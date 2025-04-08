@@ -30,22 +30,28 @@ public class Init {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    //Saltstone Variants
-    public static final BlockType SALTSTONE = registerBlockType("saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", RotatedPillarBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", Block::new, BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_REDSTONE_LAMP = registerBlockType("saltstone_redstone_lamp", LampVariantBlock::new, BlockBehaviour.Properties.copy(new LampVariantBlock(BlockBehaviour.Properties.of())), BlockSetType.STONE, 40, true);
+    //Block Properties
+    public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
+    public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
+    public static final Supplier<Block> BASE_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE));
+    public static final Supplier<Block> BASE_REDSTONE_LAMP_BLOCK = () -> new LampVariantBlock(BlockBehaviour.Properties.of());
 
-    public static <T extends Block> BlockType registerBlockType(String name, Function<BlockBehaviour.Properties, Block> block, BlockBehaviour.Properties properties, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
-        var blockBase = registerMainTabBlock(name, () -> block.apply(properties), tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
+    //Saltstone Variants
+    public static final BlockType SALTSTONE = registerBlockType("saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_REDSTONE_LAMP = registerBlockType("saltstone_redstone_lamp", BASE_REDSTONE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+
+    public static <T extends Block> BlockType registerBlockType(String name, Supplier<Block> block, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
+        var blockBase = registerMainTabBlock(name, block, tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
         var blockSlab = registerMainTabBlock(name + "_slab", blockBase, block1 -> new SlabBlock(BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
         var blockWall = registerMainTabBlock(name + "_wall", blockBase, block1 -> new WallBlock(BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
         var blockStairs = registerMainTabBlock(name + "_stairs", blockBase, block1 -> new StairBlock(block1.defaultBlockState(), BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
