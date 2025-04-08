@@ -1,2 +1,2 @@
-# RockyMinerals
+# Rocky Minerals
  minerals and fancy rocks
