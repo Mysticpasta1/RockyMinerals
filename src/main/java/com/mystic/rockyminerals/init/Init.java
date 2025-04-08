@@ -34,7 +34,6 @@ public class Init {
     public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE));
-    public static final Supplier<Block> BASE_REDSTONE_LAMP_BLOCK = () -> new LampVariantBlock(BlockBehaviour.Properties.of());
 
     //Saltstone Variants
     public static final BlockType SALTSTONE = registerBlockType("saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
@@ -48,7 +47,7 @@ public class Init {
     public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_REDSTONE_LAMP = registerBlockType("saltstone_redstone_lamp", BASE_REDSTONE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", LampVariantBlock::new);
 
     public static <T extends Block> BlockType registerBlockType(String name, Supplier<Block> block, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
         var blockBase = registerMainTabBlock(name, block, tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
@@ -59,6 +58,10 @@ public class Init {
         var pressurePlate = registerMainTabBlock(name + "_pressure_plate", blockBase, block1 -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(block1), blockSetType), block2 -> new BlockItem(block2, new Item.Properties()));
 
         return BlockType.of(blockBase, blockSlab, blockWall, blockStairs, blockButton, pressurePlate);
+    }
+
+    private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<B> block) {
+        return registerMainTabBlock(name, block, b -> () -> new BlockItem(b.get(), new Item.Properties()));
     }
 
     private static <B extends Block, I extends BlockItem> RegistryObject<B> registerMainTabBlock(String name, Supplier<B> block, Function<RegistryObject<B>, Supplier<I>> item) {

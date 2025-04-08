@@ -61,7 +61,7 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.SALTSTONE_MOSAIC, consumer);
             generateLootTableStoneTypes(Init.CUT_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.SALTSTONE_LAMP, consumer);
-            generateLootTableStoneTypes(Init.SALTSTONE_REDSTONE_LAMP, consumer);
+            dropSelf(Init.SALTSTONE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
         BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MODID, event.getExistingFileHelper()) {
@@ -78,7 +78,7 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.SALTSTONE_MOSAIC);
                 generateBlockTypeTags(Init.CUT_SALTSTONE);
                 generateBlockTypeTags(Init.SALTSTONE_LAMP);
-                generateBlockTypeTags(Init.SALTSTONE_REDSTONE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.SALTSTONE_REDSTONE_LAMP.get());
             }
 
             private void generateBlockTypeTags(BlockType blockType) {

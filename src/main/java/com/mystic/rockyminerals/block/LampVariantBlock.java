@@ -6,11 +6,13 @@ import net.minecraft.world.level.block.RedstoneLampBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 public class LampVariantBlock extends RedstoneLampBlock {
-    public LampVariantBlock(BlockBehaviour.Properties properties) {
-        super(Properties.copy(Blocks.STONE).lightLevel((blockState) -> blockState.getValue(BlockStateProperties.LIT) ? 15 : 0));
+    public static final BooleanProperty LIT = RedstoneLampBlock.LIT;
+
+    public LampVariantBlock() {
+        super(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 

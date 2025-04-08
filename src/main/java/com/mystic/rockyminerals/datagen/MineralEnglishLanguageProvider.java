@@ -31,7 +31,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.SALTSTONE_MOSAIC, "Saltstone Mosaic");
         addBlocksFromType(Init.SALTSTONE_TILE, "Saltstone Tile");
         addBlocksFromType(Init.SALTSTONE_LAMP, "Saltstone Lamp");
-        addBlocksFromType(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
+        addBlock(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
         add(Init.MAIN, "Rocky Minerals");
     }
 
