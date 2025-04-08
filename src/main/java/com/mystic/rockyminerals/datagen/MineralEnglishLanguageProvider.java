@@ -21,15 +21,17 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         //Saltstone Variants
         addBlocksFromType(Init.SALTSTONE, "Saltstone");
-        //addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");
-        //addBlocksFromType(Init.CHISELED_SALTSTONE, "Chiseled Saltstone");
-        //addBlocksFromType(Init.CRACKED_SALTSTONE, "Cracked Saltstone");
-        //addBlocksFromType(Init.CUT_SALTSTONE, "Cut Saltstone");
-        //addBlocksFromType(Init.POLISHED_SALTSTONE, "Polished Saltstone");
-        //addBlocksFromType(Init.SALTSTONE_BRICK, "Saltstone Brick");
-        //addBlocksFromType(Init.SALTSTONE_PILLAR, "Saltstone Pillar");
-        //addBlocksFromType(Init.SALTSTONE_MOSAIC, "Saltstone Mosaic");
-        //addBlocksFromType(Init.SALTSTONE_TILE, "Saltstone Tile");
+        addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");
+        addBlocksFromType(Init.CHISELED_SALTSTONE, "Chiseled Saltstone");
+        addBlocksFromType(Init.CRACKED_SALTSTONE, "Cracked Saltstone");
+        addBlocksFromType(Init.CUT_SALTSTONE, "Cut Saltstone");
+        addBlocksFromType(Init.POLISHED_SALTSTONE, "Polished Saltstone");
+        addBlocksFromType(Init.SALTSTONE_BRICK, "Saltstone Brick");
+        addBlocksFromType(Init.SALTSTONE_PILLAR, "Saltstone Pillar");
+        addBlocksFromType(Init.SALTSTONE_MOSAIC, "Saltstone Mosaic");
+        addBlocksFromType(Init.SALTSTONE_TILE, "Saltstone Tile");
+        addBlocksFromType(Init.SALTSTONE_LAMP, "Saltstone Lamp");
+        addBlocksFromType(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
         add(Init.MAIN, "Rocky Minerals");
     }
 

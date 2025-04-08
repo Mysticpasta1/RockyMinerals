@@ -1,5 +1,6 @@
 package com.mystic.rockyminerals.init;
 
+import com.mystic.rockyminerals.block.LampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -31,17 +32,17 @@ public class Init {
 
     //Saltstone Variants
     public static final BlockType SALTSTONE = registerBlockType("saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-    //public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
-
-
+    public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE), BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_REDSTONE_LAMP = registerBlockType("saltstone_redstone_lamp", HalfTransparentBlock::new, BlockBehaviour.Properties.copy(new LampVariantBlock()), BlockSetType.STONE, 40, true);
 
     public static <T extends Block> BlockType registerBlockType(String name, Function<BlockBehaviour.Properties, Block> block, BlockBehaviour.Properties properties, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
         var blockBase = registerMainTabBlock(name, () -> block.apply(properties), tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
