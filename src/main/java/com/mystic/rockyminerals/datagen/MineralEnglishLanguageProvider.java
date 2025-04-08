@@ -37,11 +37,11 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
 
     private void addBlocksFromType(BlockType type, String base) {
         addBlock(type.block(), base);
-        if(type.button() != null) addBlock(type.button(), base + " Button");
-        if(type.slab() != null) addBlock(type.slab(), base + " Slab");
-        if(type.stairs() != null) addBlock(type.stairs(), base + " Stairs");
-        if(type.pressurePlate() != null) addBlock(type.pressurePlate(), base + " Pressure Plate");
-        if(type.wall() != null) addBlock(type.wall(), base + " Wall");
+        if (type.button() != null) addBlock(type.button(), base + " Button");
+        if (type.slab() != null) addBlock(type.slab(), base + " Slab");
+        if (type.stairs() != null) addBlock(type.stairs(), base + " Stairs");
+        if (type.pressurePlate() != null) addBlock(type.pressurePlate(), base + " Pressure Plate");
+        if (type.wall() != null) addBlock(type.wall(), base + " Wall");
     }
 
     private void add(RegistryObject<CreativeModeTab> tab, String entry) {

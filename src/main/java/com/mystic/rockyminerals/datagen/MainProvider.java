@@ -17,6 +17,7 @@ public class MainProvider extends BlockStateProvider {
     private final PackOutput packOutput;
     private final ExistingFileHelper existingFileHelper;
     List<Proxied> providers;
+
     @SafeVarargs
     public MainProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper, Function<MainProvider, Proxied>... providers) {
         super(packOutput, Main.MODID, existingFileHelper);
