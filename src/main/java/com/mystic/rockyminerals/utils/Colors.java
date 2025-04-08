@@ -21,10 +21,5 @@ public enum Colors {
     BROWN("brown"),
     LIME("lime");
 
-    private final String name;
-
-    Colors(String name) {
-
-        this.name = name;
-    }
+    Colors(String name) {}
 }

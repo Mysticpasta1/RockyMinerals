@@ -71,10 +71,6 @@ public class MainProvider extends BlockStateProvider {
             return BuiltInRegistries.BLOCK.getKey(block);
         }
 
-        public boolean registered(Block block) {
-            return provider.registeredBlocks.containsKey(block);
-        }
-
         public abstract void registerStatesAndModels();
     }
 
