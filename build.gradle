@@ -9,7 +9,12 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id "com.matthewprenger.cursegradle" version "1.4.0"
+    id "com.modrinth.minotaur" version "2.+"
 }
+
+apply plugin: "com.matthewprenger.cursegradle"
+apply plugin: "com.modrinth.minotaur"
 
 group = mod_group_id
 version = mod_version
@@ -69,6 +74,11 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    maven { url = "https://api.modrinth.com/maven" }
+
+    maven { url = "https://files.minecraftforge.net/maven" }
+
     maven {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
@@ -83,11 +93,16 @@ repositories {
 }
 
 dependencies {
+
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("curse.maven:selene-499980:6380635")
+
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+
+    //!! DEPENDENCIES
+    implementation fg.deobf("maven.modrinth:moonlight:forge_1.20-${moonlight_mavenVersion}")
+
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -119,4 +134,50 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+subprojects {
+
+    var env = System.getenv()
+    var modLoader = name
+
+    var changelogFile = rootProject.file("changelog.md")
+    var changelogText = changelogFile.exists() ? changelogFile.text : ""
+
+    if (env.MODRINTH_TOKEN) {
+        modrinth {
+            projectId = "rocky-minerals"
+            uploadFile = tasks.remapJar
+            additionalFiles.add(tasks.remapSourcesJar)
+            gameVersions = [minecraft_version]
+            loaders = [modLoader]
+            changelog = changelogText
+
+            versionName = mod_version + '-forge'
+            dependencies {
+                project "moonlight"
+            }
+        }
+    }
+
+    if (env.CURSEFORGE_TOKEN) {
+        curseforge {
+            apiKey = env.CURSEFORGE_TOKEN
+            project {
+                id = project_id
+                changelog = changelogText
+                changelogType = 'markdown'
+                releaseType = 'release'
+                addGameVersion minecraft_version
+                addGameVersion modLoader.capitalize()
+
+                mainArtifact(tasks.remapJar)
+
+                    relations {
+                        incompatible("vminus")
+                        requiredDependency("selene")
+                    }
+            }
+        }
+    }
 }
