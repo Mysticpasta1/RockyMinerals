@@ -1,18 +1,20 @@
 package com.mystic.rockyminerals.datagen;
 
+import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.init.Init;
-import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -50,7 +52,7 @@ public class MineralProviders {
             dropSelf(saltstoneTypes.pressurePlate().get(), consumer);
         }, LootContextParamSets.BLOCK);
 
-        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), "atlantis", event.getExistingFileHelper()) {
+        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MODID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 var saltstoneTypes = Init.SALTSTONE;
@@ -63,7 +65,18 @@ public class MineralProviders {
             }
         };
 
-        event.getGenerator().addProvider(true, blockTagsProvider);event.getGenerator().addProvider(true, new LootTableProvider(output, Set.of(), List.of()) {
+        ItemTagsProvider itemTagsProvider = new ItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), Main.MODID, event.getExistingFileHelper()) {
+            @Override
+            protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+                var saltstoneTypes = Init.SALTSTONE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(saltstoneTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(saltstoneTypes.block().get().asItem());
+            }
+        };
+
+        event.getGenerator().addProvider(true, blockTagsProvider);
+        event.getGenerator().addProvider(true, itemTagsProvider);
+        event.getGenerator().addProvider(true, new LootTableProvider(output, Set.of(), List.of()) {
             @Override
             public @NotNull List<SubProviderEntry> getTables() {
                 return List.of(lootTableProvider);
