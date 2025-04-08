@@ -1,5 +1,5 @@
 {
-  "feature": "minecraft:ore_granite",
+  "feature": "rockyminerals:saltstone_configured",
   "placement": [
     {
       "type": "minecraft:count",
