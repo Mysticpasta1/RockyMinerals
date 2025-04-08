@@ -20,5 +20,4 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 /run/
-/run-data/
-/.idea/
+/src/generated/resources/.cache/

@@ -84,7 +84,7 @@ public class Init {
     }
 
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.rockyminerals.general"))
+            .title(Component.translatable("itemGroup.rockyminerals.main"))
             .icon(() -> SALTSTONE.block().get().asItem().getDefaultInstance()
             ).displayItems((parameters, output) -> {
                 MAIN_BLOCKS.forEach(itemLike -> output.accept(itemLike.get()));
