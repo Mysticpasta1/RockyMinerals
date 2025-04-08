@@ -1,6 +1,7 @@
 package com.mystic.rockyminerals.datagen;
 
 import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,7 +19,18 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-
+        //Saltstone Variants
+        addBlocksFromType(Init.SALTSTONE, "Saltstone");
+        //addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");
+        //addBlocksFromType(Init.CHISELED_SALTSTONE, "Chiseled Saltstone");
+        //addBlocksFromType(Init.CRACKED_SALTSTONE, "Cracked Saltstone");
+        //addBlocksFromType(Init.CUT_SALTSTONE, "Cut Saltstone");
+        //addBlocksFromType(Init.POLISHED_SALTSTONE, "Polished Saltstone");
+        //addBlocksFromType(Init.SALTSTONE_BRICK, "Saltstone Brick");
+        //addBlocksFromType(Init.SALTSTONE_PILLAR, "Saltstone Pillar");
+        //addBlocksFromType(Init.SALTSTONE_MOSAIC, "Saltstone Mosaic");
+        //addBlocksFromType(Init.SALTSTONE_TILE, "Saltstone Tile");
+        add(Init.MAIN, "Rocky Minerals");
     }
 
     private void addBlocksFromType(BlockType type, String base) {
@@ -29,15 +41,6 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         if(type.pressurePlate() != null) addBlock(type.pressurePlate(), base + " Pressure Plate");
         if(type.wall() != null) addBlock(type.wall(), base + " Wall");
     }
-
-    private void addItem(RegistryObject<Item> registryObject) {
-        addItem(registryObject, WordUtils.capitalizeFully(registryObject.getId().getPath().replace("_", " ")));
-    }
-
-    private <T extends Block> void addBlock(RegistryObject< T> registryObject) {
-        addBlock(registryObject, WordUtils.capitalizeFully(registryObject.getId().getPath().replace("_", " ")));
-    }
-
 
     private void add(RegistryObject<CreativeModeTab> tab, String entry) {
         this.add("itemGroup." + tab.getId().toLanguageKey(), entry);

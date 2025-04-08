@@ -11,15 +11,13 @@ import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public record BlockType(RegistryObject<Block> block, RegistryObject<SlabBlock> slab, RegistryObject<WallBlock> wall, RegistryObject<StairBlock> stairs, RegistryObject<ButtonBlock> button, RegistryObject<PressurePlateBlock> pressurePlate,
-                        RegistryObject<Block> cobbled, RegistryObject<Block> chiseled, RegistryObject<Block> polished, RegistryObject<Block> bricks, RegistryObject<Block> cracked, RegistryObject<Block> tiles) {
+public record BlockType(RegistryObject<Block> block, RegistryObject<SlabBlock> slab, RegistryObject<WallBlock> wall, RegistryObject<StairBlock> stairs, RegistryObject<ButtonBlock> button, RegistryObject<PressurePlateBlock> pressurePlate) {
     private static final Map<BlockType, Supplier<BlockFamily>> MAP = Maps.newHashMap();
 
     public static @NotNull Stream<BlockFamily> getAllFamilies() {return MAP.values().stream().map(Supplier::get);}
 
-    public static BlockType of(RegistryObject<Block> blockBase, RegistryObject<SlabBlock> blockSlab, RegistryObject<WallBlock> blockWall, RegistryObject<StairBlock> blockStair, RegistryObject<ButtonBlock> blockButton, RegistryObject<PressurePlateBlock> pressurePlate,
-                               RegistryObject<Block> cobbled, RegistryObject<Block> chiseled, RegistryObject<Block> polished, RegistryObject<Block> bricks, RegistryObject<Block> cracked, RegistryObject<Block> tiles) {
-        var blockType = new BlockType(blockBase, blockSlab, blockWall, blockStair, blockButton, pressurePlate, cobbled, chiseled, polished, bricks, cracked, tiles);
+    public static BlockType of(RegistryObject<Block> blockBase, RegistryObject<SlabBlock> blockSlab, RegistryObject<WallBlock> blockWall, RegistryObject<StairBlock> blockStair, RegistryObject<ButtonBlock> blockButton, RegistryObject<PressurePlateBlock> pressurePlate) {
+        var blockType = new BlockType(blockBase, blockSlab, blockWall, blockStair, blockButton, pressurePlate);
         MAP.computeIfAbsent(blockType, blockType1 -> Suppliers.memoize(() -> BlockType.family(blockType1)));
         return blockType;
     }
@@ -31,12 +29,6 @@ public record BlockType(RegistryObject<Block> block, RegistryObject<SlabBlock> s
         if(type.pressurePlate != null) family.pressurePlate(type.pressurePlate.get());
         if(type.button != null) family.button(type.button.get());
         if(type.wall != null) family.wall(type.wall.get());
-        if(type.cobbled != null) family.fence(type.cobbled.get());
-        if(type.chiseled != null) family.fence(type.chiseled.get());
-        if(type.polished != null) family.fence(type.polished.get());
-        if(type.bricks != null) family.fence(type.bricks.get());
-        if(type.cracked != null) family.fence(type.cracked.get());
-        if(type.tiles != null) family.fence(type.tiles.get());
         return family.getFamily();
     }
 }

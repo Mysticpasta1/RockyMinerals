@@ -34,7 +34,6 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
         Block variantTarget = family.getVariants().get(variant);
         switch (variant) {
             case BUTTON -> registerButton(variantTarget, original);
-            case CHISELED, CRACKED, CUT, POLISHED -> simpleBlockWithItem(variantTarget, cubeAll(variantTarget));
             case SLAB -> registerSlab((SlabBlock) variantTarget, original);
             case STAIRS -> registerStairs((StairBlock) variantTarget, original);
             case PRESSURE_PLATE -> registerPressurePlate((PressurePlateBlock) variantTarget, original);
@@ -70,7 +69,7 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
         ResourceLocation buttonId = key(button);
         ResourceLocation textureBlockId = key(texturedBlock);
 
-        ResourceLocation texture = new ResourceLocation(textureBlockId.getNamespace(), "block/" + textureBlockId.getPath());
+        ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(textureBlockId.getNamespace(), "block/" + textureBlockId.getPath());
         buttonBlock((ButtonBlock) button, texture);
         itemModels().buttonInventory(buttonId.getPath(), texture);
     }
