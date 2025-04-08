@@ -78,12 +78,6 @@ public class Init {
         return reg;
     }
 
-    public static <T extends Item> RegistryObject<T> register(String name, Supplier<T> item) {
-        var register = ITEMS.register(name, item);
-        addToMainTab(register);
-        return register;
-    }
-
     public static <T extends Item> void addToMainTab(RegistryObject<T> itemLike) {
         MAIN_BLOCKS.add(itemLike);
     }
