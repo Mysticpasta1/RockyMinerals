@@ -1,10 +1,13 @@
 package com.mystic.rockyminerals.init;
 
 import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.api.TextureInfo;
 import com.mystic.rockyminerals.block.LampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
+import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -17,8 +20,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -29,6 +31,7 @@ public class Init {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
 
+    protected static final Set<TextureInfo> textures = new HashSet<>(); //TODO: WIP
     //Block Properties
     public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
@@ -86,6 +89,7 @@ public class Init {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         CREATIVE_MODE_TABS.register(bus);
+        addBlocksToTextures();
     }
 
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder()
@@ -94,4 +98,15 @@ public class Init {
             ).displayItems((parameters, output) -> {
                 MAIN_BLOCKS.forEach(itemLike -> output.accept(itemLike.get()));
             }).build());
+
+    public static void addBlocksToTextures() {
+        MAIN_BLOCKS.forEach(item -> {
+            ResourceLocation blockId = Utils.getID(item); // get: rockyminerals:saltstone_brick
+
+            if (blockId.getPath().contains("_")) { // Skip rockyminerals:saltstone
+                TextureInfo.Builder texture = TextureInfo.of(blockId.withPath("block/"));
+                textures.add(texture.build());
+            }
+        });
+    }
 }
