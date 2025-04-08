@@ -44,14 +44,6 @@ public class MineralProviders {
 
         LootTableProvider.SubProviderEntry lootTableProvider = new LootTableProvider.SubProviderEntry(() -> consumer -> {
             //Saltstone Variants
-            var saltstoneTypes = Init.SALTSTONE;
-            dropSelf(saltstoneTypes.block().get(), consumer);
-            dropSelf(saltstoneTypes.slab().get(), consumer);
-            dropSelf(saltstoneTypes.stairs().get(), consumer);
-            dropSelf(saltstoneTypes.wall().get(), consumer);
-            dropSelf(saltstoneTypes.button().get(), consumer);
-            dropSelf(saltstoneTypes.pressurePlate().get(), consumer);
-
             var cobbledSaltstoneTypes = Init.COBBLED_SALTSTONE;
             dropSelf(cobbledSaltstoneTypes.block().get(), consumer);
             dropSelf(cobbledSaltstoneTypes.slab().get(), consumer);
@@ -59,6 +51,14 @@ public class MineralProviders {
             dropSelf(cobbledSaltstoneTypes.wall().get(), consumer);
             dropSelf(cobbledSaltstoneTypes.button().get(), consumer);
             dropSelf(cobbledSaltstoneTypes.pressurePlate().get(), consumer);
+
+            var saltstoneTypes = Init.SALTSTONE;
+            dropCobbleVariant(saltstoneTypes.block().get(), cobbledSaltstoneTypes.block().get(), consumer);
+            dropSelf(saltstoneTypes.slab().get(), consumer);
+            dropSelf(saltstoneTypes.stairs().get(), consumer);
+            dropSelf(saltstoneTypes.wall().get(), consumer);
+            dropSelf(saltstoneTypes.button().get(), consumer);
+            dropSelf(saltstoneTypes.pressurePlate().get(), consumer);
 
             var chiseledSaltstoneTypes = Init.CHISELED_SALTSTONE;
             dropSelf(chiseledSaltstoneTypes.block().get(), consumer);
@@ -268,6 +268,11 @@ public class MineralProviders {
 
     private static void dropSelf(Block block, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
         builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block)
+                .when(ExplosionCondition.survivesExplosion())).add(LootItem.lootTableItem(block))));
+    }
+
+    private static void dropCobbleVariant(Block block, Block block2, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
+        builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block2)
                 .when(ExplosionCondition.survivesExplosion())).add(LootItem.lootTableItem(block))));
     }
 }
