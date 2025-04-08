@@ -10,9 +10,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class Main {
     public static final String MODID = "rockyminerals";
 
-    @SuppressWarnings("removal")
-    public Main() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    public Main(FMLJavaModLoadingContext context) {
+        IEventBus bus = context.getModEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
     }
