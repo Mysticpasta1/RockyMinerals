@@ -2,7 +2,6 @@ package com.mystic.rockyminerals;
 
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.init.Init;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -11,7 +10,7 @@ public class Main {
     public static final String MOD_ID = "rockyminerals";
 
     public Main(FMLJavaModLoadingContext context) {
-        IEventBus bus = context.getModEventBus();
+        var bus = context.getModEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
     }
