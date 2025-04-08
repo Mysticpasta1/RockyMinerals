@@ -6,9 +6,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(Main.MODID)
+@Mod(Main.MOD_ID)
 public class Main {
-    public static final String MODID = "rockyminerals";
+    public static final String MOD_ID = "rockyminerals";
 
     public Main(FMLJavaModLoadingContext context) {
         IEventBus bus = context.getModEventBus();

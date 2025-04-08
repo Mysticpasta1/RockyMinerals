@@ -9,7 +9,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 public class MineralEnglishLanguageProvider extends LanguageProvider {
 
     public MineralEnglishLanguageProvider(PackOutput generator) {
-        super(generator, Main.MODID, "en_us");
+        super(generator, Main.MOD_ID, "en_us");
     }
 
     @Override

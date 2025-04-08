@@ -64,7 +64,7 @@ public class MineralProviders {
             dropSelf(Init.SALTSTONE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
-        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MODID, event.getExistingFileHelper()) {
+        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MOD_ID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 //Saltstone Variant
@@ -91,7 +91,7 @@ public class MineralProviders {
             }
         };
 
-        ItemTagsProvider itemTagsProvider = new ItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), Main.MODID, event.getExistingFileHelper()) {
+        ItemTagsProvider itemTagsProvider = new ItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), Main.MOD_ID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 var saltstoneTypes = Init.SALTSTONE;

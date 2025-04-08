@@ -1,5 +1,6 @@
 package com.mystic.rockyminerals.init;
 
+import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.block.LampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
@@ -21,14 +22,12 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static com.mystic.rockyminerals.Main.MODID;
-
 public class Init {
     public static final List<Supplier<? extends ItemLike>> MAIN_BLOCKS = new ArrayList<>();
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
 
     //Block Properties
     public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
@@ -53,7 +52,7 @@ public class Init {
         var blockBase = registerMainTabBlock(name, block, tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
         var blockSlab = registerMainTabBlock(name + "_slab", blockBase, block1 -> new SlabBlock(BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
         var blockWall = registerMainTabBlock(name + "_wall", blockBase, block1 -> new WallBlock(BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
-        var blockStairs = registerMainTabBlock(name + "_stairs", blockBase, block1 -> new StairBlock(block1.defaultBlockState(), BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
+        var blockStairs = registerMainTabBlock(name + "_stairs", blockBase, block1 -> new StairBlock(block1::defaultBlockState, BlockBehaviour.Properties.copy(block1)), block2 -> new BlockItem(block2, new Item.Properties()));
         var blockButton = registerMainTabBlock(name + "_button", blockBase, block1 -> new ButtonBlock(BlockBehaviour.Properties.copy(block1), blockSetType, pTicksToStayPressed, pArrowsCanPress), block2 -> new BlockItem(block2, new Item.Properties()));
         var pressurePlate = registerMainTabBlock(name + "_pressure_plate", blockBase, block1 -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(block1), blockSetType), block2 -> new BlockItem(block2, new Item.Properties()));
 
