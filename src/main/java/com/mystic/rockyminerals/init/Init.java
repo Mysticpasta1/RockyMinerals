@@ -1,13 +1,10 @@
 package com.mystic.rockyminerals.init;
 
 import com.mystic.rockyminerals.Main;
-import com.mystic.rockyminerals.api.TextureInfo;
 import com.mystic.rockyminerals.block.LampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
-import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -15,6 +12,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,7 +30,7 @@ public class Init {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
 
     //Block Properties
-    public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
+    public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM));
     public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_TRANSPARENT_MINERAL = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST));
@@ -43,7 +41,7 @@ public class Init {
     public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_BRICKS = registerBlockType("saltstone_bricks", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
