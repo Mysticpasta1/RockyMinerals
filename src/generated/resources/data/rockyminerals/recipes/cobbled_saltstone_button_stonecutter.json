@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_saltstone"
+  },
+  "result": "rockyminerals:cobbled_saltstone_button"
+}
