@@ -3,6 +3,9 @@ package com.mystic.rockyminerals.datagen;
 import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -11,6 +14,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -133,7 +137,10 @@ public class MineralProviders {
     }
 
     private static void dropCobbleVariant(Block block, Block block2, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
-        builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block2))
-                .when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(block))));
+        builder.accept(block.getLootTable(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(block).when(MatchTool.toolMatches(
+                                ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.ANY)))))
+                        .add(LootItem.lootTableItem(block2).when(ExplosionCondition.survivesExplosion()))));
     }
 }
