@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "rockyminerals:block/chiseled_saltstone_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "rockyminerals:block/chiseled_saltstone"
+    },
+    "axis=z": {
+      "model": "rockyminerals:block/chiseled_saltstone_horizontal",
+      "x": 90
+    }
+  }
+}

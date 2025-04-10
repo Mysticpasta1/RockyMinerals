@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "name": "rockyminerals:chiseled_saltstone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rockyminerals:chiseled_saltstone"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rockyminerals:blocks/chiseled_saltstone"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "rockyminerals:block/saltstone_pillar"
+  }
+}

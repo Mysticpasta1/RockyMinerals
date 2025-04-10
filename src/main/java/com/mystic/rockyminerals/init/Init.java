@@ -42,13 +42,13 @@ public class Init {
     //Saltstone Variants
     public static final BlockType SALTSTONE = registerBlockType("saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_BRICK = registerBlockType("saltstone_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", BASE_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_MOSAIC = registerBlockType("saltstone_mosaic", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_MOSAIC = registerBlockType("mosaic_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", LampVariantBlock::new);
@@ -89,7 +89,7 @@ public class Init {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         CREATIVE_MODE_TABS.register(bus);
-        addBlocksToTextures();
+        //addBlocksToTextures();
     }
 
     public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder()

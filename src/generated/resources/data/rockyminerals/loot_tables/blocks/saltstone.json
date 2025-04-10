@@ -3,20 +3,19 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:survives_explosion"
-            }
-          ],
-          "name": "rockyminerals:saltstone"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "rockyminerals:saltstone"
+          "name": "rockyminerals:cobbled_saltstone"
         }
+      ],
+      "functions": [
+        null
       ],
       "rolls": 1.0
     }

@@ -17,6 +17,8 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,6 +36,7 @@ public class MineralProviders {
 
     public static void dataGather(GatherDataEvent event) {
         var output = event.getGenerator().getPackOutput();
+        event.getGenerator().addProvider(true, new MineralBlockModelProvider(output, event.getExistingFileHelper()));
         event.getGenerator().addProvider(true, new MainProvider(output, event.getExistingFileHelper(), MineralBlockStateProvider::new));
         event.getGenerator().addProvider(true, new MineralEnglishLanguageProvider(output));
         event.getGenerator().addProvider(true, new RecipeProvider(output) {
@@ -68,6 +71,7 @@ public class MineralProviders {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 //Saltstone Variant
+                generateBlockTypeTags(Init.SALTSTONE);
                 generateBlockTypeTags(Init.COBBLED_SALTSTONE);
                 generateBlockTypeTags(Init.CHISELED_SALTSTONE);
                 generateBlockTypeTags(Init.CRACKED_SALTSTONE);
@@ -129,7 +133,7 @@ public class MineralProviders {
     }
 
     private static void dropCobbleVariant(Block block, Block block2, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
-        builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block2)
-                .when(ExplosionCondition.survivesExplosion())).add(LootItem.lootTableItem(block))));
+        builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block2))
+                .when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(block))));
     }
 }

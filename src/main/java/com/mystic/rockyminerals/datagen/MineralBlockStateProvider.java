@@ -1,10 +1,13 @@
 package com.mystic.rockyminerals.datagen;
 
+import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 
 public class MineralBlockStateProvider extends MainProvider.Proxied {
     public MineralBlockStateProvider(MainProvider provider) {
@@ -14,6 +17,7 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
     @Override
     public void registerStatesAndModels() {
         BlockType.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
+        registerLamp(Init.SALTSTONE_REDSTONE_LAMP.get(), Init.SALTSTONE_REDSTONE_LAMP.get());
     }
 
     private void registerBlockFamily(BlockFamily family) {
@@ -26,7 +30,22 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
     }
 
     private void registerBlockItem(Block block, Block texture) {
-        simpleBlockWithItem(block, cubeAll(texture));
+        if(block instanceof RotatedPillarBlock pillarBlock) {
+            simpleBlockItem(block, models().cubeColumn(name(block), blockTexture(block), blockTexture(texture)));
+            axisBlock(pillarBlock, blockTexture(block), extendPillar(blockTexture(texture)));
+        } else {
+            simpleBlockWithItem(block, cubeAll(texture));
+        }
+    }
+
+    private String name(Block block) {
+        return this.key(block).getPath();
+    }
+
+    private ResourceLocation extendPillar(ResourceLocation rl) {
+        String var10002 = rl.getNamespace();
+        String var10003 = rl.getPath();
+        return ResourceLocation.fromNamespaceAndPath(var10002, var10003 + "_top");
     }
 
     private void processVariant(BlockFamily.Variant variant, BlockFamily family) {
@@ -73,4 +92,16 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
         buttonBlock((ButtonBlock) button, texture);
         itemModels().buttonInventory(buttonId.getPath(), texture);
     }
+
+
+    private void registerLamp(Block lamp, Block texture) {
+        var unlit = this.blockTexture(texture).withSuffix("_unlit");
+        var lit = this.blockTexture(texture).withSuffix("_lit");
+
+        this.getVariantBuilder(lamp)
+                .partialState().with(RedstoneLampBlock.LIT, false).addModels(new ConfiguredModel(new ModelFile.UncheckedModelFile(unlit)))
+                .partialState().with(RedstoneLampBlock.LIT, true).addModels(new ConfiguredModel(new ModelFile.UncheckedModelFile(lit)));
+        simpleBlockItem(lamp, new ModelFile.UncheckedModelFile(unlit));
+    }
+
 }
