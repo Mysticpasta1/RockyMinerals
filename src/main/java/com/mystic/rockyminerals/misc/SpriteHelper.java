@@ -13,7 +13,7 @@ public class SpriteHelper {
             TextureInfo.of("rockyminerals:cut_stone", Main.res("block/template/cut_stonetype")).build(),
             TextureInfo.of("rockyminerals:mosaic_stone", Main.res("block/template/mosaic_stonetype")).build(),
             TextureInfo.of("rockyminerals:polished_stone", Main.res("block/template/polished_stonetype")).build(),
-            TextureInfo.of("rockyminerals:stone_brick", Main.res("block/template/stonetype_brick")).build(),
+            TextureInfo.of("rockyminerals:stone_bricks", Main.res("block/template/stonetype_bricks")).build(),
             TextureInfo.of("rockyminerals:stone_lamp", Main.res("block/template/stonetype_lamp")).build(),
             TextureInfo.of("rockyminerals:stone_tile", Main.res("block/template/stonetype_tile")).build(),
 

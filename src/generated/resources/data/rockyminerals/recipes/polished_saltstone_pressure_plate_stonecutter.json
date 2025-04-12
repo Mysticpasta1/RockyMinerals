@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "rockyminerals:polished_saltstone"
-  },
-  "result": "rockyminerals:polished_saltstone_pressure_plate"
-}

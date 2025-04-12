@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/saltstone_lamp",
-    "side": "rockyminerals:block/saltstone_lamp",
-    "top": "rockyminerals:block/saltstone_lamp"
-  }
-}

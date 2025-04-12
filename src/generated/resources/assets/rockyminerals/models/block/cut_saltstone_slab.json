@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockyminerals:block/cut_saltstone",
-    "side": "rockyminerals:block/cut_saltstone",
-    "top": "rockyminerals:block/cut_saltstone"
-  }
-}

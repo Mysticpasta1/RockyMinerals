@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "rockyminerals:mosaic_saltstone"
-  },
-  "result": "rockyminerals:mosaic_saltstone_wall"
-}

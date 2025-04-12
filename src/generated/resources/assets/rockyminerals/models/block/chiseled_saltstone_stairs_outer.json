@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/chiseled_saltstone",
-    "side": "rockyminerals:block/chiseled_saltstone",
-    "top": "rockyminerals:block/chiseled_saltstone"
-  }
-}

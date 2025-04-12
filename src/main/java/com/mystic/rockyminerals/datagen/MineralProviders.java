@@ -3,7 +3,6 @@ package com.mystic.rockyminerals.datagen;
 import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
-import net.mehvahdjukaar.moonlight.core.recipe.StoneCutterRecipeTemplate;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -15,13 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.BlastingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RedstoneLampBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -53,8 +48,13 @@ public class MineralProviders {
             protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {
                 buildRecipesForAllVariants(recipeOutput,
                         Init.SALTSTONE, Init.COBBLED_SALTSTONE, Init.CHISELED_SALTSTONE, Init.CRACKED_SALTSTONE,
-                        Init.SALTSTONE_BRICK, Init.SALTSTONE_TILE, Init.POLISHED_SALTSTONE, Init.SALTSTONE_PILLAR,
+                        Init.SALTSTONE_BRICKS, Init.SALTSTONE_TILE, Init.POLISHED_SALTSTONE, Init.SALTSTONE_PILLAR,
                         Init.SALTSTONE_MOSAIC, Init.CUT_SALTSTONE, Init.SALTSTONE_LAMP, Init.SALTSTONE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.HALITE, Init.COBBLED_HALITE, Init.CHISELED_HALITE, Init.CRACKED_HALITE,
+                        Init.HALITE_BRICKS, Init.HALITE_TILE, Init.POLISHED_HALITE, Init.HALITE_PILLAR,
+                        Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
             }
 
             private static void buildRecipesForAllVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
@@ -261,7 +261,7 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.COBBLED_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.CHISELED_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.CRACKED_SALTSTONE, consumer);
-            generateLootTableStoneTypes(Init.SALTSTONE_BRICK, consumer);
+            generateLootTableStoneTypes(Init.SALTSTONE_BRICKS, consumer);
             generateLootTableStoneTypes(Init.SALTSTONE_TILE, consumer);
             generateLootTableStoneTypes(Init.POLISHED_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.SALTSTONE_PILLAR, consumer);
@@ -269,6 +269,26 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.CUT_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.SALTSTONE_LAMP, consumer);
             dropSelf(Init.SALTSTONE_REDSTONE_LAMP.get(), consumer);
+
+            //Halite Variants
+            var haliteTypes = Init.HALITE;
+            dropCobbleVariant(haliteTypes.block().get(), Init.COBBLED_HALITE.block().get(), consumer);
+            dropSelf(haliteTypes.slab().get(), consumer);
+            dropSelf(haliteTypes.stairs().get(), consumer);
+            dropSelf(haliteTypes.wall().get(), consumer);
+            dropSelf(haliteTypes.button().get(), consumer);
+            dropSelf(haliteTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_HALITE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_HALITE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_HALITE, consumer);
+            generateLootTableStoneTypes(Init.HALITE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.HALITE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_HALITE, consumer);
+            generateLootTableStoneTypes(Init.HALITE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.HALITE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_HALITE, consumer);
+            generateLootTableStoneTypes(Init.HALITE_LAMP, consumer);
+            dropSelf(Init.HALITE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
         BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MOD_ID, event.getExistingFileHelper()) {
@@ -279,7 +299,7 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.COBBLED_SALTSTONE);
                 generateBlockTypeTags(Init.CHISELED_SALTSTONE);
                 generateBlockTypeTags(Init.CRACKED_SALTSTONE);
-                generateBlockTypeTags(Init.SALTSTONE_BRICK);
+                generateBlockTypeTags(Init.SALTSTONE_BRICKS);
                 generateBlockTypeTags(Init.SALTSTONE_TILE);
                 generateBlockTypeTags(Init.POLISHED_SALTSTONE);
                 generateBlockTypeTags(Init.SALTSTONE_PILLAR);
@@ -287,6 +307,20 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.CUT_SALTSTONE);
                 generateBlockTypeTags(Init.SALTSTONE_LAMP);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.SALTSTONE_REDSTONE_LAMP.get());
+
+                //Halite Variants
+                generateBlockTypeTags(Init.HALITE);
+                generateBlockTypeTags(Init.COBBLED_HALITE);
+                generateBlockTypeTags(Init.CHISELED_HALITE);
+                generateBlockTypeTags(Init.CRACKED_HALITE);
+                generateBlockTypeTags(Init.HALITE_BRICKS);
+                generateBlockTypeTags(Init.HALITE_TILE);
+                generateBlockTypeTags(Init.POLISHED_HALITE);
+                generateBlockTypeTags(Init.HALITE_PILLAR);
+                generateBlockTypeTags(Init.HALITE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_HALITE);
+                generateBlockTypeTags(Init.HALITE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.HALITE_REDSTONE_LAMP.get());
             }
 
             private void generateBlockTypeTags(BlockType blockType) {
@@ -296,6 +330,7 @@ public class MineralProviders {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockType.wall().get());
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockType.button().get());
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockType.pressurePlate().get());
+                tag(BlockTags.WALLS).add(blockType.wall().get());
             }
         };
 
@@ -309,6 +344,14 @@ public class MineralProviders {
                 var cobbleSaltstoneTypes = Init.COBBLED_SALTSTONE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbleSaltstoneTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbleSaltstoneTypes.block().get().asItem());
+
+                var haliteTypes = Init.HALITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(haliteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(haliteTypes.block().get().asItem());
+
+                var cobbleHaliteTypes = Init.COBBLED_HALITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
             }
         };
 

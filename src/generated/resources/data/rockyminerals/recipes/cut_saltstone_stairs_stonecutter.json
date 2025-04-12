@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "rockyminerals:cut_saltstone"
-  },
-  "result": "rockyminerals:cut_saltstone_stairs"
-}

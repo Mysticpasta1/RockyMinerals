@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/saltstone",
-    "side": "rockyminerals:block/saltstone",
-    "top": "rockyminerals:block/saltstone"
-  }
-}
