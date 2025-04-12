@@ -19,8 +19,8 @@ public record TextureInfo(String blockId, ResourceLocation texture, ResourceLoca
     }
 
     public static final class Builder {
-        private String blockId;
-        private ResourceLocation texture;
+        private final String blockId;
+        private final ResourceLocation texture;
         private ResourceLocation mask;
         private final boolean onAtlas;
 
@@ -35,11 +35,6 @@ public record TextureInfo(String blockId, ResourceLocation texture, ResourceLoca
             this.texture = texture;
             this.mask = mask;
             this.onAtlas = !texture.getPath().startsWith("entity/");
-        }
-
-        public Builder(List<Pair<ResourceLocation, ResourceLocation>> pairList) {
-            this.onAtlas = !pairList.get(0).getFirst().getPath().startsWith("entity/");
-
         }
 
         public TextureInfo build() {
