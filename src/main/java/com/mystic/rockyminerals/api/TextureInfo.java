@@ -1,44 +1,49 @@
 package com.mystic.rockyminerals.api;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.Nullable;
 
-public record TextureInfo(ResourceLocation texture, @Nullable ResourceLocation mask,
-                          boolean copyMCMETA, boolean onAtlas) {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static Builder of(ResourceLocation res) {
-        return new Builder(res);
+public record TextureInfo(String blockId, ResourceLocation texture, ResourceLocation mask,
+                          boolean onAtlas) {
+
+
+    public static Builder of(String blockId, ResourceLocation texture) {
+        return new Builder(blockId, texture);
+    }
+
+    public static Builder of(String blockId, ResourceLocation texture, ResourceLocation mask) {
+        return new Builder(blockId, texture, mask);
     }
 
     public static final class Builder {
-        private final ResourceLocation texture;
+        private String blockId;
+        private ResourceLocation texture;
         private ResourceLocation mask;
-        private boolean copyMCMETA = false;
-        private boolean onAtlas;
+        private final boolean onAtlas;
 
-        public Builder(ResourceLocation texture) {
+        public Builder(String blockId, ResourceLocation texture) {
+            this.blockId = blockId;
             this.texture = texture;
             this.onAtlas = !texture.getPath().startsWith("entity/");
         }
 
-        public Builder mask(ResourceLocation mask) {
+        public Builder(String blockId, ResourceLocation texture, ResourceLocation mask) {
+            this.blockId = blockId;
+            this.texture = texture;
             this.mask = mask;
-            return this;
+            this.onAtlas = !texture.getPath().startsWith("entity/");
         }
 
-        // for textures not on atlas that won't be cleared
-        public Builder forEntityOrGui(){
-            this.onAtlas = false;
-            return this;
-        }
+        public Builder(List<Pair<ResourceLocation, ResourceLocation>> pairList) {
+            this.onAtlas = !pairList.get(0).getFirst().getPath().startsWith("entity/");
 
-        public Builder copyMCMETA() {
-            this.copyMCMETA = true;
-            return this;
         }
 
         public TextureInfo build() {
-            return new TextureInfo(texture, mask, copyMCMETA, onAtlas);
+            return new TextureInfo(blockId, texture, mask, onAtlas);
         }
     }
 }

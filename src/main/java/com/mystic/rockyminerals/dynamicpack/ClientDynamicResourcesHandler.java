@@ -1,6 +1,7 @@
 package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.Main;
+import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -31,7 +32,9 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     }
 
     @Override
-    public void regenerateDynamicAssets(ResourceManager resourceManager) {
+    public void regenerateDynamicAssets(ResourceManager manager) {
+        this.dynamicPack.setGenerateDebugResources(PlatHelper.isDev());
 
+        TextureGenerator.generateTextures(this, manager);
     }
 }
