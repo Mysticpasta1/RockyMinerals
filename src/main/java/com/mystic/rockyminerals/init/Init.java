@@ -44,7 +44,7 @@ public class Init {
     public static final BlockType COBBLED_SALTSTONE = registerBlockType("cobbled_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CHISELED_SALTSTONE = registerBlockType("chiseled_saltstone", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CRACKED_SALTSTONE = registerBlockType("cracked_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType SALTSTONE_BRICKS = registerBricksBlockType("saltstone_bricks", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType SALTSTONE_BRICKS = registerBricksBlockType("saltstone_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_TILE = registerBlockType("saltstone_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType POLISHED_SALTSTONE = registerBlockType("polished_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_PILLAR = registerBlockType("saltstone_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
