@@ -1,6 +1,5 @@
 package com.mystic.rockyminerals.api.set;
 
-import com.google.common.collect.BiMap;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
 import net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
@@ -35,17 +34,6 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
         return INSTANCE.getValues();
     }
 
-    public static Map<String, String> getSubTypes() {
-        Map<String, String> mapOfChildren = new HashMap<>();
-
-        for (var currentType : INSTANCE.getValues()) {
-            for (var child : currentType.getChildren()) {
-                mapOfChildren.put(currentType.getTypeName(), Utils.getID(child.getValue()).toString());
-            }
-        }
-        return mapOfChildren;
-    }
-
     public static StoneType getValue(String stoneTypeId) {
         return INSTANCE.get(ResourceLocation.parse(stoneTypeId));
     }
@@ -61,7 +49,7 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
 
         if (baseRes.getNamespace().equals("rockyminerals")) {
             // Check for <type>_bricks
-            if (path.matches("[a-z]+(?:_(bricks|stairs))") && baseblock.defaultBlockState().instrument() == NoteBlockInstrument.BASEDRUM ) {
+            if (path.matches("[a-z]+_(bricks|stairs)") && baseblock.defaultBlockState().instrument() == NoteBlockInstrument.BASEDRUM ) {
                 String stoneName = path.substring(0, path.length() - 7); // get stoneName from namespace:stoneName_bricks
                 ResourceLocation idBlockType = baseRes.withPath(stoneName);
 
