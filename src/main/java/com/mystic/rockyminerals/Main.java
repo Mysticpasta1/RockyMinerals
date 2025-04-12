@@ -1,7 +1,11 @@
 package com.mystic.rockyminerals;
 
+import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
 import com.mystic.rockyminerals.datagen.MineralProviders;
+import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
 import com.mystic.rockyminerals.init.Init;
+import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
+import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -18,6 +22,11 @@ public class Main {
         var bus = context.getModEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
+        BlockSetAPI.registerBlockSetDefinition(StoneTypeRegistry.INSTANCE);
+
+        if (PlatHelper.getPhysicalSide().isClient()) {
+            ClientDynamicResourcesHandler.getInstance().register();
+        }
     }
 
     public static ResourceLocation res(String path) {
