@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public class CrystalType extends RockType {
+public class MineralType extends RockType {
 
     /**
      * Childkey Availability:
@@ -25,14 +25,14 @@ public class CrystalType extends RockType {
 
     public final Block stone;
 
-    protected CrystalType(ResourceLocation id, Block stone) {
+    protected MineralType(ResourceLocation id, Block stone) {
         super(id, stone);
         this.stone = stone;
     }
 
     @Override
     public String getTranslationKey() {
-        return "crystal_type." + this.getNamespace() + "." + this.getTypeName();
+        return "mineral_type." + this.getNamespace() + "." + this.getTypeName();
     }
 
     @Override
@@ -45,32 +45,27 @@ public class CrystalType extends RockType {
         return bricks != null ? bricks : this.stone;
     }
 
-    @Override
-    protected void initializeChildrenItems() {
-        this.addChild("shard", this.findRelatedEntry("shard", BuiltInRegistries.ITEM));
-    }
-
-    public static class Finder implements BlockType.SetFinder<CrystalType> {
+    public static class Finder implements BlockType.SetFinder<MineralType> {
 
         private final Map<String, ResourceLocation> childNames = new HashMap<>();
-        private final Supplier<Block> crystalFinder;
+        private final Supplier<Block> mineralFinder;
         private final ResourceLocation id;
 
         public Finder(ResourceLocation id, Supplier<Block> crystal) {
             this.id = id;
-            this.crystalFinder = crystal;
+            this.mineralFinder = crystal;
         }
 
-        public static CrystalType.Finder vanilla(String nameCrystal, String blockId){
-            return simple("minecraft", nameCrystal, blockId);
+        public static MineralType.Finder vanilla(String nameMineral, String blockId){
+            return simple("minecraft", nameMineral, blockId);
         }
 
-        public static CrystalType.Finder simple(String modId, String nameCrystalType, String nameCrystal) {
+        public static MineralType.Finder simple(String modId, String nameCrystalType, String nameCrystal) {
             return simple(ResourceLocation.fromNamespaceAndPath(modId, nameCrystalType), ResourceLocation.fromNamespaceAndPath(modId, nameCrystal));
         }
 
-        public static CrystalType.Finder simple(ResourceLocation nameCrystalTYpe, ResourceLocation nameCrystal) {
-            return new CrystalType.Finder(nameCrystalTYpe,
+        public static MineralType.Finder simple(ResourceLocation nameCrystalTYpe, ResourceLocation nameCrystal) {
+            return new MineralType.Finder(nameCrystalTYpe,
                     () -> BuiltInRegistries.BLOCK.get(nameCrystal));
         }
 
@@ -84,19 +79,19 @@ public class CrystalType extends RockType {
 
         @Override
         @ApiStatus.Internal
-        public Optional<CrystalType> get() {
+        public Optional<MineralType> get() {
             if (PlatHelper.isModLoaded(id.getNamespace())) {
                 try {
-                    Block crystal = crystalFinder.get();
+                    Block crystal = mineralFinder.get();
                     var d = BuiltInRegistries.BLOCK.get(BuiltInRegistries.BLOCK.getDefaultKey());
                     if (crystal != d && crystal != null) {
-                        var w = new CrystalType(id, crystal);
+                        var w = new MineralType(id, crystal);
                         childNames.forEach((key, value) -> w.addChild(key, BuiltInRegistries.BLOCK.get(value)));
                         return Optional.of(w);
                     }
                 } catch (Exception ignored) {
                 }
-                Main.LOGGER.warn("Failed to find custom crystal type {}", id);
+                Main.LOGGER.warn("Failed to find custom mineral type {}", id);
             }
             return Optional.empty();
         }
