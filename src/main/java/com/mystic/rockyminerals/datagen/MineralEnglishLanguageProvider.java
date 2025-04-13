@@ -56,6 +56,48 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.HALITE_LAMP, "Halite Lamp");
         addBlock(Init.HALITE_REDSTONE_LAMP, "Halite Redstone Lamp");
 
+        //Opal Variants
+        addBaseBlocksFromType(Init.OPAL, "Opal");
+        addBlocksFromType(Init.COBBLED_OPAL, "Cobbled Opal");
+        addBlocksFromType(Init.CHISELED_OPAL, "Chiseled Opal");
+        addBlocksFromType(Init.CRACKED_OPAL, "Cracked Opal");
+        addBlocksFromType(Init.CUT_OPAL, "Cut Opal");
+        addBlocksFromType(Init.POLISHED_OPAL, "Polished Opal");
+        addBlocksFromBricksType(Init.OPAL_BRICKS, "Opal Brick");
+        addBlocksFromType(Init.OPAL_PILLAR, "Opal Pillar");
+        addBlocksFromType(Init.OPAL_MOSAIC, "Opal Mosaic");
+        addBlocksFromType(Init.OPAL_TILE, "Opal Tile");
+        addBlocksFromType(Init.OPAL_LAMP, "Opal Lamp");
+        addBlock(Init.OPAL_REDSTONE_LAMP, "Opal Redstone Lamp");
+
+        //Pumice Variants
+        addBaseBlocksFromType(Init.PUMICE, "Pumice");
+        addBlocksFromType(Init.COBBLED_PUMICE, "Cobbled Pumice");
+        addBlocksFromType(Init.CHISELED_PUMICE, "Chiseled Pumice");
+        addBlocksFromType(Init.CRACKED_PUMICE, "Cracked Pumice");
+        addBlocksFromType(Init.CUT_PUMICE, "Cut Pumice");
+        addBlocksFromType(Init.POLISHED_PUMICE, "Polished Pumice");
+        addBlocksFromBricksType(Init.PUMICE_BRICKS, "Pumice Brick");
+        addBlocksFromType(Init.PUMICE_PILLAR, "Pumice Pillar");
+        addBlocksFromType(Init.PUMICE_MOSAIC, "Pumice Mosaic");
+        addBlocksFromType(Init.PUMICE_TILE, "Pumice Tile");
+        addBlocksFromType(Init.PUMICE_LAMP, "Pumice Lamp");
+        addBlock(Init.PUMICE_REDSTONE_LAMP, "Pumice Redstone Lamp");
+
+        //Rhyolite Variants
+        addBaseBlocksFromType(Init.RHYOLITE, "Rhyolite");
+        addBlocksFromType(Init.COBBLED_RHYOLITE, "Cobbled Rhyolite");
+        addBlocksFromType(Init.CHISELED_RHYOLITE, "Chiseled Rhyolite");
+        addBlocksFromType(Init.CRACKED_RHYOLITE, "Cracked Rhyolite");
+        addBlocksFromType(Init.CUT_RHYOLITE, "Cut Rhyolite");
+        addBlocksFromType(Init.POLISHED_RHYOLITE, "Polished Rhyolite");
+        addBlocksFromBricksType(Init.RHYOLITE_BRICKS, "Opal Brick");
+        addBlocksFromType(Init.RHYOLITE_PILLAR, "Rhyolite Pillar");
+        addBlocksFromType(Init.RHYOLITE_MOSAIC, "Rhyolite Mosaic");
+        addBlocksFromType(Init.RHYOLITE_TILE, "Rhyolite Tile");
+        addBlocksFromType(Init.RHYOLITE_LAMP, "Rhyolite Lamp");
+        addBlock(Init.RHYOLITE_REDSTONE_LAMP, "Rhyolite Redstone Lamp");
+
         //Worn Granite Variants
         addBaseBlocksFromType(Init.WORN_GRANITE, "Worn Granite");
         addBlocksFromType(Init.COBBLED_WORN_GRANITE, "Cobbled Worn Granite");

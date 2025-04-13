@@ -5,8 +5,7 @@ import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 
 public class CompatStoneType {
 
-    public static void init() {
-        simpleStoneFinder("rockyminerals", "worn_granite");
+    public static void init() {simpleStoneFinder("rockyminerals", "worn_granite");
     }
 
 

@@ -65,6 +65,26 @@ public class MineralProviders {
                         Init.ANHYDRITE, Init.COBBLED_ANHYDRITE, Init.CHISELED_ANHYDRITE, Init.CRACKED_ANHYDRITE,
                         Init.ANHYDRITE_BRICKS, Init.ANHYDRITE_TILE, Init.POLISHED_ANHYDRITE, Init.ANHYDRITE_PILLAR,
                         Init.ANHYDRITE_MOSAIC, Init.CUT_ANHYDRITE, Init.ANHYDRITE_LAMP, Init.ANHYDRITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.OPAL, Init.COBBLED_OPAL, Init.CHISELED_OPAL, Init.CRACKED_OPAL,
+                        Init.OPAL_BRICKS, Init.OPAL_TILE, Init.POLISHED_OPAL, Init.OPAL_PILLAR,
+                        Init.OPAL_MOSAIC, Init.CUT_OPAL, Init.OPAL_LAMP, Init.OPAL_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.BLUE_CALCITE, Init.COBBLED_BLUE_CALCITE, Init.CHISELED_BLUE_CALCITE, Init.CRACKED_BLUE_CALCITE,
+                        Init.BLUE_CALCITE_BRICKS, Init.BLUE_CALCITE_TILE, Init.POLISHED_BLUE_CALCITE, Init.BLUE_CALCITE_PILLAR,
+                        Init.BLUE_CALCITE_MOSAIC, Init.CUT_BLUE_CALCITE, Init.BLUE_CALCITE_LAMP, Init.BLUE_CALCITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.PUMICE, Init.COBBLED_PUMICE, Init.CHISELED_PUMICE, Init.CRACKED_PUMICE,
+                        Init.PUMICE_BRICKS, Init.PUMICE_TILE, Init.POLISHED_PUMICE, Init.PUMICE_PILLAR,
+                        Init.PUMICE_MOSAIC, Init.CUT_PUMICE, Init.PUMICE_LAMP, Init.PUMICE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.RHYOLITE, Init.COBBLED_RHYOLITE, Init.CHISELED_RHYOLITE, Init.CRACKED_RHYOLITE,
+                        Init.RHYOLITE_BRICKS, Init.RHYOLITE_TILE, Init.POLISHED_RHYOLITE, Init.RHYOLITE_PILLAR,
+                        Init.RHYOLITE_MOSAIC, Init.CUT_RHYOLITE, Init.RHYOLITE_LAMP, Init.RHYOLITE_REDSTONE_LAMP.get());
             }
 
             private static void buildRecipesForAllVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
@@ -280,6 +300,86 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.ANHYDRITE_LAMP, consumer);
             dropSelf(Init.ANHYDRITE_REDSTONE_LAMP.get(), consumer);
 
+            //Opal Variants
+            var opalTypes = Init.OPAL;
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_OPAL.block().get(), consumer);
+            dropSelf(opalTypes.slab().get(), consumer);
+            dropSelf(opalTypes.stairs().get(), consumer);
+            dropSelf(opalTypes.wall().get(), consumer);
+            dropSelf(opalTypes.button().get(), consumer);
+            dropSelf(opalTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_OPAL, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_OPAL, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_OPAL, consumer);
+            generateLootTableStoneTypes(Init.OPAL_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.OPAL_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_OPAL, consumer);
+            generateLootTableStoneTypes(Init.OPAL_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.OPAL_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_OPAL, consumer);
+            generateLootTableStoneTypes(Init.OPAL_LAMP, consumer);
+            dropSelf(Init.OPAL_REDSTONE_LAMP.get(), consumer);
+
+            //Blue Calcite Variants
+            var blueCalciteTypes = Init.BLUE_CALCITE;
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_BLUE_CALCITE.block().get(), consumer);
+            dropSelf(blueCalciteTypes.slab().get(), consumer);
+            dropSelf(blueCalciteTypes.stairs().get(), consumer);
+            dropSelf(blueCalciteTypes.wall().get(), consumer);
+            dropSelf(blueCalciteTypes.button().get(), consumer);
+            dropSelf(blueCalciteTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_BLUE_CALCITE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_BLUE_CALCITE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_BLUE_CALCITE, consumer);
+            generateLootTableStoneTypes(Init.BLUE_CALCITE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.BLUE_CALCITE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_BLUE_CALCITE, consumer);
+            generateLootTableStoneTypes(Init.BLUE_CALCITE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.BLUE_CALCITE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_BLUE_CALCITE, consumer);
+            generateLootTableStoneTypes(Init.BLUE_CALCITE_LAMP, consumer);
+            dropSelf(Init.BLUE_CALCITE_REDSTONE_LAMP.get(), consumer);
+
+            //Pumice Variants
+            var pumiceTypes = Init.PUMICE;
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_PUMICE.block().get(), consumer);
+            dropSelf(pumiceTypes.slab().get(), consumer);
+            dropSelf(pumiceTypes.stairs().get(), consumer);
+            dropSelf(pumiceTypes.wall().get(), consumer);
+            dropSelf(pumiceTypes.button().get(), consumer);
+            dropSelf(pumiceTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_PUMICE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_PUMICE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_PUMICE, consumer);
+            generateLootTableStoneTypes(Init.PUMICE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.PUMICE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_PUMICE, consumer);
+            generateLootTableStoneTypes(Init.PUMICE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.PUMICE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_PUMICE, consumer);
+            generateLootTableStoneTypes(Init.PUMICE_LAMP, consumer);
+            dropSelf(Init.PUMICE_REDSTONE_LAMP.get(), consumer);
+
+            //Rhyolite Variants
+            var rhyoliteTypes = Init.RHYOLITE;
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_RHYOLITE.block().get(), consumer);
+            dropSelf(rhyoliteTypes.slab().get(), consumer);
+            dropSelf(rhyoliteTypes.stairs().get(), consumer);
+            dropSelf(rhyoliteTypes.wall().get(), consumer);
+            dropSelf(rhyoliteTypes.button().get(), consumer);
+            dropSelf(rhyoliteTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_RHYOLITE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_RHYOLITE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_RHYOLITE, consumer);
+            generateLootTableStoneTypes(Init.RHYOLITE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.RHYOLITE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_RHYOLITE, consumer);
+            generateLootTableStoneTypes(Init.RHYOLITE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.RHYOLITE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_RHYOLITE, consumer);
+            generateLootTableStoneTypes(Init.RHYOLITE_LAMP, consumer);
+            dropSelf(Init.RHYOLITE_REDSTONE_LAMP.get(), consumer);
+
             //Saltstone Variants
             var saltstoneTypes = Init.SALTSTONE;
             dropCobbleVariant(saltstoneTypes.block().get(), Init.COBBLED_SALTSTONE.block().get(), consumer);
@@ -357,6 +457,62 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.CUT_ANHYDRITE);
                 generateBlockTypeTags(Init.ANHYDRITE_LAMP);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.ANHYDRITE_REDSTONE_LAMP.get());
+
+                //Opal Variant
+                generateBlockTypeTags(Init.OPAL);
+                generateBlockTypeTags(Init.COBBLED_OPAL);
+                generateBlockTypeTags(Init.CHISELED_OPAL);
+                generateBlockTypeTags(Init.CRACKED_OPAL);
+                generateBlockTypeTags(Init.OPAL_BRICKS);
+                generateBlockTypeTags(Init.OPAL_TILE);
+                generateBlockTypeTags(Init.POLISHED_OPAL);
+                generateBlockTypeTags(Init.OPAL_PILLAR);
+                generateBlockTypeTags(Init.OPAL_MOSAIC);
+                generateBlockTypeTags(Init.CUT_OPAL);
+                generateBlockTypeTags(Init.OPAL_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.OPAL_REDSTONE_LAMP.get());
+
+                //Blue Calcite Variant
+                generateBlockTypeTags(Init.BLUE_CALCITE);
+                generateBlockTypeTags(Init.COBBLED_BLUE_CALCITE);
+                generateBlockTypeTags(Init.CHISELED_BLUE_CALCITE);
+                generateBlockTypeTags(Init.CRACKED_BLUE_CALCITE);
+                generateBlockTypeTags(Init.BLUE_CALCITE_BRICKS);
+                generateBlockTypeTags(Init.BLUE_CALCITE_TILE);
+                generateBlockTypeTags(Init.POLISHED_BLUE_CALCITE);
+                generateBlockTypeTags(Init.BLUE_CALCITE_PILLAR);
+                generateBlockTypeTags(Init.BLUE_CALCITE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_BLUE_CALCITE);
+                generateBlockTypeTags(Init.BLUE_CALCITE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.BLUE_CALCITE_REDSTONE_LAMP.get());
+
+                //Pumice Variant
+                generateBlockTypeTags(Init.PUMICE);
+                generateBlockTypeTags(Init.COBBLED_PUMICE);
+                generateBlockTypeTags(Init.CHISELED_PUMICE);
+                generateBlockTypeTags(Init.CRACKED_PUMICE);
+                generateBlockTypeTags(Init.PUMICE_BRICKS);
+                generateBlockTypeTags(Init.PUMICE_TILE);
+                generateBlockTypeTags(Init.POLISHED_PUMICE);
+                generateBlockTypeTags(Init.PUMICE_PILLAR);
+                generateBlockTypeTags(Init.PUMICE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_PUMICE);
+                generateBlockTypeTags(Init.PUMICE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.PUMICE_REDSTONE_LAMP.get());
+
+                //Rhyolite Variant
+                generateBlockTypeTags(Init.RHYOLITE);
+                generateBlockTypeTags(Init.COBBLED_RHYOLITE);
+                generateBlockTypeTags(Init.CHISELED_RHYOLITE);
+                generateBlockTypeTags(Init.CRACKED_RHYOLITE);
+                generateBlockTypeTags(Init.RHYOLITE_BRICKS);
+                generateBlockTypeTags(Init.RHYOLITE_TILE);
+                generateBlockTypeTags(Init.POLISHED_RHYOLITE);
+                generateBlockTypeTags(Init.RHYOLITE_PILLAR);
+                generateBlockTypeTags(Init.RHYOLITE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_RHYOLITE);
+                generateBlockTypeTags(Init.RHYOLITE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.RHYOLITE_REDSTONE_LAMP.get());
 
                 //Saltstone Variant
                 generateBlockTypeTags(Init.SALTSTONE);
@@ -438,6 +594,38 @@ public class MineralProviders {
                 var cobbledWornGraniteTypes = Init.COBBLED_WORN_GRANITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
+
+                var opalTypes = Init.OPAL;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(opalTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(opalTypes.block().get().asItem());
+
+                var cobbledOpalTypes = Init.COBBLED_OPAL;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledOpalTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledOpalTypes.block().get().asItem());
+
+                var blueCalciteTypes = Init.BLUE_CALCITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(blueCalciteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(blueCalciteTypes.block().get().asItem());
+
+                var cobbledBlueCalciteTypes = Init.COBBLED_BLUE_CALCITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledBlueCalciteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledBlueCalciteTypes.block().get().asItem());
+
+                var pumiceTypes = Init.PUMICE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(pumiceTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(pumiceTypes.block().get().asItem());
+
+                var cobbledPumiceTypes = Init.COBBLED_PUMICE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledPumiceTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledPumiceTypes.block().get().asItem());
+
+                var rhyoliteTypes = Init.RHYOLITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(rhyoliteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(rhyoliteTypes.block().get().asItem());
+
+                var cobbledRhyoliteTypes = Init.COBBLED_RHYOLITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledRhyoliteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledRhyoliteTypes.block().get().asItem());
 
                 var anhydriteTypes = Init.ANHYDRITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(anhydriteTypes.block().get().asItem());

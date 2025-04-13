@@ -59,6 +59,34 @@ public class Init {
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", StoneLampVariantBlock::new);
 
+    //Pumice Variants
+    public static final BlockType PUMICE = registerBlockType("pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_PUMICE = registerBlockType("cobbled_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_PUMICE = registerBlockType("chiseled_pumice", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_PUMICE = registerBlockType("cracked_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType PUMICE_BRICKS = registerBricksBlockType("pumice_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType PUMICE_TILE = registerBlockType("pumice_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_PUMICE = registerBlockType("polished_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType PUMICE_PILLAR = registerBlockType("pumice_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType PUMICE_MOSAIC = registerBlockType("mosaic_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_PUMICE = registerBlockType("cut_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType PUMICE_LAMP = registerBlockType("pumice_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> PUMICE_REDSTONE_LAMP = registerBlock("pumice_redstone_lamp", StoneLampVariantBlock::new);
+
+    //Rhyolite Variants
+    public static final BlockType RHYOLITE = registerBlockType("rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_RHYOLITE = registerBlockType("cobbled_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_RHYOLITE = registerBlockType("chiseled_rhyolite", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_RHYOLITE = registerBlockType("cracked_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType RHYOLITE_BRICKS = registerBricksBlockType("rhyolite_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType RHYOLITE_TILE = registerBlockType("rhyolite_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_RHYOLITE = registerBlockType("polished_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType RHYOLITE_PILLAR = registerBlockType("rhyolite_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType RHYOLITE_MOSAIC = registerBlockType("mosaic_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_RHYOLITE = registerBlockType("cut_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType RHYOLITE_LAMP = registerBlockType("rhyolite_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> RHYOLITE_REDSTONE_LAMP = registerBlock("rhyolite_redstone_lamp", StoneLampVariantBlock::new);
+
     //Anhydrite Variants
     public static final BlockType ANHYDRITE = registerBlockType("anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType COBBLED_ANHYDRITE = registerBlockType("cobbled_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
@@ -72,6 +100,20 @@ public class Init {
     public static final BlockType CUT_ANHYDRITE = registerBlockType("cut_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType ANHYDRITE_LAMP = registerBlockType("anhydrite_lamp", BASE_MINERAL_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> ANHYDRITE_REDSTONE_LAMP = registerBlock("anhydrite_redstone_lamp", MineralLampVariantBlock::new);
+
+    //Blue calcite Variants
+    public static final BlockType BLUE_CALCITE = registerBlockType("blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_BLUE_CALCITE = registerBlockType("cobbled_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_BLUE_CALCITE = registerBlockType("chiseled_blue_calcitee", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_BLUE_CALCITE = registerBlockType("cracked_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType BLUE_CALCITE_BRICKS = registerBricksBlockType("blue_calcite_brick", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType BLUE_CALCITE_TILE = registerBlockType("blue_calcite_tile", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_BLUE_CALCITE = registerBlockType("polished_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType BLUE_CALCITE_PILLAR = registerBlockType("blue_calcite_pillar", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType BLUE_CALCITE_MOSAIC = registerBlockType("mosaic_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_BLUE_CALCITE = registerBlockType("cut_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType BLUE_CALCITE_LAMP = registerBlockType("blue_calcite_lamp", BASE_MINERAL_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> BLUE_CALCITE_REDSTONE_LAMP = registerBlock("blue_calcite_redstone_lamp", MineralLampVariantBlock::new);
 
     //Worn Granite Variants
     public static final BlockType WORN_GRANITE = registerBlockType("worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
@@ -100,6 +142,20 @@ public class Init {
     public static final BlockType CUT_HALITE = registerBlockType("cut_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
     public static final BlockType HALITE_LAMP = registerBlockType("halite_lamp", BASE_HALF_TRANSPARENT_LAMP_BLOCK, BlockSetType.STONE, 30, true);
     public static final RegistryObject<Block> HALITE_REDSTONE_LAMP = registerBlock("halite_redstone_lamp", HalfTransparentLampVariantBlock::new);
+
+    //Opal Variants
+    public static final BlockType OPAL = registerBlockType("opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType COBBLED_OPAL = registerBlockType("cobbled_opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType CHISELED_OPAL = registerBlockType("chiseled_opal", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
+    public static final BlockType CRACKED_OPAL = registerBlockType("cracked_opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType OPAL_BRICKS = registerBricksBlockType("opal_brick", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType OPAL_TILE = registerBlockType("opal_tile", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType POLISHED_OPAL = registerBlockType("polished_opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType OPAL_PILLAR = registerBlockType("opal_pillar", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
+    public static final BlockType OPAL_MOSAIC = registerBlockType("mosaic_opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType CUT_OPAL = registerBlockType("cut_opal", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType OPAL_LAMP = registerBlockType("opal_lamp", BASE_HALF_TRANSPARENT_LAMP_BLOCK, BlockSetType.STONE, 30, true);
+    public static final RegistryObject<Block> OPAL_REDSTONE_LAMP = registerBlock("opal_redstone_lamp", HalfTransparentLampVariantBlock::new);
 
     public static BlockType registerBlockType(String name, Supplier<Block> block, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
         var blockBase = registerMainTabBlock(name, block, tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));

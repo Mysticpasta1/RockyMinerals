@@ -5,11 +5,7 @@ import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 
 public class CompatMineralType {
 
-    public static void init() {
-
-
-
-    }
+    public static void init() {simpleMineralFinder("rockyminerals", "blue_calcite");}
 
 //!! MineralType
 
