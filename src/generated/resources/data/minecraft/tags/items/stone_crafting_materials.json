@@ -5,6 +5,8 @@
     "rockyminerals:halite",
     "rockyminerals:cobbled_halite",
     "rockyminerals:worn_granite",
-    "rockyminerals:cobbled_worn_granite"
+    "rockyminerals:cobbled_worn_granite",
+    "rockyminerals:anhydrite",
+    "rockyminerals:cobbled_anhydrite"
   ]
 }

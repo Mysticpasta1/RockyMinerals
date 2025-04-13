@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:mosaic_anhydrite"
+    }
+  },
+  "pattern": [
+    "   ",
+    "## ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:mosaic_anhydrite_pressure_plate"
+  },
+  "show_notification": true
+}

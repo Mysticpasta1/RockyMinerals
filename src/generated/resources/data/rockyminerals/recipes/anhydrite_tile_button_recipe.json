@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:anhydrite_tile"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:anhydrite_tile_button"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:anhydrite_lamp"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:anhydrite_lamp_button"
+  }
+}

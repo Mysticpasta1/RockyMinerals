@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:mosaic_anhydrite"
+  },
+  "result": "rockyminerals:mosaic_anhydrite_button"
+}

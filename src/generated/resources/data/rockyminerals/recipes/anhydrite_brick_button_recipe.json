@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:anhydrite_bricks"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:anhydrite_brick_button"
+  }
+}

@@ -17,10 +17,15 @@ public class MineralBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
+        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_unlit");
+        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_lit");
+
         cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_lit");
+
         cubeAll(Init.HALITE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.HALITE_REDSTONE_LAMP, "_lit");
+
         cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_lit");
     }

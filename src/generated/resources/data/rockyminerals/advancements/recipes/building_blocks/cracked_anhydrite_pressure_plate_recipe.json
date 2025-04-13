@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cracked_anhydrite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:cracked_anhydrite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:cracked_anhydrite_pressure_plate_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cracked_anhydrite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:cracked_anhydrite_pressure_plate_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

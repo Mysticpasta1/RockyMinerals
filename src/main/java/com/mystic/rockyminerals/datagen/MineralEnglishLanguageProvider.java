@@ -14,6 +14,20 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        //Anhydrite Variants
+        addBaseBlocksFromType(Init.ANHYDRITE, "Anhydrite");
+        addBlocksFromType(Init.COBBLED_ANHYDRITE, "Cobbled Anhydrite");
+        addBlocksFromType(Init.CHISELED_ANHYDRITE, "Chiseled Anhydrite");
+        addBlocksFromType(Init.CRACKED_ANHYDRITE, "Cracked Anhydrite");
+        addBlocksFromType(Init.CUT_ANHYDRITE, "Cut Anhydrite");
+        addBlocksFromType(Init.POLISHED_ANHYDRITE, "Polished Anhydrite");
+        addBlocksFromBricksType(Init.ANHYDRITE_BRICKS, "Anhydrite Brick");
+        addBlocksFromType(Init.ANHYDRITE_PILLAR, "Anhydrite Pillar");
+        addBlocksFromType(Init.ANHYDRITE_MOSAIC, "Anhydrite Mosaic");
+        addBlocksFromType(Init.ANHYDRITE_TILE, "Anhydrite Tile");
+        addBlocksFromType(Init.ANHYDRITE_LAMP, "Anhydrite Lamp");
+        addBlock(Init.ANHYDRITE_REDSTONE_LAMP, "Anhydrite Redstone Lamp");
+
         //Saltstone Variants
         addBaseBlocksFromType(Init.SALTSTONE, "Saltstone");
         addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");

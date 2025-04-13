@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:anhydrite_tile"
+  },
+  "result": "rockyminerals:anhydrite_tile_slab"
+}

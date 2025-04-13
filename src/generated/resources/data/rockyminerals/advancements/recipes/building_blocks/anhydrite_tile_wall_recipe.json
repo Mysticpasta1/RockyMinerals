@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_anhydrite_tile": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:anhydrite_tile"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:anhydrite_tile_wall_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_anhydrite_tile",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:anhydrite_tile_wall_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

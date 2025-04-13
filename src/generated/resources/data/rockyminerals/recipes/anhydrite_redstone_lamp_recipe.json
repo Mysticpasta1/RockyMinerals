@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:anhydrite_lamp"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " r ",
+    "r#r",
+    " r "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:anhydrite_redstone_lamp"
+  },
+  "show_notification": true
+}

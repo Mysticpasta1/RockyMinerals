@@ -60,6 +60,11 @@ public class MineralProviders {
                         Init.WORN_GRANITE, Init.COBBLED_WORN_GRANITE, Init.CHISELED_WORN_GRANITE, Init.CRACKED_WORN_GRANITE,
                         Init.WORN_GRANITE_BRICKS, Init.WORN_GRANITE_TILE, Init.POLISHED_WORN_GRANITE, Init.WORN_GRANITE_PILLAR,
                         Init.WORN_GRANITE_MOSAIC, Init.CUT_WORN_GRANITE, Init.WORN_GRANITE_LAMP, Init.WORN_GRANITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.ANHYDRITE, Init.COBBLED_ANHYDRITE, Init.CHISELED_ANHYDRITE, Init.CRACKED_ANHYDRITE,
+                        Init.ANHYDRITE_BRICKS, Init.ANHYDRITE_TILE, Init.POLISHED_ANHYDRITE, Init.ANHYDRITE_PILLAR,
+                        Init.ANHYDRITE_MOSAIC, Init.CUT_ANHYDRITE, Init.ANHYDRITE_LAMP, Init.ANHYDRITE_REDSTONE_LAMP.get());
             }
 
             private static void buildRecipesForAllVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
@@ -255,6 +260,26 @@ public class MineralProviders {
         });
 
         LootTableProvider.SubProviderEntry lootTableProvider = new LootTableProvider.SubProviderEntry(() -> consumer -> {
+            //Anhydrite Variants
+            var anhydriteTypes = Init.ANHYDRITE;
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_ANHYDRITE.block().get(), consumer);
+            dropSelf(anhydriteTypes.slab().get(), consumer);
+            dropSelf(anhydriteTypes.stairs().get(), consumer);
+            dropSelf(anhydriteTypes.wall().get(), consumer);
+            dropSelf(anhydriteTypes.button().get(), consumer);
+            dropSelf(anhydriteTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_ANHYDRITE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_ANHYDRITE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_ANHYDRITE, consumer);
+            generateLootTableStoneTypes(Init.ANHYDRITE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.ANHYDRITE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_ANHYDRITE, consumer);
+            generateLootTableStoneTypes(Init.ANHYDRITE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.ANHYDRITE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_ANHYDRITE, consumer);
+            generateLootTableStoneTypes(Init.ANHYDRITE_LAMP, consumer);
+            dropSelf(Init.ANHYDRITE_REDSTONE_LAMP.get(), consumer);
+
             //Saltstone Variants
             var saltstoneTypes = Init.SALTSTONE;
             dropCobbleVariant(saltstoneTypes.block().get(), Init.COBBLED_SALTSTONE.block().get(), consumer);
@@ -319,6 +344,20 @@ public class MineralProviders {
         BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MOD_ID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+                //Anhydrite Variant
+                generateBlockTypeTags(Init.ANHYDRITE);
+                generateBlockTypeTags(Init.COBBLED_ANHYDRITE);
+                generateBlockTypeTags(Init.CHISELED_ANHYDRITE);
+                generateBlockTypeTags(Init.CRACKED_ANHYDRITE);
+                generateBlockTypeTags(Init.ANHYDRITE_BRICKS);
+                generateBlockTypeTags(Init.ANHYDRITE_TILE);
+                generateBlockTypeTags(Init.POLISHED_ANHYDRITE);
+                generateBlockTypeTags(Init.ANHYDRITE_PILLAR);
+                generateBlockTypeTags(Init.ANHYDRITE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_ANHYDRITE);
+                generateBlockTypeTags(Init.ANHYDRITE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.ANHYDRITE_REDSTONE_LAMP.get());
+
                 //Saltstone Variant
                 generateBlockTypeTags(Init.SALTSTONE);
                 generateBlockTypeTags(Init.COBBLED_SALTSTONE);
@@ -399,6 +438,14 @@ public class MineralProviders {
                 var cobbledWornGraniteTypes = Init.COBBLED_WORN_GRANITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
+
+                var anhydriteTypes = Init.ANHYDRITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(anhydriteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(anhydriteTypes.block().get().asItem());
+
+                var cobbledAnhydriteTypes = Init.COBBLED_ANHYDRITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledAnhydriteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledAnhydriteTypes.block().get().asItem());
             }
         };
 

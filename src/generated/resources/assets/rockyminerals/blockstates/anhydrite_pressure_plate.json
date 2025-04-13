@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "rockyminerals:block/anhydrite_pressure_plate"
+    },
+    "powered=true": {
+      "model": "rockyminerals:block/anhydrite_pressure_plate_down"
+    }
+  }
+}

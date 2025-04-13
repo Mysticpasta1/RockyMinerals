@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cut_anhydrite"
+  },
+  "result": "rockyminerals:cut_anhydrite_pressure_plate"
+}

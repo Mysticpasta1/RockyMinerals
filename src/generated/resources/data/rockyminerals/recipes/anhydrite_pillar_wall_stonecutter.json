@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:anhydrite_pillar"
+  },
+  "result": "rockyminerals:anhydrite_pillar_wall"
+}

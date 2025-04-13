@@ -3,6 +3,7 @@ package com.mystic.rockyminerals.init;
 import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.block.HalfTransparentLampVariantBlock;
 import com.mystic.rockyminerals.block.HalfTransparentRotatedPillarBlock;
+import com.mystic.rockyminerals.block.MineralLampVariantBlock;
 import com.mystic.rockyminerals.block.StoneLampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
@@ -36,6 +37,10 @@ public class Init {
     public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE));
 
+    public static final Supplier<Block> BASE_MINERAL_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST));
+    public static final Supplier<Block> BASE_MINERAL_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST));
+    public static final Supplier<Block> BASE_MINERAL_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).lightLevel(light -> 15).sound(SoundType.AMETHYST));
+
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_MINERAL = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_LAMP_BLOCK = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(light -> 15).sound(SoundType.AMETHYST));
@@ -53,6 +58,20 @@ public class Init {
     public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", StoneLampVariantBlock::new);
+
+    //Anhydrite Variants
+    public static final BlockType ANHYDRITE = registerBlockType("anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_ANHYDRITE = registerBlockType("cobbled_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_ANHYDRITE = registerBlockType("chiseled_anhydrite", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_ANHYDRITE = registerBlockType("cracked_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType ANHYDRITE_BRICKS = registerBricksBlockType("anhydrite_brick", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType ANHYDRITE_TILE = registerBlockType("anhydrite_tile", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_ANHYDRITE = registerBlockType("polished_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType ANHYDRITE_PILLAR = registerBlockType("anhydrite_pillar", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType ANHYDRITE_MOSAIC = registerBlockType("mosaic_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_ANHYDRITE = registerBlockType("cut_anhydrite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType ANHYDRITE_LAMP = registerBlockType("anhydrite_lamp", BASE_MINERAL_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> ANHYDRITE_REDSTONE_LAMP = registerBlock("anhydrite_redstone_lamp", MineralLampVariantBlock::new);
 
     //Worn Granite Variants
     public static final BlockType WORN_GRANITE = registerBlockType("worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);

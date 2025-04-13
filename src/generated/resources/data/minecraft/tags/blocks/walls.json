@@ -1,5 +1,16 @@
 {
   "values": [
+    "rockyminerals:anhydrite_wall",
+    "rockyminerals:cobbled_anhydrite_wall",
+    "rockyminerals:chiseled_anhydrite_wall",
+    "rockyminerals:cracked_anhydrite_wall",
+    "rockyminerals:anhydrite_brick_wall",
+    "rockyminerals:anhydrite_tile_wall",
+    "rockyminerals:polished_anhydrite_wall",
+    "rockyminerals:anhydrite_pillar_wall",
+    "rockyminerals:mosaic_anhydrite_wall",
+    "rockyminerals:cut_anhydrite_wall",
+    "rockyminerals:anhydrite_lamp_wall",
     "rockyminerals:saltstone_wall",
     "rockyminerals:cobbled_saltstone_wall",
     "rockyminerals:chiseled_saltstone_wall",
