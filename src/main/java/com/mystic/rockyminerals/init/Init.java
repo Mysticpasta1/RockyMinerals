@@ -1,7 +1,8 @@
 package com.mystic.rockyminerals.init;
 
 import com.mystic.rockyminerals.Main;
-import com.mystic.rockyminerals.block.MineralLampVariantBlock;
+import com.mystic.rockyminerals.block.HalfTransparentLampVariantBlock;
+import com.mystic.rockyminerals.block.HalfTransparentRotatedPillarBlock;
 import com.mystic.rockyminerals.block.StoneLampVariantBlock;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
@@ -32,12 +33,14 @@ public class Init {
 
     //Block Properties
     public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM));
-    public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
+    public static final Supplier<Block> BASE_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE));
     public static final Supplier<Block> BASE_LAMP_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(light -> 15).sound(SoundType.STONE));
-    public static final Supplier<Block> BASE_TRANSPARENT_MINERAL = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
-    public static final Supplier<Block> BASE_TRANSPARENT_STONE = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().sound(SoundType.STONE));
-    public static final Supplier<Block> BASE_MINERAL_ROTATED_PILLAR_BLOCK = () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
-    public static final Supplier<Block> BASE_MINERAL_LAMP_BLOCK = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(light -> 15).sound(SoundType.AMETHYST));
+
+    public static final Supplier<Block> BASE_HALF_TRANSPARENT_STONE = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().sound(SoundType.STONE));
+
+    public static final Supplier<Block> BASE_HALF_TRANSPARENT_MINERAL = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
+    public static final Supplier<Block> BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
+    public static final Supplier<Block> BASE_HALF_TRANSPARENT_LAMP_BLOCK = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(light -> 15).sound(SoundType.AMETHYST));
 
     //Saltstone Variants
     public static final BlockType SALTSTONE = registerBlockType("saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
@@ -54,18 +57,18 @@ public class Init {
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", StoneLampVariantBlock::new);
 
     //Halite Variants
-    public static final BlockType HALITE = registerBlockType("halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType COBBLED_HALITE = registerBlockType("cobbled_halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType CHISELED_HALITE = registerBlockType("chiseled_halite", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
-    public static final BlockType CRACKED_HALITE = registerBlockType("cracked_halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType HALITE_BRICKS = registerBricksBlockType("halite_brick", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType HALITE_TILE = registerBlockType("halite_tile", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType POLISHED_HALITE = registerBlockType("polished_halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType HALITE_PILLAR = registerBlockType("halite_pillar", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
-    public static final BlockType HALITE_MOSAIC = registerBlockType("mosaic_halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType CUT_HALITE = registerBlockType("cut_halite", BASE_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
-    public static final BlockType HALITE_LAMP = registerBlockType("halite_lamp", BASE_MINERAL_LAMP_BLOCK, BlockSetType.STONE, 30, true);
-    public static final RegistryObject<Block> HALITE_REDSTONE_LAMP = registerBlock("halite_redstone_lamp", MineralLampVariantBlock::new);
+    public static final BlockType HALITE = registerBlockType("halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType COBBLED_HALITE = registerBlockType("cobbled_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType CHISELED_HALITE = registerBlockType("chiseled_halite", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
+    public static final BlockType CRACKED_HALITE = registerBlockType("cracked_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType HALITE_BRICKS = registerBricksBlockType("halite_brick", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType HALITE_TILE = registerBlockType("halite_tile", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType POLISHED_HALITE = registerBlockType("polished_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType HALITE_PILLAR = registerBlockType("halite_pillar", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 30, true);
+    public static final BlockType HALITE_MOSAIC = registerBlockType("mosaic_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType CUT_HALITE = registerBlockType("cut_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
+    public static final BlockType HALITE_LAMP = registerBlockType("halite_lamp", BASE_HALF_TRANSPARENT_LAMP_BLOCK, BlockSetType.STONE, 30, true);
+    public static final RegistryObject<Block> HALITE_REDSTONE_LAMP = registerBlock("halite_redstone_lamp", HalfTransparentLampVariantBlock::new);
 
     public static BlockType registerBlockType(String name, Supplier<Block> block, BlockSetType blockSetType, int pTicksToStayPressed, boolean pArrowsCanPress) {
         var blockBase = registerMainTabBlock(name, block, tRegistryObject -> () -> new BlockItem(tRegistryObject.get(), new Item.Properties()));
