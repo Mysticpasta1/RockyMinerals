@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:polished_blue_calcite"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:polished_blue_calcite_button"
+  }
+}

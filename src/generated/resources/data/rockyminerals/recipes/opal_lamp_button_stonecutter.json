@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:opal_lamp"
+  },
+  "result": "rockyminerals:opal_lamp_button"
+}

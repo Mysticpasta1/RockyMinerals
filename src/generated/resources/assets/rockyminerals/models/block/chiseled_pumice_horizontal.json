@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "rockyminerals:block/chiseled_pumice_top",
+    "side": "rockyminerals:block/chiseled_pumice"
+  }
+}

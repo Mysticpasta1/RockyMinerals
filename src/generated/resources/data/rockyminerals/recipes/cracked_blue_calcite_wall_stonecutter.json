@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cracked_blue_calcite"
+  },
+  "result": "rockyminerals:cracked_blue_calcite_wall"
+}

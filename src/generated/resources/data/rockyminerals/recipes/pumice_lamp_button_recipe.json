@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:pumice_lamp"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:pumice_lamp_button"
+  }
+}

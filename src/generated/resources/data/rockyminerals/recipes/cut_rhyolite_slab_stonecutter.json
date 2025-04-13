@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:cut_rhyolite"
+  },
+  "result": "rockyminerals:cut_rhyolite_slab"
+}

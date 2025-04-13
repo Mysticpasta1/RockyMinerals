@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "rockyminerals:block/cut_blue_calcite"
+  }
+}

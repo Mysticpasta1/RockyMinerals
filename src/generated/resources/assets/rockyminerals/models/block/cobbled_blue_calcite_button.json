@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "rockyminerals:block/cobbled_blue_calcite"
+  }
+}

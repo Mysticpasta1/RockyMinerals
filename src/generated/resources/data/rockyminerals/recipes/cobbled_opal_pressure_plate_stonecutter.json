@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_opal"
+  },
+  "result": "rockyminerals:cobbled_opal_pressure_plate"
+}

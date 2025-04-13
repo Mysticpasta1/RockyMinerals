@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rockyminerals:block/chiseled_rhyolite",
+    "side": "rockyminerals:block/chiseled_rhyolite",
+    "top": "rockyminerals:block/chiseled_rhyolite"
+  }
+}

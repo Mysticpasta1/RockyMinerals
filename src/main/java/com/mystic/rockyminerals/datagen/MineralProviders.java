@@ -302,7 +302,7 @@ public class MineralProviders {
 
             //Opal Variants
             var opalTypes = Init.OPAL;
-            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_OPAL.block().get(), consumer);
+            dropCobbleVariant(opalTypes.block().get(), Init.COBBLED_OPAL.block().get(), consumer);
             dropSelf(opalTypes.slab().get(), consumer);
             dropSelf(opalTypes.stairs().get(), consumer);
             dropSelf(opalTypes.wall().get(), consumer);
@@ -322,7 +322,7 @@ public class MineralProviders {
 
             //Blue Calcite Variants
             var blueCalciteTypes = Init.BLUE_CALCITE;
-            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_BLUE_CALCITE.block().get(), consumer);
+            dropCobbleVariant(blueCalciteTypes.block().get(), Init.COBBLED_BLUE_CALCITE.block().get(), consumer);
             dropSelf(blueCalciteTypes.slab().get(), consumer);
             dropSelf(blueCalciteTypes.stairs().get(), consumer);
             dropSelf(blueCalciteTypes.wall().get(), consumer);
@@ -342,7 +342,7 @@ public class MineralProviders {
 
             //Pumice Variants
             var pumiceTypes = Init.PUMICE;
-            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_PUMICE.block().get(), consumer);
+            dropCobbleVariant(pumiceTypes.block().get(), Init.COBBLED_PUMICE.block().get(), consumer);
             dropSelf(pumiceTypes.slab().get(), consumer);
             dropSelf(pumiceTypes.stairs().get(), consumer);
             dropSelf(pumiceTypes.wall().get(), consumer);
@@ -362,7 +362,7 @@ public class MineralProviders {
 
             //Rhyolite Variants
             var rhyoliteTypes = Init.RHYOLITE;
-            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_RHYOLITE.block().get(), consumer);
+            dropCobbleVariant(rhyoliteTypes.block().get(), Init.COBBLED_RHYOLITE.block().get(), consumer);
             dropSelf(rhyoliteTypes.slab().get(), consumer);
             dropSelf(rhyoliteTypes.stairs().get(), consumer);
             dropSelf(rhyoliteTypes.wall().get(), consumer);

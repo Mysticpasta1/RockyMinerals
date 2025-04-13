@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:rhyolite_pillar"
+  },
+  "result": "rockyminerals:rhyolite_pillar_stairs"
+}

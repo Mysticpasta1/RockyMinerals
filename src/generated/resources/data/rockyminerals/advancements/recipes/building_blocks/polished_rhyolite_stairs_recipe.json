@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_rhyolite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:polished_rhyolite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:polished_rhyolite_stairs_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_rhyolite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:polished_rhyolite_stairs_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

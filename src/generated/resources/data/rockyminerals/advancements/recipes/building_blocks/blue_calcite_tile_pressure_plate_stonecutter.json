@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_calcite_tile": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:blue_calcite_tile"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:blue_calcite_tile_pressure_plate_stonecutter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blue_calcite_tile",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:blue_calcite_tile_pressure_plate_stonecutter"
+    ]
+  },
+  "sends_telemetry_event": false
+}

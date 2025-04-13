@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:opal_pillar"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:opal_pillar_button"
+  }
+}

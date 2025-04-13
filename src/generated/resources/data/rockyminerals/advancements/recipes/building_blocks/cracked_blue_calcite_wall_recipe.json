@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cracked_blue_calcite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:cracked_blue_calcite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:cracked_blue_calcite_wall_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cracked_blue_calcite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:cracked_blue_calcite_wall_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

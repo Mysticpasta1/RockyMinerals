@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/rhyolite_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/rhyolite"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/rhyolite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/cracked_opal",
+    "side": "rockyminerals:block/cracked_opal",
+    "top": "rockyminerals:block/cracked_opal"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/mosaic_blue_calcite_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/mosaic_blue_calcite"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/mosaic_blue_calcite_slab_top"
+    }
+  }
+}

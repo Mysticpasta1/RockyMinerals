@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "name": "rockyminerals:blue_calcite_tile_stairs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rockyminerals:blue_calcite_tile_stairs"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rockyminerals:blocks/blue_calcite_tile_stairs"
+}

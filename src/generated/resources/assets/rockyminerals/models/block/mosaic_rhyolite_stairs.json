@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/mosaic_rhyolite",
+    "side": "rockyminerals:block/mosaic_rhyolite",
+    "top": "rockyminerals:block/mosaic_rhyolite"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:polished_blue_calcite"
+  },
+  "result": "rockyminerals:polished_blue_calcite_stairs"
+}

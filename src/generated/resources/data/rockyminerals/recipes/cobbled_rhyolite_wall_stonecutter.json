@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_rhyolite"
+  },
+  "result": "rockyminerals:cobbled_rhyolite_wall"
+}

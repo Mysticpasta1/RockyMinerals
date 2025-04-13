@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/pumice_lamp",
+    "side": "rockyminerals:block/pumice_lamp",
+    "top": "rockyminerals:block/pumice_lamp"
+  }
+}

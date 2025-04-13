@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:rhyolite_bricks"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:rhyolite_brick_button"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:cut_pumice"
+  },
+  "result": "rockyminerals:cut_pumice_slab"
+}

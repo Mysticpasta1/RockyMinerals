@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:mosaic_pumice"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:mosaic_pumice_button"
+  }
+}

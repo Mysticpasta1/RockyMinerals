@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:blue_calcite_pillar"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:blue_calcite_pillar_button"
+  }
+}

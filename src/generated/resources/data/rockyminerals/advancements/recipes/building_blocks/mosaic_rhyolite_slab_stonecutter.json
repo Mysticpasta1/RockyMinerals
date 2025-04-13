@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mosaic_rhyolite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:mosaic_rhyolite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:mosaic_rhyolite_slab_stonecutter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mosaic_rhyolite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:mosaic_rhyolite_slab_stonecutter"
+    ]
+  },
+  "sends_telemetry_event": false
+}

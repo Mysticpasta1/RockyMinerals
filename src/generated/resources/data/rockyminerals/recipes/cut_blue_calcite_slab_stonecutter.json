@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:cut_blue_calcite"
+  },
+  "result": "rockyminerals:cut_blue_calcite_slab"
+}

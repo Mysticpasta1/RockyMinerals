@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:rhyolite_lamp"
+  },
+  "result": "rockyminerals:rhyolite_lamp_button"
+}

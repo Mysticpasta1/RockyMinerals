@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:opal_lamp"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:opal_lamp_button"
+  }
+}

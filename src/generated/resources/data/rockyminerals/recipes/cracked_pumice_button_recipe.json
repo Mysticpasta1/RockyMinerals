@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:cracked_pumice"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:cracked_pumice_button"
+  }
+}

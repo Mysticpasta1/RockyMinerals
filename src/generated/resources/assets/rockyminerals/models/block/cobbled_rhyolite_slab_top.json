@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "rockyminerals:block/cobbled_rhyolite",
+    "side": "rockyminerals:block/cobbled_rhyolite",
+    "top": "rockyminerals:block/cobbled_rhyolite"
+  }
+}

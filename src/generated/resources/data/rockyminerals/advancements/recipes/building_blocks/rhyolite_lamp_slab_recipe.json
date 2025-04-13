@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rhyolite_lamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:rhyolite_lamp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:rhyolite_lamp_slab_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rhyolite_lamp",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:rhyolite_lamp_slab_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

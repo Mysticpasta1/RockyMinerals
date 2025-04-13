@@ -104,7 +104,7 @@ public class Init {
     //Blue calcite Variants
     public static final BlockType BLUE_CALCITE = registerBlockType("blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType COBBLED_BLUE_CALCITE = registerBlockType("cobbled_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
-    public static final BlockType CHISELED_BLUE_CALCITE = registerBlockType("chiseled_blue_calcitee", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_BLUE_CALCITE = registerBlockType("chiseled_blue_calcite", BASE_MINERAL_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CRACKED_BLUE_CALCITE = registerBlockType("cracked_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType BLUE_CALCITE_BRICKS = registerBricksBlockType("blue_calcite_brick", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType BLUE_CALCITE_TILE = registerBlockType("blue_calcite_tile", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
