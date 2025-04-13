@@ -1,0 +1,36 @@
+name: publish
+
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    permissions:
+      contents: write
+      packages: write
+    strategy:
+      matrix:
+        java: [ 17 ]
+        os: [ ubuntu-22.04 ]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: build
+        run: |
+          ./gradlew build
+
+      - name: Add Artifacts to Github Release
+        uses: alexellis/upload-assets@0.4.1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["./build/libs/*-all.jar"]'
+
+      - name: Publish to Curseforge
+        run: ./gradlew -Psemver=release curseforge
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          CHANGELOG: ${{ github.event.release.body }}
