@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:worn_granite_bricks"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:worn_granite_brick_button"
+  }
+}

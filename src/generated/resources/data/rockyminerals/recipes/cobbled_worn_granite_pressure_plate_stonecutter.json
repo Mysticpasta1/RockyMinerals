@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_worn_granite"
+  },
+  "result": "rockyminerals:cobbled_worn_granite_pressure_plate"
+}

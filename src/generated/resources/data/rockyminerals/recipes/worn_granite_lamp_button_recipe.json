@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:worn_granite_lamp"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:worn_granite_lamp_button"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:cobbled_worn_granite_stonecutter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_worn_granite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:worn_granite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_worn_granite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:cobbled_worn_granite_stonecutter"
+    ]
+  },
+  "sends_telemetry_event": false
+}

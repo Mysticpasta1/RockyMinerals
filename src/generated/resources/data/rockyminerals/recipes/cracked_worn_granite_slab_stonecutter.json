@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:cracked_worn_granite"
+  },
+  "result": "rockyminerals:cracked_worn_granite_slab"
+}
