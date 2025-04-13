@@ -95,6 +95,10 @@ public abstract class RockType extends BlockType{
     }
 
     @Override
+    /**
+     * Example: namespace: TYPE_prefixOrInfix_suffix
+     * Example: namespace: prefixOrInfix_TYPE_suffix
+     */
     protected @Nullable <V> V findRelatedEntry(String prefixOrInfix, String suffix, Registry<V> reg) {
         if (id.toString().equals("minecraft:stone") && prefixOrInfix.equals("cobblestone")) {
             return reg.get(ResourceLocation.parse("cobblestone"));
