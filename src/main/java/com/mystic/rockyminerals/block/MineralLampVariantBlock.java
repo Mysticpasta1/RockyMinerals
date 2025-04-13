@@ -11,7 +11,7 @@ public class MineralLampVariantBlock extends RedstoneLampBlock {
     public static final BooleanProperty LIT = RedstoneLampBlock.LIT;
 
     public MineralLampVariantBlock() {
-        super(Properties.copy(Blocks.AMETHYST_BLOCK).lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
+        super(Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 

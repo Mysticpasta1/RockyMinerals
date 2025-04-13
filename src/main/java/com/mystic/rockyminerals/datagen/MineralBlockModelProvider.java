@@ -19,6 +19,8 @@ public class MineralBlockModelProvider extends BlockModelProvider {
     protected void registerModels() {
         cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_lit");
+        cubeAll(Init.HALITE_REDSTONE_LAMP, "_unlit");
+        cubeAll(Init.HALITE_REDSTONE_LAMP, "_lit");
     }
 
     private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {
