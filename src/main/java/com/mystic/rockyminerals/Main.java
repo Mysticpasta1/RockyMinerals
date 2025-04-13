@@ -1,5 +1,6 @@
 package com.mystic.rockyminerals;
 
+import com.mystic.rockyminerals.api.set.CrystalTypeRegistry;
 import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
@@ -23,6 +24,7 @@ public class Main {
         Init.init(bus);
         MineralProviders.init(bus);
         BlockSetAPI.registerBlockSetDefinition(StoneTypeRegistry.INSTANCE);
+        BlockSetAPI.registerBlockSetDefinition(CrystalTypeRegistry.INSTANCE);
 
         if (PlatHelper.getPhysicalSide().isClient()) {
             ClientDynamicResourcesHandler.getInstance().register();
