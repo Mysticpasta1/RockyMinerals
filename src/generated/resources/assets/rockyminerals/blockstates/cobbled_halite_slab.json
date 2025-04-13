@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/cobbled_halite_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/cobbled_halite"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/cobbled_halite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/mosaic_saltstone_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/mosaic_saltstone"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/mosaic_saltstone_slab_top"
+    }
+  }
+}

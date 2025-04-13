@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/cut_saltstone",
+    "side": "rockyminerals:block/cut_saltstone",
+    "top": "rockyminerals:block/cut_saltstone"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:halite"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#g#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:halite_lamp"
+  },
+  "show_notification": true
+}

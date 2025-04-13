@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:cracked_halite"
+  },
+  "result": "rockyminerals:cracked_halite_slab"
+}

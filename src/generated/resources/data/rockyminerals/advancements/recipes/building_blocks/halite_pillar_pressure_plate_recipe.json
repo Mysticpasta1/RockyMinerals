@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_halite_pillar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:halite_pillar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:halite_pillar_pressure_plate_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_halite_pillar",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:halite_pillar_pressure_plate_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

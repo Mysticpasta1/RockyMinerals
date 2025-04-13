@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:halite_tile"
+  },
+  "result": "rockyminerals:halite_tile_stairs"
+}

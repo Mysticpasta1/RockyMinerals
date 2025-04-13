@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cut_halite"
+  },
+  "result": "rockyminerals:cut_halite_button"
+}

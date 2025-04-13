@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:saltstone_bricks"
+  },
+  "result": "rockyminerals:saltstone_brick_slab"
+}

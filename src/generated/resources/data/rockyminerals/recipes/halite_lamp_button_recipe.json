@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:halite_lamp"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:halite_lamp_button"
+  }
+}

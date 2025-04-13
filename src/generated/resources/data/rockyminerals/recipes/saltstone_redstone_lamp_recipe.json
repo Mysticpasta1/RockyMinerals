@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:saltstone_lamp"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " r ",
+    "r#r",
+    " r "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:saltstone_redstone_lamp"
+  },
+  "show_notification": true
+}

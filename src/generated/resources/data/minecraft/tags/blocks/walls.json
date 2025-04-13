@@ -1,0 +1,26 @@
+{
+  "values": [
+    "rockyminerals:saltstone_wall",
+    "rockyminerals:cobbled_saltstone_wall",
+    "rockyminerals:chiseled_saltstone_wall",
+    "rockyminerals:cracked_saltstone_wall",
+    "rockyminerals:saltstone_brick_wall",
+    "rockyminerals:saltstone_tile_wall",
+    "rockyminerals:polished_saltstone_wall",
+    "rockyminerals:saltstone_pillar_wall",
+    "rockyminerals:mosaic_saltstone_wall",
+    "rockyminerals:cut_saltstone_wall",
+    "rockyminerals:saltstone_lamp_wall",
+    "rockyminerals:halite_wall",
+    "rockyminerals:cobbled_halite_wall",
+    "rockyminerals:chiseled_halite_wall",
+    "rockyminerals:cracked_halite_wall",
+    "rockyminerals:halite_brick_wall",
+    "rockyminerals:halite_tile_wall",
+    "rockyminerals:polished_halite_wall",
+    "rockyminerals:halite_pillar_wall",
+    "rockyminerals:mosaic_halite_wall",
+    "rockyminerals:cut_halite_wall",
+    "rockyminerals:halite_lamp_wall"
+  ]
+}
