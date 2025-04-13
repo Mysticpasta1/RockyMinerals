@@ -1,1 +1,0 @@
-fix world gen for new ores in v2 :D
