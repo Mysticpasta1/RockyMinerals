@@ -98,6 +98,20 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.RHYOLITE_LAMP, "Rhyolite Lamp");
         addBlock(Init.RHYOLITE_REDSTONE_LAMP, "Rhyolite Redstone Lamp");
 
+        //Blue Calcite Variants
+        addBaseBlocksFromType(Init.BLUE_CALCITE, "Blue Calcite");
+        addBlocksFromType(Init.COBBLED_BLUE_CALCITE, "Cobbled Blue Calcite");
+        addBlocksFromType(Init.CHISELED_BLUE_CALCITE, "Chiseled Blue Calcite");
+        addBlocksFromType(Init.CRACKED_BLUE_CALCITE, "Cracked Blue Calcite");
+        addBlocksFromType(Init.CUT_BLUE_CALCITE, "Cut Blue Calcite");
+        addBlocksFromType(Init.POLISHED_BLUE_CALCITE, "Polished Blue Calcite");
+        addBlocksFromBricksType(Init.BLUE_CALCITE_BRICKS, "Opal Brick");
+        addBlocksFromType(Init.BLUE_CALCITE_PILLAR, "Blue Calcite Pillar");
+        addBlocksFromType(Init.BLUE_CALCITE_MOSAIC, "Blue Calcite Mosaic");
+        addBlocksFromType(Init.BLUE_CALCITE_TILE, "Blue Calcite Tile");
+        addBlocksFromType(Init.BLUE_CALCITE_LAMP, "Blue Calcite Lamp");
+        addBlock(Init.BLUE_CALCITE_REDSTONE_LAMP, "Blue Calcite Redstone Lamp");
+
         //Worn Granite Variants
         addBaseBlocksFromType(Init.WORN_GRANITE, "Worn Granite");
         addBlocksFromType(Init.COBBLED_WORN_GRANITE, "Cobbled Worn Granite");

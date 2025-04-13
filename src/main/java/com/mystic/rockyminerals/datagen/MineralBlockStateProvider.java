@@ -24,6 +24,7 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
         registerLamp(Init.OPAL_REDSTONE_LAMP.get(), Init.OPAL_REDSTONE_LAMP.get());
         registerLamp(Init.PUMICE_REDSTONE_LAMP.get(), Init.PUMICE_REDSTONE_LAMP.get());
         registerLamp(Init.RHYOLITE_REDSTONE_LAMP.get(), Init.RHYOLITE_REDSTONE_LAMP.get());
+        registerLamp(Init.BLUE_CALCITE_REDSTONE_LAMP.get(), Init.BLUE_CALCITE_REDSTONE_LAMP.get());
     }
 
     private void registerBlockFamily(BlockFamily family) {

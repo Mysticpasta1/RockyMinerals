@@ -170,7 +170,7 @@ subprojects {
             loaders = [modLoader]
             changelog = changelogText
 
-            versionName = mod_version + '-forge'
+            versionName = mod_version
             dependencies {
                 project "moonlight"
             }
