@@ -105,7 +105,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.CRACKED_BLUE_CALCITE, "Cracked Blue Calcite");
         addBlocksFromType(Init.CUT_BLUE_CALCITE, "Cut Blue Calcite");
         addBlocksFromType(Init.POLISHED_BLUE_CALCITE, "Polished Blue Calcite");
-        addBlocksFromBricksType(Init.BLUE_CALCITE_BRICKS, "Opal Brick");
+        addBlocksFromBricksType(Init.BLUE_CALCITE_BRICKS, "Blue Calcite Brick");
         addBlocksFromType(Init.BLUE_CALCITE_PILLAR, "Blue Calcite Pillar");
         addBlocksFromType(Init.BLUE_CALCITE_MOSAIC, "Blue Calcite Mosaic");
         addBlocksFromType(Init.BLUE_CALCITE_TILE, "Blue Calcite Tile");
