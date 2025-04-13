@@ -392,11 +392,11 @@ public class MineralProviders {
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
 
-                var wornGraniteTypes = Init.HALITE;
+                var wornGraniteTypes = Init.WORN_GRANITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(wornGraniteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(wornGraniteTypes.block().get().asItem());
 
-                var cobbledWornGraniteTypes = Init.COBBLED_HALITE;
+                var cobbledWornGraniteTypes = Init.COBBLED_WORN_GRANITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
             }
