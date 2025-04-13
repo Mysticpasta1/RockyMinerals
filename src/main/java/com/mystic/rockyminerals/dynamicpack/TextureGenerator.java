@@ -23,7 +23,7 @@ public class TextureGenerator {
             if (currentType.isVanilla()) continue;
             creatingTexture(currentType, generator, manager);
         }
-        for (CrystalType currentType : CrystalTypeRegistry.getTypes()) {
+        for (MineralType currentType : MineralTypeRegistry.getTypes()) {
             if (currentType.isVanilla()) continue;
             creatingTexture(currentType, generator, manager);
         }
