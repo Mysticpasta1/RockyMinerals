@@ -19,6 +19,7 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
         BlockType.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
         registerLamp(Init.SALTSTONE_REDSTONE_LAMP.get(), Init.SALTSTONE_REDSTONE_LAMP.get());
         registerLamp(Init.HALITE_REDSTONE_LAMP.get(), Init.HALITE_REDSTONE_LAMP.get());
+        registerLamp(Init.WORN_GRANITE_REDSTONE_LAMP.get(), Init.WORN_GRANITE_REDSTONE_LAMP.get());
     }
 
     private void registerBlockFamily(BlockFamily family) {

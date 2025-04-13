@@ -55,6 +55,11 @@ public class MineralProviders {
                         Init.HALITE, Init.COBBLED_HALITE, Init.CHISELED_HALITE, Init.CRACKED_HALITE,
                         Init.HALITE_BRICKS, Init.HALITE_TILE, Init.POLISHED_HALITE, Init.HALITE_PILLAR,
                         Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllVariants(recipeOutput,
+                        Init.WORN_GRANITE, Init.COBBLED_WORN_GRANITE, Init.CHISELED_WORN_GRANITE, Init.CRACKED_WORN_GRANITE,
+                        Init.WORN_GRANITE_BRICKS, Init.WORN_GRANITE_TILE, Init.POLISHED_WORN_GRANITE, Init.WORN_GRANITE_PILLAR,
+                        Init.WORN_GRANITE_MOSAIC, Init.CUT_WORN_GRANITE, Init.WORN_GRANITE_LAMP, Init.WORN_GRANITE_REDSTONE_LAMP.get());
             }
 
             private static void buildRecipesForAllVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
@@ -289,6 +294,26 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.CUT_HALITE, consumer);
             generateLootTableStoneTypes(Init.HALITE_LAMP, consumer);
             dropSelf(Init.HALITE_REDSTONE_LAMP.get(), consumer);
+
+            //Worn Granite Variants
+            var wornGraniteTypes = Init.WORN_GRANITE;
+            dropCobbleVariant(wornGraniteTypes.block().get(), Init.COBBLED_WORN_GRANITE.block().get(), consumer);
+            dropSelf(wornGraniteTypes.slab().get(), consumer);
+            dropSelf(wornGraniteTypes.stairs().get(), consumer);
+            dropSelf(wornGraniteTypes.wall().get(), consumer);
+            dropSelf(wornGraniteTypes.button().get(), consumer);
+            dropSelf(wornGraniteTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_WORN_GRANITE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_WORN_GRANITE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_WORN_GRANITE, consumer);
+            generateLootTableStoneTypes(Init.WORN_GRANITE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.WORN_GRANITE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_WORN_GRANITE, consumer);
+            generateLootTableStoneTypes(Init.WORN_GRANITE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.WORN_GRANITE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_WORN_GRANITE, consumer);
+            generateLootTableStoneTypes(Init.WORN_GRANITE_LAMP, consumer);
+            dropSelf(Init.WORN_GRANITE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
         BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MOD_ID, event.getExistingFileHelper()) {
@@ -321,6 +346,20 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.CUT_HALITE);
                 generateBlockTypeTags(Init.HALITE_LAMP);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.HALITE_REDSTONE_LAMP.get());
+
+                //Worn Granite Variants
+                generateBlockTypeTags(Init.WORN_GRANITE);
+                generateBlockTypeTags(Init.COBBLED_WORN_GRANITE);
+                generateBlockTypeTags(Init.CHISELED_WORN_GRANITE);
+                generateBlockTypeTags(Init.CRACKED_WORN_GRANITE);
+                generateBlockTypeTags(Init.WORN_GRANITE_BRICKS);
+                generateBlockTypeTags(Init.WORN_GRANITE_TILE);
+                generateBlockTypeTags(Init.POLISHED_WORN_GRANITE);
+                generateBlockTypeTags(Init.WORN_GRANITE_PILLAR);
+                generateBlockTypeTags(Init.WORN_GRANITE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_WORN_GRANITE);
+                generateBlockTypeTags(Init.WORN_GRANITE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.WORN_GRANITE_REDSTONE_LAMP.get());
             }
 
             private void generateBlockTypeTags(BlockType blockType) {
@@ -352,6 +391,14 @@ public class MineralProviders {
                 var cobbleHaliteTypes = Init.COBBLED_HALITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbleHaliteTypes.block().get().asItem());
+
+                var wornGraniteTypes = Init.HALITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(wornGraniteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(wornGraniteTypes.block().get().asItem());
+
+                var cobbledWornGraniteTypes = Init.COBBLED_HALITE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledWornGraniteTypes.block().get().asItem());
             }
         };
 

@@ -15,7 +15,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         //Saltstone Variants
-        addBlocksFromType(Init.SALTSTONE, "Saltstone");
+        addBaseBlocksFromType(Init.SALTSTONE, "Saltstone");
         addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");
         addBlocksFromType(Init.CHISELED_SALTSTONE, "Chiseled Saltstone");
         addBlocksFromType(Init.CRACKED_SALTSTONE, "Cracked Saltstone");
@@ -29,7 +29,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlock(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
 
         //Halite Variants
-        addBlocksFromType(Init.HALITE, "Halite");
+        addBaseBlocksFromType(Init.HALITE, "Halite");
         addBlocksFromType(Init.COBBLED_HALITE, "Cobbled Halite");
         addBlocksFromType(Init.CHISELED_HALITE, "Chiseled Halite");
         addBlocksFromType(Init.CRACKED_HALITE, "Cracked Halite");
@@ -42,11 +42,34 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.HALITE_LAMP, "Halite Lamp");
         addBlock(Init.HALITE_REDSTONE_LAMP, "Halite Redstone Lamp");
 
+        //Worn Granite Variants
+        addBaseBlocksFromType(Init.WORN_GRANITE, "Worn Granite");
+        addBlocksFromType(Init.COBBLED_WORN_GRANITE, "Cobbled Worn Granite");
+        addBlocksFromType(Init.CHISELED_WORN_GRANITE, "Chiseled Worn Granite");
+        addBlocksFromType(Init.CRACKED_WORN_GRANITE, "Cracked Worn Granite");
+        addBlocksFromType(Init.CUT_WORN_GRANITE, "Cut Worn Granite");
+        addBlocksFromType(Init.POLISHED_WORN_GRANITE, "Polished Worn Granite");
+        addBlocksFromBricksType(Init.WORN_GRANITE_BRICKS, "Worn Granite Brick");
+        addBlocksFromType(Init.WORN_GRANITE_PILLAR, "Worn Granite Pillar");
+        addBlocksFromType(Init.WORN_GRANITE_MOSAIC, "Worn Granite Mosaic");
+        addBlocksFromType(Init.WORN_GRANITE_TILE, "Worn Granite Tile");
+        addBlocksFromType(Init.WORN_GRANITE_LAMP, "Worn Granite Lamp");
+        addBlock(Init.WORN_GRANITE_REDSTONE_LAMP, "Worn Granite Redstone Lamp");
+
         add("itemGroup." + Init.MAIN.getId().toLanguageKey(), "Rocky Minerals");
     }
 
     private void addBlocksFromType(BlockType type, String base) {
         addBlock(type.block(), base);
+        if (type.button() != null) addBlock(type.button(), base + " Button");
+        if (type.slab() != null) addBlock(type.slab(), base + " Slab");
+        if (type.stairs() != null) addBlock(type.stairs(), base + " Stairs");
+        if (type.pressurePlate() != null) addBlock(type.pressurePlate(), base + " Pressure Plate");
+        if (type.wall() != null) addBlock(type.wall(), base + " Wall");
+    }
+
+    private void addBaseBlocksFromType(BlockType type, String base) {
+        addBlock(type.block(), "Block of " + base);
         if (type.button() != null) addBlock(type.button(), base + " Button");
         if (type.slab() != null) addBlock(type.slab(), base + " Slab");
         if (type.stairs() != null) addBlock(type.stairs(), base + " Stairs");

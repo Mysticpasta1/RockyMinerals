@@ -56,6 +56,20 @@ public class Init {
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", StoneLampVariantBlock::new);
 
+    //Worn Granite Variants
+    public static final BlockType WORN_GRANITE = registerBlockType("worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_WORN_GRANITE = registerBlockType("cobbled_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_WORN_GRANITE = registerBlockType("chiseled_worn_granite", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_WORN_GRANITE = registerBlockType("cracked_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType WORN_GRANITE_BRICKS = registerBricksBlockType("worn_granite_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType WORN_GRANITE_TILE = registerBlockType("worn_granite_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_WORN_GRANITE = registerBlockType("polished_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType WORN_GRANITE_PILLAR = registerBlockType("worn_granite_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType WORN_GRANITE_MOSAIC = registerBlockType("mosaic_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_WORN_GRANITE = registerBlockType("cut_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType WORN_GRANITE_LAMP = registerBlockType("worn_granite_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> WORN_GRANITE_REDSTONE_LAMP = registerBlock("worn_granite_redstone_lamp", StoneLampVariantBlock::new);
+
     //Halite Variants
     public static final BlockType HALITE = registerBlockType("halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
     public static final BlockType COBBLED_HALITE = registerBlockType("cobbled_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
