@@ -2,10 +2,42 @@ package com.mystic.rockyminerals.misc;
 
 import com.mystic.rockyminerals.Main;
 import com.mystic.rockyminerals.api.TextureInfo;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
 
-public class SpriteHelper {
+public class ResourcesHelper {
+
+/// WIP
+//    public static List<ResourceLocation> baseFileReference = List.of(
+//
+//            Main.res("stonetype_redstone_lamp"),
+
+//            Main.res("stonetype"),
+//            Main.res("stonetype_tile"),
+//            Main.res("stonetype_bricks"),
+//            Main.res("stonetype_lamp"),
+//            Main.res("stonetype_pillar"),
+//            Main.res("polished_stonetype"),
+//            Main.res("mosaic_stonetype"),
+//            Main.res("cut_stonetype"),
+//            Main.res("cracked_stonetype"),
+//            Main.res("cobbled_stonetype"),
+//            Main.res("chiseled_stonetype"),
+//
+//            Main.res("stonetype_X_button"),
+//            Main.res("stonetype_X_pressure_plate"),
+//            Main.res("stonetype_X_slab"),
+//            Main.res("stonetype_X_stairs"),
+//            Main.res("stonetype_X_wall"),
+//
+//            Main.res("X_button"),
+//            Main.res("X_pressure_plate"),
+//            Main.res("X_slab"),
+//            Main.res("X_stairs"),
+//            Main.res("X_wall")
+//
+//    );
 
     public static List<TextureInfo> textureReference = List.of(
             TextureInfo.of("rockyminerals:cobbled_stone", Main.res("block/template/cobbled_stonetype")).build(),
