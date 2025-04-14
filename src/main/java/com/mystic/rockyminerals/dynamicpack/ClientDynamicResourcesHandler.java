@@ -35,6 +35,6 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     public void regenerateDynamicAssets(ResourceManager manager) {
         this.dynamicPack.setGenerateDebugResources(PlatHelper.isDev());
 
-        ResourcesGenerator.generateTextures(this, manager);
+        ResourcesGenerator.generateResources(this, manager);
     }
 }
