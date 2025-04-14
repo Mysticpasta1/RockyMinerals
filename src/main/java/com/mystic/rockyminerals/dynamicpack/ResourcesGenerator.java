@@ -17,18 +17,22 @@ import static com.mystic.rockyminerals.misc.ResourcesHelper.textureReference;
 
 public class ResourcesGenerator {
 
-    public static void generateTextures(DynClientResourcesGenerator generator, ResourceManager manager) {
+    public static void generateResources(DynClientResourcesGenerator generator, ResourceManager manager) {
         for (StoneType currentType : StoneTypeRegistry.getTypes()) {
             if (currentType.isVanilla()) continue;
-            creatingTexture(currentType, generator, manager);
+            generateTexture(currentType, generator, manager);
         }
         for (MineralType currentType : MineralTypeRegistry.getTypes()) {
             if (currentType.isVanilla()) continue;
-            creatingTexture(currentType, generator, manager);
+            generateTexture(currentType, generator, manager);
         }
     }
 
-    private static void creatingTexture(RockType rockType, DynClientResourcesGenerator generator, ResourceManager manager) {
+    private static void generateBlockstates(RockType rockType, DynClientResourcesGenerator generator, ResourceManager manager) {
+
+    }
+
+    private static void generateTexture(RockType rockType, DynClientResourcesGenerator generator, ResourceManager manager) {
 
         try (TextureImage stoneTexture = TextureImage.open(manager,
                 RPUtils.findFirstBlockTextureLocation(manager, rockType.getBlockOfThis("stone")))
