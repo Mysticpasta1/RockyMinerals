@@ -1,5 +1,6 @@
 package com.mystic.rockyminerals.api.set;
 
+import com.mystic.rockyminerals.Main;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
 import net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,18 +18,12 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
     public static final StoneTypeRegistry INSTANCE = new StoneTypeRegistry();
 
     public StoneTypeRegistry() {
-        super(StoneType.class, "stone_type");
+        super(StoneType.class, Main.MOD_ID + ":stone_type");
 
-        this.addFinder(StoneType.Finder.vanilla("stone"));
-        this.addFinder(StoneType.Finder.vanilla("andesite"));
     }
 
-    public static StoneType getStoneType() {
-        return getValue("stone");
-    }
-
-    public static StoneType getAndesiteType() {
-        return getValue("andesite");
+    public static StoneType getSaltstoneType() {
+        return getValue("rockyminerals:saltstone");
     }
 
     public static Collection<StoneType> getTypes() {
