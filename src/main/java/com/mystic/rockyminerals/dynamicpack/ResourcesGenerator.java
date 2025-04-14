@@ -13,10 +13,9 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-import static com.mystic.rockyminerals.misc.SpriteHelper.textureReference;
+import static com.mystic.rockyminerals.misc.ResourcesHelper.textureReference;
 
-
-public class TextureGenerator {
+public class ResourcesGenerator {
 
     public static void generateTextures(DynClientResourcesGenerator generator, ResourceManager manager) {
         for (StoneType currentType : StoneTypeRegistry.getTypes()) {
