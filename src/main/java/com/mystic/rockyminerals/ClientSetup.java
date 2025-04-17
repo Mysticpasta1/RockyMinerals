@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals;
 
-import com.mystic.rockyminerals.init.Init;
+import com.mystic.rockyminerals.registry.Init;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;

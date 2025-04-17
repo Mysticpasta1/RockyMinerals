@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.datagen;
 
-import com.mystic.rockyminerals.init.Init;
+import com.mystic.rockyminerals.registry.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.model.ModelLocationUtils;

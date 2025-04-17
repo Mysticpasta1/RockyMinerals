@@ -1,7 +1,7 @@
 package com.mystic.rockyminerals.datagen;
 
 import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.init.Init;
+import com.mystic.rockyminerals.registry.Init;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;

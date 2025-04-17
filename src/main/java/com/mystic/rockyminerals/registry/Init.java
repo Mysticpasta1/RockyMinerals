@@ -1,4 +1,4 @@
-package com.mystic.rockyminerals.init;
+package com.mystic.rockyminerals.registry;
 
 import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.block.HalfTransparentLampVariantBlock;

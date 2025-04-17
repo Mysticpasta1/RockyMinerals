@@ -6,7 +6,7 @@ import com.mystic.rockyminerals.api.set.MineralTypeRegistry;
 import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
-import com.mystic.rockyminerals.init.Init;
+import com.mystic.rockyminerals.registry.Init;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 import net.minecraft.resources.ResourceLocation;

@@ -1,7 +1,7 @@
 package com.mystic.rockyminerals.datagen;
 
 import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.init.Init;
+import com.mystic.rockyminerals.registry.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
