@@ -22,10 +22,10 @@ public class ResourcesGenerator {
             if (currentType.isVanilla()) continue;
             generateTexture(currentType, generator, manager);
         }
-//        for (MineralType currentType : MineralTypeRegistry.getTypes()) {
-//            if (currentType.isVanilla()) continue;
-//            generateTexture(currentType, generator, manager);
-//        }
+        for (MineralType currentType : MineralTypeRegistry.getTypes()) {
+            if (currentType.isVanilla()) continue;
+            generateTexture(currentType, generator, manager);
+        }
     }
 
     private static void generateBlockstates(RockType rockType, DynClientResourcesGenerator generator, ResourceManager manager) {
