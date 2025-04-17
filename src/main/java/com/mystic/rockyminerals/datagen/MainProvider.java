@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.datagen;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +20,7 @@ public class MainProvider extends BlockStateProvider {
 
     @SafeVarargs
     public MainProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper, Function<MainProvider, Proxied>... providers) {
-        super(packOutput, Main.MOD_ID, existingFileHelper);
+        super(packOutput, RockyMineral.MOD_ID, existingFileHelper);
         this.packOutput = packOutput;
         this.existingFileHelper = existingFileHelper;
         this.providers = Stream.of(providers).map(provider -> provider.apply(this)).collect(Collectors.toList());
@@ -45,7 +45,7 @@ public class MainProvider extends BlockStateProvider {
         private final MainProvider provider;
 
         public Proxied(MainProvider provider) {
-            super(provider.getPackOutput(), Main.MOD_ID, provider.getExistingFileHelper());
+            super(provider.getPackOutput(), RockyMineral.MOD_ID, provider.getExistingFileHelper());
             this.provider = provider;
         }
 

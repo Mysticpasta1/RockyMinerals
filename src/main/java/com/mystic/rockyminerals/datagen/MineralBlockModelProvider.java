@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.datagen;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.init.Init;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class MineralBlockModelProvider extends BlockModelProvider {
 
     public MineralBlockModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Main.MOD_ID, existingFileHelper);
+        super(generator, RockyMineral.MOD_ID, existingFileHelper);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.dynamicpack;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.api.TextureInfo;
 import com.mystic.rockyminerals.api.set.*;
 import net.mehvahdjukaar.moonlight.api.resources.RPUtils;
@@ -22,10 +22,10 @@ public class ResourcesGenerator {
             if (currentType.isVanilla()) continue;
             generateTexture(currentType, generator, manager);
         }
-        for (MineralType currentType : MineralTypeRegistry.getTypes()) {
-            if (currentType.isVanilla()) continue;
-            generateTexture(currentType, generator, manager);
-        }
+//        for (MineralType currentType : MineralTypeRegistry.getTypes()) {
+//            if (currentType.isVanilla()) continue;
+//            generateTexture(currentType, generator, manager);
+//        }
     }
 
     private static void generateBlockstates(RockType rockType, DynClientResourcesGenerator generator, ResourceManager manager) {
@@ -68,7 +68,7 @@ public class ResourcesGenerator {
             }
 
         } catch (Exception e) {
-            Main.LOGGER.error(e.getMessage());
+            RockyMineral.LOGGER.error(e.getMessage());
         }
     }
 

@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.init;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.block.HalfTransparentLampVariantBlock;
 import com.mystic.rockyminerals.block.HalfTransparentRotatedPillarBlock;
 import com.mystic.rockyminerals.block.MineralLampVariantBlock;
@@ -28,9 +28,9 @@ import java.util.function.Supplier;
 public class Init {
     public static final List<Supplier<? extends ItemLike>> MAIN_BLOCKS = new ArrayList<>();
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RockyMineral.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RockyMineral.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, RockyMineral.MOD_ID);
 
     //Block Properties
     public static final Supplier<Block> BASE_BLOCK = () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM));

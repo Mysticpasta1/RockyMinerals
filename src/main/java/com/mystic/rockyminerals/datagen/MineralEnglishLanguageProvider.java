@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.datagen;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.PackOutput;
@@ -9,7 +9,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 public class MineralEnglishLanguageProvider extends LanguageProvider {
 
     public MineralEnglishLanguageProvider(PackOutput generator) {
-        super(generator, Main.MOD_ID, "en_us");
+        super(generator, RockyMineral.MOD_ID, "en_us");
     }
 
     @Override

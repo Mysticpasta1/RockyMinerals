@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.api.set;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
 import net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -16,7 +16,7 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
     public static final MineralTypeRegistry INSTANCE = new MineralTypeRegistry();
 
     public MineralTypeRegistry() {
-        super(MineralType.class, Main.MOD_ID + ":mineral_type");
+        super(MineralType.class, RockyMineral.MOD_ID + ":mineral_type");
     }
 
 

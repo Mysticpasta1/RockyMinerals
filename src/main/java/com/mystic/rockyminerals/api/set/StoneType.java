@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.api.set;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -82,15 +82,15 @@ public class StoneType extends RockType {
             if (PlatHelper.isModLoaded(id.getNamespace())) {
                 try {
                     Block stone = stoneFinder.get();
-                    var d = BuiltInRegistries.BLOCK.get(BuiltInRegistries.BLOCK.getDefaultKey());
-                    if (stone != d && stone != null) {
-                        var w = new StoneType(id, stone);
-                        childNames.forEach((key, value) -> w.addChild(key, BuiltInRegistries.BLOCK.get(value)));
-                        return Optional.of(w);
+                    Block blockKey = BuiltInRegistries.BLOCK.get(BuiltInRegistries.BLOCK.getDefaultKey());
+                    if (stone != blockKey && stone != null) {
+                        StoneType stoneType = new StoneType(id, stone);
+                        childNames.forEach((key, value) -> stoneType.addChild(key, BuiltInRegistries.BLOCK.get(value)));
+                        return Optional.of(stoneType);
                     }
                 } catch (Exception ignored) {
                 }
-                Main.LOGGER.warn("Failed to find custom stone type {}", id);
+                RockyMineral.LOGGER.warn("Failed to find custom stone type {}", id);
             }
             return Optional.empty();
         }

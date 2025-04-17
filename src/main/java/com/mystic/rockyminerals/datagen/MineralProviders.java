@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.datagen;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.init.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -104,19 +104,19 @@ public class MineralProviders {
 
                 SimpleCookingRecipeBuilder.smelting(Ingredient.of(brick.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 0.7F, 200)
                         .unlockedBy(getHasName(brick.block().get()), has(brick.block().get()))
-                        .save(recipeOutput, Main.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
 
                 SimpleCookingRecipeBuilder.blasting(Ingredient.of(brick.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 0.7F, 100)
                         .unlockedBy(getHasName(brick.block().get()), has(brick.block().get()))
-                        .save(recipeOutput, Main.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
 
                 SimpleCookingRecipeBuilder.smelting(Ingredient.of(cobbled.block().get()), RecipeCategory.BUILDING_BLOCKS, original.block().get(), 0.7F, 200)
                         .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get()))
-                        .save(recipeOutput, Main.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
+                        .save(recipeOutput, RockyMineral.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
 
                 SimpleCookingRecipeBuilder.blasting(Ingredient.of(cobbled.block().get()), RecipeCategory.BUILDING_BLOCKS, original.block().get(), 0.7F, 100)
                         .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get()))
-                        .save(recipeOutput, Main.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
+                        .save(recipeOutput, RockyMineral.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, brick.block().get(), 4)
                         .pattern("## ")
@@ -124,7 +124,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', cobbled.block().get())
                         .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get().asItem()))
-                        .save(recipeOutput, Main.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, polished.block().get(), 4)
                         .pattern("## ")
@@ -132,7 +132,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', original.block().get())
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, tile.block().get(), 4)
                         .pattern("## ")
@@ -140,7 +140,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', brick.block().get())
                         .unlockedBy(getHasName(brick.block().get()), has(brick.block().get().asItem()))
-                        .save(recipeOutput, Main.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, chiseled.block().get(), 1)
                         .pattern(" # ")
@@ -148,7 +148,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', brick.slab().get())
                         .unlockedBy(getHasName(brick.slab().get()), has(brick.slab().get().asItem()))
-                        .save(recipeOutput, Main.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, mosaic.block().get(), 1)
                         .pattern(" # ")
@@ -156,7 +156,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', chiseled.slab().get())
                         .unlockedBy(getHasName(chiseled.slab().get()), has(chiseled.slab().get().asItem()))
-                        .save(recipeOutput, Main.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, pillar.block().get(), 1)
                         .pattern(" # ")
@@ -164,7 +164,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', original.block().get())
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, cut.block().get(), 4)
                         .pattern("## ")
@@ -172,7 +172,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', polished.block().get())
                         .unlockedBy(getHasName(polished.block().get()), has(polished.block().get().asItem()))
-                        .save(recipeOutput, Main.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, lamp.block().get(), 4)
                         .pattern(" # ")
@@ -182,7 +182,7 @@ public class MineralProviders {
                         .define('g', Items.GLOWSTONE_DUST)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
                         .unlockedBy(getHasName(Items.GLOWSTONE_DUST), has(Items.GLOWSTONE_DUST))
-                        .save(recipeOutput, Main.res(lamp.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(lamp.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, redstoneLamp, 4)
                         .pattern(" r ")
@@ -192,42 +192,42 @@ public class MineralProviders {
                         .define('r', Items.REDSTONE)
                         .unlockedBy(getHasName(lamp.block().get()), has(lamp.block().get().asItem()))
                         .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
-                        .save(recipeOutput, Main.res(redstoneLamp.getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(redstoneLamp.getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cobbled.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(cobbled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(cobbled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, chiseled.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, brick.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, tile.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, polished.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, pillar.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, mosaic.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cut.block().get(), 1)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .save(recipeOutput, Main.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
             }
 
             private static void buildBlockTypeVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType blockType) {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, blockType.button().get(), 1)
                         .requires(blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.button().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(blockType.button().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockType.stairs().get(), 4)
                         .pattern("#  ")
@@ -235,7 +235,7 @@ public class MineralProviders {
                         .pattern("###")
                         .define('#', blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.stairs().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(blockType.stairs().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockType.slab().get(), 6)
                         .pattern("   ")
@@ -243,7 +243,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.slab().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(blockType.slab().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockType.pressurePlate().get(), 1)
                         .pattern("   ")
@@ -251,7 +251,7 @@ public class MineralProviders {
                         .pattern("   ")
                         .define('#', blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.pressurePlate().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(blockType.pressurePlate().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockType.wall().get(), 6)
                         .pattern("   ")
@@ -259,23 +259,23 @@ public class MineralProviders {
                         .pattern("###")
                         .define('#', blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.wall().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+                        .save(recipeOutput, RockyMineral.res(blockType.wall().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(blockType.block().get().asItem()), RecipeCategory.BUILDING_BLOCKS, blockType.slab().get().asItem(), 2)
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.slab().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(blockType.slab().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(blockType.block().get().asItem()), RecipeCategory.BUILDING_BLOCKS, blockType.button().get().asItem(), 1)
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.button().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(blockType.button().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(blockType.block().get().asItem()), RecipeCategory.BUILDING_BLOCKS, blockType.stairs().get().asItem(), 1)
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.stairs().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(blockType.stairs().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(blockType.block().get().asItem()), RecipeCategory.BUILDING_BLOCKS, blockType.wall().get().asItem(), 1)
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.wall().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(blockType.wall().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(blockType.block().get().asItem()), RecipeCategory.BUILDING_BLOCKS, blockType.pressurePlate().get().asItem(), 1)
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
-                        .save(recipeOutput, Main.res(blockType.pressurePlate().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                        .save(recipeOutput, RockyMineral.res(blockType.pressurePlate().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
             }
         });
 
@@ -441,7 +441,7 @@ public class MineralProviders {
             dropSelf(Init.WORN_GRANITE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
-        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), Main.MOD_ID, event.getExistingFileHelper()) {
+        BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), RockyMineral.MOD_ID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 //Anhydrite Variant
@@ -568,7 +568,7 @@ public class MineralProviders {
             }
         };
 
-        ItemTagsProvider itemTagsProvider = new ItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), Main.MOD_ID, event.getExistingFileHelper()) {
+        ItemTagsProvider itemTagsProvider = new ItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), RockyMineral.MOD_ID, event.getExistingFileHelper()) {
             @Override
             protected void addTags(HolderLookup.@NotNull Provider pProvider) {
                 var saltstoneTypes = Init.SALTSTONE;

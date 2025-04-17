@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.dynamicpack;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
@@ -18,12 +18,12 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     }
 
     public ClientDynamicResourcesHandler() {
-        super(new DynamicTexturePack(Main.res("generated_pack")));
+        super(new DynamicTexturePack(RockyMineral.res("generated_pack")));
     }
 
     @Override
     public Logger getLogger() {
-        return Main.LOGGER;
+        return RockyMineral.LOGGER;
     }
 
     @Override

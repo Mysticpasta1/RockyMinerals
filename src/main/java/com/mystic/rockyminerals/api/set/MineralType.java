@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.api.set;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -51,22 +51,22 @@ public class MineralType extends RockType {
         private final Supplier<Block> mineralFinder;
         private final ResourceLocation id;
 
-        public Finder(ResourceLocation id, Supplier<Block> crystal) {
+        public Finder(ResourceLocation id, Supplier<Block> mineral) {
             this.id = id;
-            this.mineralFinder = crystal;
+            this.mineralFinder = mineral;
         }
 
         public static MineralType.Finder vanilla(String nameMineral, String blockId){
             return simple("minecraft", nameMineral, blockId);
         }
 
-        public static MineralType.Finder simple(String modId, String nameCrystalType, String nameCrystal) {
-            return simple(ResourceLocation.fromNamespaceAndPath(modId, nameCrystalType), ResourceLocation.fromNamespaceAndPath(modId, nameCrystal));
+        public static MineralType.Finder simple(String modId, String nameMineralType, String nameMineral) {
+            return simple(ResourceLocation.fromNamespaceAndPath(modId, nameMineralType), ResourceLocation.fromNamespaceAndPath(modId, nameMineral));
         }
 
-        public static MineralType.Finder simple(ResourceLocation nameCrystalTYpe, ResourceLocation nameCrystal) {
+        public static MineralType.Finder simple(ResourceLocation nameCrystalTYpe, ResourceLocation nameMineral) {
             return new MineralType.Finder(nameCrystalTYpe,
-                    () -> BuiltInRegistries.BLOCK.get(nameCrystal));
+                    () -> BuiltInRegistries.BLOCK.get(nameMineral));
         }
 
         public void addChild(String childType, String childName) {
@@ -82,16 +82,16 @@ public class MineralType extends RockType {
         public Optional<MineralType> get() {
             if (PlatHelper.isModLoaded(id.getNamespace())) {
                 try {
-                    Block crystal = mineralFinder.get();
-                    var d = BuiltInRegistries.BLOCK.get(BuiltInRegistries.BLOCK.getDefaultKey());
-                    if (crystal != d && crystal != null) {
-                        var w = new MineralType(id, crystal);
-                        childNames.forEach((key, value) -> w.addChild(key, BuiltInRegistries.BLOCK.get(value)));
-                        return Optional.of(w);
+                    Block mineral = mineralFinder.get();
+                    Block blockKey = BuiltInRegistries.BLOCK.get(BuiltInRegistries.BLOCK.getDefaultKey());
+                    if (mineral != blockKey && mineral != null) {
+                        MineralType mineralType = new MineralType(id, mineral);
+                        childNames.forEach((key, value) -> mineralType.addChild(key, BuiltInRegistries.BLOCK.get(value)));
+                        return Optional.of(mineralType);
                     }
                 } catch (Exception ignored) {
                 }
-                Main.LOGGER.warn("Failed to find custom mineral type {}", id);
+                RockyMineral.LOGGER.warn("Failed to find custom mineral type {}", id);
             }
             return Optional.empty();
         }

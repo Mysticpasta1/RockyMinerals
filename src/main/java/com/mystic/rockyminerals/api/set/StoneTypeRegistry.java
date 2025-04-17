@@ -1,6 +1,6 @@
 package com.mystic.rockyminerals.api.set;
 
-import com.mystic.rockyminerals.Main;
+import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
 import net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,7 +18,7 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
     public static final StoneTypeRegistry INSTANCE = new StoneTypeRegistry();
 
     public StoneTypeRegistry() {
-        super(StoneType.class, Main.MOD_ID + ":stone_type");
+        super(StoneType.class, RockyMineral.MOD_ID + ":stone_type");
 
     }
 

@@ -16,12 +16,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-@Mod(Main.MOD_ID)
-public class Main {
+@Mod(RockyMineral.MOD_ID)
+public class RockyMineral {
     public static final String MOD_ID = "rockyminerals";
     public static final Logger LOGGER = LogManager.getLogger("Rocky Minerals");
 
-    public Main(FMLJavaModLoadingContext context) {
+    public RockyMineral(FMLJavaModLoadingContext context) {
         var bus = context.getModEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
