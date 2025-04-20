@@ -1,7 +1,6 @@
 package com.mystic.rockyminerals;
 
-import com.mystic.rockyminerals.api.intergration.CompatMineralType;
-import com.mystic.rockyminerals.api.intergration.CompatStoneType;
+import com.mystic.rockyminerals.api.intergration.CompatBlockType;
 import com.mystic.rockyminerals.api.set.MineralTypeRegistry;
 import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
 import com.mystic.rockyminerals.datagen.MineralProviders;
@@ -27,8 +26,7 @@ public class RockyMineral {
         MineralProviders.init(bus);
         BlockSetAPI.registerBlockSetDefinition(StoneTypeRegistry.INSTANCE);
         BlockSetAPI.registerBlockSetDefinition(MineralTypeRegistry.INSTANCE);
-        CompatStoneType.init();
-        CompatMineralType.init();
+        CompatBlockType.init();
 
         if (PlatHelper.getPhysicalSide().isClient()) {
             ClientDynamicResourcesHandler.getInstance().register();
