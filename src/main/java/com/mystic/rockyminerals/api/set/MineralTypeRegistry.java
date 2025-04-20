@@ -19,6 +19,9 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
         super(MineralType.class, RockyMineral.MOD_ID + ":mineral_type");
     }
 
+    public static MineralType getBlueCalciteType() {
+        return getValue("rockyminerals:blue_calcite");
+    }
 
     public static Collection<MineralType> getTypes() {
         return INSTANCE.getValues();
