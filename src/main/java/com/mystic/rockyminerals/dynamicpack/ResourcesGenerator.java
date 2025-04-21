@@ -27,32 +27,21 @@ public class ResourcesGenerator {
 
     public static Map<BlockType, ArrayList<Block>> decorativeBlockTypes = new HashMap<>();
     public static Map<BlockType, ArrayList<Item>> decorativeItemTypes = new HashMap<>();
+    public static ArrayList<BlockType> rockTypes = new ArrayList<>();
 
     public static void generateResources(DynClientResourcesGenerator generator, ResourceManager manager) {
 
+        /// Creating textures for all RockTypes
         for (StoneType currentType : StoneTypeRegistry.getTypes()) {
-            if (currentType.isVanilla()) continue;
-            BlockType baseType = StoneTypeRegistry.getSaltstoneType();
             generateTexture("stonetype", currentType, Saltstone_Templates, generator, manager);
-
-            /// Modifying blockstates & models files - contents are included, too
-            generateStandardResources(currentType, decorativeBlockTypes.get(currentType), baseType,
-                    makeBlockStateTransformer(baseType, manager), makeModelTransformer(baseType, manager),
-                    generator, manager
-            );
-
-            /// Modifying models/item files - contents are included, too
-            if (!decorativeItemTypes.isEmpty()) {
-                generateStandardItemModels(currentType, decorativeItemTypes.get(currentType), baseType,
-                        makeModelTransformer(baseType, manager), generator, manager
-                );
-            }
-
         }
         for (MineralType currentType : MineralTypeRegistry.getTypes()) {
-            if (currentType.isVanilla()) continue;
-            BlockType baseType = StoneTypeRegistry.getSaltstoneType();
             generateTexture("blue_calcite", currentType, BlueCacite_Templates, generator, manager);
+        }
+
+        /// Creating blockstates, models/block, models/item
+        for (BlockType currentType : rockTypes) {
+            BlockType baseType = StoneTypeRegistry.getSaltstoneType();
 
             /// Modifying blocks' files
             generateStandardResources(currentType, decorativeBlockTypes.get(currentType), baseType,
