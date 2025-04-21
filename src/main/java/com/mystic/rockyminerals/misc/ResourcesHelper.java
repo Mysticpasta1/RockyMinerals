@@ -7,6 +7,13 @@ import java.util.List;
 
 public class ResourcesHelper {
 
+    /**
+     *      STONETYPE:
+     *  saltstone
+     *  rhyolite
+     *  pumice
+     *  worn_granite
+     **/
     public static List<TextureInfo> Saltstone_Templates = List.of(
             TextureInfo.of("rockyminerals:cobbled_stone", RockyMineral.res("block/template/cobbled_stonetype")).build(),
             TextureInfo.of("rockyminerals:cracked_stone", RockyMineral.res("block/template/cracked_stonetype")).build(),
@@ -27,6 +34,13 @@ public class ResourcesHelper {
             TextureInfo.of("rockyminerals:stone_redstone_lamp", RockyMineral.res("block/template/stonetype_redstone_lamp_unlit"), RockyMineral.res("block/mask/rocktype_redstone_lamp_common")).build()
     );
 
+    /**
+     *      MINERALTYPE:
+     *  blue_calcite
+     *  aphydrite
+     *  halite
+     *  opal
+    **/
     public static List<TextureInfo> BlueCacite_Templates = List.of(
             TextureInfo.of("rockyminerals:cobbled_blue_calcite", RockyMineral.res("block/cobbled_blue_calcite")).build(),
             TextureInfo.of("rockyminerals:cracked_blue_calcite", RockyMineral.res("block/cracked_blue_calcite")).build(),
