@@ -159,7 +159,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 publishMods {
-    dryRun = true
+    dryRun = false
     var changelogFile = rootProject.file("changelog.md")
     var changelogText = changelogFile.exists() ? changelogFile.text : " "
 
