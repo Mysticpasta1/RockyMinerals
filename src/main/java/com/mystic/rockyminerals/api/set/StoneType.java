@@ -31,7 +31,7 @@ public class StoneType extends RockType {
 
     @Override
     public String getTranslationKey() {
-        return "stone_type." + this.getNamespace() + "." + this.getTypeName();
+        return "stone_type." + this.getTypeName();
     }
 
     @Override

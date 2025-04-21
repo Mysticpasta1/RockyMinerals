@@ -32,7 +32,7 @@ public class MineralType extends StoneType {
 
     @Override
     public String getTranslationKey() {
-        return "mineral_type." + this.getNamespace() + "." + this.getTypeName();
+        return "mineral_type." + this.getTypeName();
     }
 
     @Override
