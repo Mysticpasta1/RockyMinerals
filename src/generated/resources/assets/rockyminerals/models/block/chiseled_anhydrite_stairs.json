@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/chiseled_anhydrite",
-    "side": "rockyminerals:block/chiseled_anhydrite",
-    "top": "rockyminerals:block/chiseled_anhydrite"
-  }
-}

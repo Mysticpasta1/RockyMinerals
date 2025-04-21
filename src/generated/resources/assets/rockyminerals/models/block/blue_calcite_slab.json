@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockyminerals:block/blue_calcite",
-    "side": "rockyminerals:block/blue_calcite",
-    "top": "rockyminerals:block/blue_calcite"
-  }
-}

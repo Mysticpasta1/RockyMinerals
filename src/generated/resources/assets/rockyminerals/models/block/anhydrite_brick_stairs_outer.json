@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/anhydrite_bricks",
-    "side": "rockyminerals:block/anhydrite_bricks",
-    "top": "rockyminerals:block/anhydrite_bricks"
-  }
-}

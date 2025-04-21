@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/cracked_halite",
-    "side": "rockyminerals:block/cracked_halite",
-    "top": "rockyminerals:block/cracked_halite"
-  }
-}

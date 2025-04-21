@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "rockyminerals:block/pumice_bricks",
-    "side": "rockyminerals:block/pumice_bricks",
-    "top": "rockyminerals:block/pumice_bricks"
-  }
-}

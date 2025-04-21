@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "rockyminerals:block/polished_anhydrite",
-    "side": "rockyminerals:block/polished_anhydrite",
-    "top": "rockyminerals:block/polished_anhydrite"
-  }
-}

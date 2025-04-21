@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_inventory",
-  "textures": {
-    "texture": "rockyminerals:block/worn_granite_pillar"
-  }
-}

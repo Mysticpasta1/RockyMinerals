@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/halite_pillar",
-    "side": "rockyminerals:block/halite_pillar",
-    "top": "rockyminerals:block/halite_pillar"
-  }
-}

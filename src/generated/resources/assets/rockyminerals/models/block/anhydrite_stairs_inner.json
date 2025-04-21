@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/anhydrite",
-    "side": "rockyminerals:block/anhydrite",
-    "top": "rockyminerals:block/anhydrite"
-  }
-}
