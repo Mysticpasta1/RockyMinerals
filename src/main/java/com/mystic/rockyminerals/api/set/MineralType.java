@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public class MineralType extends RockType {
+public class MineralType extends StoneType {
 
     /**
      * Childkey Availability:
@@ -38,11 +38,6 @@ public class MineralType extends RockType {
     @Override
     public ItemLike mainChild() {
         return this.stone;
-    }
-
-    public Block bricksOrStone() {
-        Block bricks= this.getBlockOfThis("bricks");
-        return bricks != null ? bricks : this.stone;
     }
 
     public static class Finder implements BlockType.SetFinder<MineralType> {

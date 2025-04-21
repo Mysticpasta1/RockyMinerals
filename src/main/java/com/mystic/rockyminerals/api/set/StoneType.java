@@ -39,11 +39,6 @@ public class StoneType extends RockType {
         return this.stone;
     }
 
-    public Block bricksOrStone() {
-        Block bricks= this.getBlockOfThis("bricks");
-        return bricks != null ? bricks : this.stone;
-    }
-
     public static class Finder implements SetFinder<StoneType> {
 
         private final Map<String, ResourceLocation> childNames = new HashMap<>();
