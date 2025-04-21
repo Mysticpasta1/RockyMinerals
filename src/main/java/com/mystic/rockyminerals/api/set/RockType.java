@@ -4,11 +4,19 @@ import net.mehvahdjukaar.moonlight.api.set.BlockType;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Objects;
+
+import static com.mystic.rockyminerals.dynamicpack.ResourcesGenerator.decorativeBlockTypes;
+import static com.mystic.rockyminerals.dynamicpack.ResourcesGenerator.decorativeItemTypes;
 
 public abstract class RockType extends BlockType{
     /**
@@ -27,10 +35,13 @@ public abstract class RockType extends BlockType{
     }
 
     @Override
-    public String getAppendableIdWith(String prefix, String suffix) {
-        String suffixed = (suffix.isEmpty()) ? "" : "_" + suffix;
-        String prefixed = (prefix.isEmpty()) ? "" : prefix + "_";
-        return  this.getNamespace() +"/"+ prefixed + this.getTypeName() + suffixed;
+    public ItemLike mainChild() {
+        return block;
+    }
+
+    public Block bricksOrStone() {
+        Block bricks= this.getBlockOfThis("bricks");
+        return bricks != null ? bricks : this.block;
     }
 
     @Override
@@ -148,7 +159,7 @@ public abstract class RockType extends BlockType{
 
     @Override
     protected void initializeChildrenItems() {
-        this.addChild("brick", this.findRelatedEntry("brick", BuiltInRegistries.ITEM));
+
     }
 
     /// @param suffix concatenation of "brick_" + suffix
@@ -200,13 +211,39 @@ public abstract class RockType extends BlockType{
     }
 
     @Override
-    public ItemLike mainChild() {
-        return block;
-    }
+    /// Extra method to add object to decorativeBlockTypes or decorativeItemTypes
+    public void addChild(String genericName, @Nullable Object obj) {
+        if (obj != Items.AIR && obj != Blocks.AIR) {
+            if (obj != null) {
+                super.addChild(genericName, obj);
 
-    public Block bricksOrStone() {
-        Block bricks= this.getBlockOfThis("bricks");
-        return bricks != null ? bricks : this.block;
+                if (obj instanceof Block foundBlock) {
+                    if (!decorativeBlockTypes.containsKey(this)) {
+                        ArrayList<Block> array = new ArrayList<>();
+                        array.add(foundBlock);
+                        decorativeBlockTypes.put(this, array);
+                    }
+                    else {
+                        decorativeBlockTypes.get(this).add(foundBlock);
+                    }
+                }
+
+                if (obj instanceof Item ITEM) {
+                    if (!decorativeItemTypes.containsKey(this)) {
+                        ArrayList<Item> array = new ArrayList<>();
+                        array.add(ITEM);
+                        decorativeItemTypes.put(this, array);
+                    }
+                    else {
+                        decorativeItemTypes.get(this).add(ITEM);
+                    }
+                }
+
+            }
+
+        } else {
+            throw new IllegalStateException("Tried to add air block/item to Block Type. Key " + genericName + ". This is a Moonlight bug, please report me");
+        }
     }
 
 }
