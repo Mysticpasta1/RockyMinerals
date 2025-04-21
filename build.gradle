@@ -13,13 +13,10 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
-    id "com.matthewprenger.cursegradle" version "1.4.0"
-    id "com.modrinth.minotaur" version "2.+"
+    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
 }
 
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: "com.matthewprenger.cursegradle"
-apply plugin: "com.modrinth.minotaur"
 
 group = mod_group_id
 version = mod_version
@@ -69,7 +66,7 @@ minecraft {
         }
 
         data {
-            workingDirectory project.file('run-data')
+            workingDirectory file('run-data')
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
@@ -144,7 +141,10 @@ tasks.named('jar', Jar).configure {
                     "Implementation-Title"    : project.name,
                     "Implementation-Version"  : project.jar.archiveVersion,
                     "Implementation-Vendor"   : mod_authors,
-                    "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")])
+                    "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    "accessWidenerPath"       : 'rockyminerals.accesswidener'
+        ])
+
     }
     finalizedBy 'reobfJar'
 }
@@ -153,48 +153,28 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
-subprojects {
-
-    var env = System.getenv()
-    var modLoader = name
-
+publishMods {
+    dryRun = true
     var changelogFile = rootProject.file("changelog.md")
-    var changelogText = changelogFile.exists() ? changelogFile.text : ""
+    var changelogText = changelogFile.exists() ? changelogFile.text : " "
 
-    if (env.MODRINTH_TOKEN) {
-        modrinth {
-            projectId = "rocky-minerals"
-            uploadFile = tasks.remapJar
-            additionalFiles.add(tasks.remapSourcesJar)
-            gameVersions = [minecraft_version]
-            loaders = [modLoader]
-            changelog = changelogText
+    file = jar.archiveFile
+    changelog = changelogText
+    type = STABLE
+    modLoaders.add("forge")
+    displayName = file.map { it.asFile.name }
 
-            versionName = mod_version
-            dependencies {
-                project "moonlight"
-            }
-        }
+    curseforge {
+        projectId = "${curseforge_id}"
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        requires("selene")
     }
 
-    if (env.CURSEFORGE_TOKEN) {
-        curseforge {
-            apiKey = env.CURSEFORGE_TOKEN
-            project {
-                id = project_id
-                changelog = changelogText
-                changelogType = 'markdown'
-                releaseType = 'release'
-                addGameVersion minecraft_version
-                addGameVersion modLoader.capitalize()
-
-                mainArtifact(tasks.remapJar)
-
-                relations {
-                    incompatible("vminus")
-                    requiredDependency("selene")
-                }
-            }
-        }
+    modrinth {
+        projectId = "${modrinth_id}"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        requires("moonlight")
     }
 }
