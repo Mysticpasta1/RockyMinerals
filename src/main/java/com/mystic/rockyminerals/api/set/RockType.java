@@ -4,7 +4,6 @@ import net.mehvahdjukaar.moonlight.api.set.BlockType;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -15,8 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import static com.mystic.rockyminerals.dynamicpack.ResourcesGenerator.decorativeBlockTypes;
-import static com.mystic.rockyminerals.dynamicpack.ResourcesGenerator.decorativeItemTypes;
+import static com.mystic.rockyminerals.dynamicpack.ResourcesGenerator.*;
 
 public abstract class RockType extends BlockType{
     /**
@@ -216,6 +214,8 @@ public abstract class RockType extends BlockType{
         if (obj != Items.AIR && obj != Blocks.AIR) {
             if (obj != null) {
                 super.addChild(genericName, obj);
+
+                if (!rockTypes.contains(this)) rockTypes.add(this);
 
                 if (obj instanceof Block foundBlock) {
                     if (!decorativeBlockTypes.containsKey(this)) {
