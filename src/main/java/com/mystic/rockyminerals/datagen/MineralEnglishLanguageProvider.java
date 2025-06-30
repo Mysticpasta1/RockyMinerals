@@ -40,7 +40,23 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.SALTSTONE_MOSAIC, "Saltstone Mosaic");
         addBlocksFromType(Init.SALTSTONE_TILE, "Saltstone Tile");
         addBlocksFromType(Init.SALTSTONE_LAMP, "Saltstone Lamp");
+        addBlocksFromType(Init.MOSSY_SALTSTONE, "Mossy Saltstone");
         addBlock(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
+
+        //Duskmire Variants
+        addBaseBlocksFromType(Init.DUSKMIRE, "Duskmire");
+        addBlocksFromType(Init.COBBLED_DUSKMIRE, "Cobbled Duskmire");
+        addBlocksFromType(Init.CHISELED_DUSKMIRE, "Chiseled Duskmire");
+        addBlocksFromType(Init.CRACKED_DUSKMIRE, "Cracked Duskmire");
+        addBlocksFromType(Init.CUT_DUSKMIRE, "Cut Duskmire");
+        addBlocksFromType(Init.POLISHED_DUSKMIRE, "Polished Duskmire");
+        addBlocksFromBricksType(Init.DUSKMIRE_BRICKS, "Duskmire Brick");
+        addBlocksFromType(Init.DUSKMIRE_PILLAR, "Duskmire Pillar");
+        addBlocksFromType(Init.DUSKMIRE_MOSAIC, "Duskmire Mosaic");
+        addBlocksFromType(Init.DUSKMIRE_TILE, "Duskmire Tile");
+        addBlocksFromType(Init.DUSKMIRE_LAMP, "Duskmire Lamp");
+        addBlocksFromType(Init.MOSSY_DUSKMIRE, "Mossy Duskmire");
+        addBlock(Init.DUSKMIRE_REDSTONE_LAMP, "Duskmire Redstone Lamp");
 
         //Halite Variants
         addBaseBlocksFromType(Init.HALITE, "Halite");
@@ -82,6 +98,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.PUMICE_MOSAIC, "Pumice Mosaic");
         addBlocksFromType(Init.PUMICE_TILE, "Pumice Tile");
         addBlocksFromType(Init.PUMICE_LAMP, "Pumice Lamp");
+        addBlocksFromType(Init.MOSSY_PUMICE, "Mossy Pumice");
         addBlock(Init.PUMICE_REDSTONE_LAMP, "Pumice Redstone Lamp");
 
         //Rhyolite Variants
@@ -96,6 +113,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.RHYOLITE_MOSAIC, "Rhyolite Mosaic");
         addBlocksFromType(Init.RHYOLITE_TILE, "Rhyolite Tile");
         addBlocksFromType(Init.RHYOLITE_LAMP, "Rhyolite Lamp");
+        addBlocksFromType(Init.MOSSY_RHYOLITE, "Mossy Rhyolite");
         addBlock(Init.RHYOLITE_REDSTONE_LAMP, "Rhyolite Redstone Lamp");
 
         //Blue Calcite Variants
@@ -124,6 +142,7 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.WORN_GRANITE_MOSAIC, "Worn Granite Mosaic");
         addBlocksFromType(Init.WORN_GRANITE_TILE, "Worn Granite Tile");
         addBlocksFromType(Init.WORN_GRANITE_LAMP, "Worn Granite Lamp");
+        addBlocksFromType(Init.MOSSY_WORN_GRANITE, "Mossy Worn Granite");
         addBlock(Init.WORN_GRANITE_REDSTONE_LAMP, "Worn Granite Redstone Lamp");
 
         add("itemGroup." + Init.MAIN.getId().toLanguageKey(), "Rocky Minerals");

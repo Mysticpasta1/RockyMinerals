@@ -29,6 +29,9 @@ public class MineralBlockModelProvider extends BlockModelProvider {
         cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_lit");
 
+        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_unlit");
+        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_lit");
+
         cubeAll(Init.OPAL_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.OPAL_REDSTONE_LAMP, "_lit");
 

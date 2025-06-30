@@ -1,10 +1,7 @@
 package com.mystic.rockyminerals.registry;
 
 import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.block.HalfTransparentLampVariantBlock;
-import com.mystic.rockyminerals.block.HalfTransparentRotatedPillarBlock;
-import com.mystic.rockyminerals.block.MineralLampVariantBlock;
-import com.mystic.rockyminerals.block.StoneLampVariantBlock;
+import com.mystic.rockyminerals.block.*;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -57,7 +54,35 @@ public class Init {
     public static final BlockType SALTSTONE_MOSAIC = registerBlockType("mosaic_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_SALTSTONE = registerBlockType("cut_saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType SALTSTONE_LAMP = registerBlockType("saltstone_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_SALTSTONE = registerBlockType(
+            "mossy_saltstone",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> SALTSTONE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
     public static final RegistryObject<Block> SALTSTONE_REDSTONE_LAMP = registerBlock("saltstone_redstone_lamp", StoneLampVariantBlock::new);
+
+    //Duskmire Variants
+    public static final BlockType DUSKMIRE = registerBlockType("duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_DUSKMIRE = registerBlockType("cobbled_duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_DUSKMIRE = registerBlockType("chiseled_duskmire", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_DUSKMIRE = registerBlockType("cracked_duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType DUSKMIRE_BRICKS = registerBricksBlockType("duskmire_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType DUSKMIRE_TILE = registerBlockType("duskmire_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_DUSKMIRE = registerBlockType("polished_duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType DUSKMIRE_PILLAR = registerBlockType("duskmire_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType DUSKMIRE_MOSAIC = registerBlockType("mosaic_duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_DUSKMIRE = registerBlockType("cut_duskmire", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType DUSKMIRE_LAMP = registerBlockType("duskmire_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_DUSKMIRE = registerBlockType(
+            "mossy_duskmire",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> DUSKMIRE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
+    public static final RegistryObject<Block> DUSKMIRE_REDSTONE_LAMP = registerBlock("duskmire_redstone_lamp", StoneLampVariantBlock::new);
 
     //Pumice Variants
     public static final BlockType PUMICE = registerBlockType("pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
@@ -71,6 +96,13 @@ public class Init {
     public static final BlockType PUMICE_MOSAIC = registerBlockType("mosaic_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_PUMICE = registerBlockType("cut_pumice", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType PUMICE_LAMP = registerBlockType("pumice_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_PUMICE = registerBlockType(
+            "mossy_pumice",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> PUMICE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
     public static final RegistryObject<Block> PUMICE_REDSTONE_LAMP = registerBlock("pumice_redstone_lamp", StoneLampVariantBlock::new);
 
     //Rhyolite Variants
@@ -85,6 +117,13 @@ public class Init {
     public static final BlockType RHYOLITE_MOSAIC = registerBlockType("mosaic_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_RHYOLITE = registerBlockType("cut_rhyolite", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType RHYOLITE_LAMP = registerBlockType("rhyolite_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_RHYOLITE = registerBlockType(
+            "mossy_rhyolite",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> RHYOLITE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
     public static final RegistryObject<Block> RHYOLITE_REDSTONE_LAMP = registerBlock("rhyolite_redstone_lamp", StoneLampVariantBlock::new);
 
     //Anhydrite Variants
@@ -127,6 +166,13 @@ public class Init {
     public static final BlockType WORN_GRANITE_MOSAIC = registerBlockType("mosaic_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType CUT_WORN_GRANITE = registerBlockType("cut_worn_granite", BASE_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType WORN_GRANITE_LAMP = registerBlockType("worn_granite_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_WORN_GRANITE = registerBlockType(
+            "mossy_worn_granite",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> WORN_GRANITE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
     public static final RegistryObject<Block> WORN_GRANITE_REDSTONE_LAMP = registerBlock("worn_granite_redstone_lamp", StoneLampVariantBlock::new);
 
     //Halite Variants

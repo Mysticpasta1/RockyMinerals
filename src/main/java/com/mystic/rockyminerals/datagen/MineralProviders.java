@@ -46,48 +46,53 @@ public class MineralProviders {
         event.getGenerator().addProvider(true, new RecipeProvider(output) {
             @Override
             protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {
-                buildRecipesForAllVariants(recipeOutput,
+                buildRecipesForAllStoneVariants(recipeOutput,
                         Init.SALTSTONE, Init.COBBLED_SALTSTONE, Init.CHISELED_SALTSTONE, Init.CRACKED_SALTSTONE,
                         Init.SALTSTONE_BRICKS, Init.SALTSTONE_TILE, Init.POLISHED_SALTSTONE, Init.SALTSTONE_PILLAR,
-                        Init.SALTSTONE_MOSAIC, Init.CUT_SALTSTONE, Init.SALTSTONE_LAMP, Init.SALTSTONE_REDSTONE_LAMP.get());
+                        Init.SALTSTONE_MOSAIC, Init.CUT_SALTSTONE, Init.SALTSTONE_LAMP, Init.MOSSY_SALTSTONE, Init.SALTSTONE_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
-                        Init.HALITE, Init.COBBLED_HALITE, Init.CHISELED_HALITE, Init.CRACKED_HALITE,
-                        Init.HALITE_BRICKS, Init.HALITE_TILE, Init.POLISHED_HALITE, Init.HALITE_PILLAR,
-                        Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
+                buildRecipesForAllStoneVariants(recipeOutput,
+                        Init.DUSKMIRE, Init.COBBLED_DUSKMIRE, Init.CHISELED_DUSKMIRE, Init.CRACKED_DUSKMIRE,
+                        Init.DUSKMIRE_BRICKS, Init.DUSKMIRE_TILE, Init.POLISHED_DUSKMIRE, Init.DUSKMIRE_PILLAR,
+                        Init.DUSKMIRE_MOSAIC, Init.CUT_DUSKMIRE, Init.DUSKMIRE_LAMP, Init.MOSSY_DUSKMIRE, Init.DUSKMIRE_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
+                buildRecipesForAllStoneVariants(recipeOutput,
                         Init.WORN_GRANITE, Init.COBBLED_WORN_GRANITE, Init.CHISELED_WORN_GRANITE, Init.CRACKED_WORN_GRANITE,
                         Init.WORN_GRANITE_BRICKS, Init.WORN_GRANITE_TILE, Init.POLISHED_WORN_GRANITE, Init.WORN_GRANITE_PILLAR,
-                        Init.WORN_GRANITE_MOSAIC, Init.CUT_WORN_GRANITE, Init.WORN_GRANITE_LAMP, Init.WORN_GRANITE_REDSTONE_LAMP.get());
+                        Init.WORN_GRANITE_MOSAIC, Init.CUT_WORN_GRANITE, Init.WORN_GRANITE_LAMP, Init.MOSSY_WORN_GRANITE, Init.WORN_GRANITE_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
+                buildRecipesForAllStoneVariants(recipeOutput,
+                        Init.PUMICE, Init.COBBLED_PUMICE, Init.CHISELED_PUMICE, Init.CRACKED_PUMICE,
+                        Init.PUMICE_BRICKS, Init.PUMICE_TILE, Init.POLISHED_PUMICE, Init.PUMICE_PILLAR,
+                        Init.PUMICE_MOSAIC, Init.CUT_PUMICE, Init.PUMICE_LAMP, Init.MOSSY_PUMICE, Init.PUMICE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllStoneVariants(recipeOutput,
+                        Init.RHYOLITE, Init.COBBLED_RHYOLITE, Init.CHISELED_RHYOLITE, Init.CRACKED_RHYOLITE,
+                        Init.RHYOLITE_BRICKS, Init.RHYOLITE_TILE, Init.POLISHED_RHYOLITE, Init.RHYOLITE_PILLAR,
+                        Init.RHYOLITE_MOSAIC, Init.CUT_RHYOLITE, Init.RHYOLITE_LAMP, Init.MOSSY_RHYOLITE, Init.RHYOLITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllMineralVariants(recipeOutput,
                         Init.ANHYDRITE, Init.COBBLED_ANHYDRITE, Init.CHISELED_ANHYDRITE, Init.CRACKED_ANHYDRITE,
                         Init.ANHYDRITE_BRICKS, Init.ANHYDRITE_TILE, Init.POLISHED_ANHYDRITE, Init.ANHYDRITE_PILLAR,
                         Init.ANHYDRITE_MOSAIC, Init.CUT_ANHYDRITE, Init.ANHYDRITE_LAMP, Init.ANHYDRITE_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
+                buildRecipesForAllMineralVariants(recipeOutput,
                         Init.OPAL, Init.COBBLED_OPAL, Init.CHISELED_OPAL, Init.CRACKED_OPAL,
                         Init.OPAL_BRICKS, Init.OPAL_TILE, Init.POLISHED_OPAL, Init.OPAL_PILLAR,
                         Init.OPAL_MOSAIC, Init.CUT_OPAL, Init.OPAL_LAMP, Init.OPAL_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
+                buildRecipesForAllMineralVariants(recipeOutput,
                         Init.BLUE_CALCITE, Init.COBBLED_BLUE_CALCITE, Init.CHISELED_BLUE_CALCITE, Init.CRACKED_BLUE_CALCITE,
                         Init.BLUE_CALCITE_BRICKS, Init.BLUE_CALCITE_TILE, Init.POLISHED_BLUE_CALCITE, Init.BLUE_CALCITE_PILLAR,
                         Init.BLUE_CALCITE_MOSAIC, Init.CUT_BLUE_CALCITE, Init.BLUE_CALCITE_LAMP, Init.BLUE_CALCITE_REDSTONE_LAMP.get());
 
-                buildRecipesForAllVariants(recipeOutput,
-                        Init.PUMICE, Init.COBBLED_PUMICE, Init.CHISELED_PUMICE, Init.CRACKED_PUMICE,
-                        Init.PUMICE_BRICKS, Init.PUMICE_TILE, Init.POLISHED_PUMICE, Init.PUMICE_PILLAR,
-                        Init.PUMICE_MOSAIC, Init.CUT_PUMICE, Init.PUMICE_LAMP, Init.PUMICE_REDSTONE_LAMP.get());
-
-                buildRecipesForAllVariants(recipeOutput,
-                        Init.RHYOLITE, Init.COBBLED_RHYOLITE, Init.CHISELED_RHYOLITE, Init.CRACKED_RHYOLITE,
-                        Init.RHYOLITE_BRICKS, Init.RHYOLITE_TILE, Init.POLISHED_RHYOLITE, Init.RHYOLITE_PILLAR,
-                        Init.RHYOLITE_MOSAIC, Init.CUT_RHYOLITE, Init.RHYOLITE_LAMP, Init.RHYOLITE_REDSTONE_LAMP.get());
+                buildRecipesForAllMineralVariants(recipeOutput,
+                        Init.HALITE, Init.COBBLED_HALITE, Init.CHISELED_HALITE, Init.CRACKED_HALITE,
+                        Init.HALITE_BRICKS, Init.HALITE_TILE, Init.POLISHED_HALITE, Init.HALITE_PILLAR,
+                        Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
             }
 
-            private static void buildRecipesForAllVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
+            private static void buildRecipesForAllMineralVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
                                                            BlockType brick, BlockType tile, BlockType polished,
                                                            BlockType pillar, BlockType mosaic, BlockType cut,
                                                            BlockType lamp, Block redstoneLamp) {
@@ -100,6 +105,143 @@ public class MineralProviders {
                 buildBlockTypeVariants(recipeOutput, pillar);
                 buildBlockTypeVariants(recipeOutput, mosaic);
                 buildBlockTypeVariants(recipeOutput, cut);
+                buildBlockTypeVariants(recipeOutput, lamp);
+
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(brick.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 0.7F, 200)
+                        .unlockedBy(getHasName(brick.block().get()), has(brick.block().get()))
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
+
+                SimpleCookingRecipeBuilder.blasting(Ingredient.of(brick.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 0.7F, 100)
+                        .unlockedBy(getHasName(brick.block().get()), has(brick.block().get()))
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
+
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(cobbled.block().get()), RecipeCategory.BUILDING_BLOCKS, original.block().get(), 0.7F, 200)
+                        .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get()))
+                        .save(recipeOutput, RockyMineral.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_smelting"));
+
+                SimpleCookingRecipeBuilder.blasting(Ingredient.of(cobbled.block().get()), RecipeCategory.BUILDING_BLOCKS, original.block().get(), 0.7F, 100)
+                        .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get()))
+                        .save(recipeOutput, RockyMineral.res(original.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_blasting"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, brick.block().get(), 4)
+                        .pattern("## ")
+                        .pattern("## ")
+                        .pattern("   ")
+                        .define('#', cobbled.block().get())
+                        .unlockedBy(getHasName(cobbled.block().get()), has(cobbled.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, polished.block().get(), 4)
+                        .pattern("## ")
+                        .pattern("## ")
+                        .pattern("   ")
+                        .define('#', original.block().get())
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, tile.block().get(), 4)
+                        .pattern("## ")
+                        .pattern("## ")
+                        .pattern("   ")
+                        .define('#', brick.block().get())
+                        .unlockedBy(getHasName(brick.block().get()), has(brick.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, chiseled.block().get(), 1)
+                        .pattern(" # ")
+                        .pattern(" # ")
+                        .pattern("   ")
+                        .define('#', brick.slab().get())
+                        .unlockedBy(getHasName(brick.slab().get()), has(brick.slab().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, mosaic.block().get(), 1)
+                        .pattern(" # ")
+                        .pattern(" # ")
+                        .pattern("   ")
+                        .define('#', chiseled.slab().get())
+                        .unlockedBy(getHasName(chiseled.slab().get()), has(chiseled.slab().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, pillar.block().get(), 1)
+                        .pattern(" # ")
+                        .pattern(" # ")
+                        .pattern("   ")
+                        .define('#', original.block().get())
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, cut.block().get(), 4)
+                        .pattern("## ")
+                        .pattern("## ")
+                        .pattern("   ")
+                        .define('#', polished.block().get())
+                        .unlockedBy(getHasName(polished.block().get()), has(polished.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, lamp.block().get(), 4)
+                        .pattern(" # ")
+                        .pattern("#g#")
+                        .pattern(" # ")
+                        .define('#', original.block().get())
+                        .define('g', Items.GLOWSTONE_DUST)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .unlockedBy(getHasName(Items.GLOWSTONE_DUST), has(Items.GLOWSTONE_DUST))
+                        .save(recipeOutput, RockyMineral.res(lamp.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, redstoneLamp, 4)
+                        .pattern(" r ")
+                        .pattern("r#r")
+                        .pattern(" r ")
+                        .define('#', lamp.block().get())
+                        .define('r', Items.REDSTONE)
+                        .unlockedBy(getHasName(lamp.block().get()), has(lamp.block().get().asItem()))
+                        .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                        .save(recipeOutput, RockyMineral.res(redstoneLamp.getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cobbled.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(cobbled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(cracked.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, chiseled.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(chiseled.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, brick.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(brick.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, tile.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(tile.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, polished.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(polished.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, pillar.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(pillar.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, mosaic.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(mosaic.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(original.block().get()), RecipeCategory.BUILDING_BLOCKS, cut.block().get(), 1)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
+            }
+
+            private static void buildRecipesForAllStoneVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
+                                                           BlockType brick, BlockType tile, BlockType polished,
+                                                           BlockType pillar, BlockType mosaic, BlockType cut, BlockType mossy,
+                                                           BlockType lamp, Block redstoneLamp) {
+                buildBlockTypeVariants(recipeOutput, original);
+                buildBlockTypeVariants(recipeOutput, cobbled);
+                buildBlockTypeVariants(recipeOutput, chiseled);
+                buildBlockTypeVariants(recipeOutput, brick);
+                buildBlockTypeVariants(recipeOutput, tile);
+                buildBlockTypeVariants(recipeOutput, polished);
+                buildBlockTypeVariants(recipeOutput, pillar);
+                buildBlockTypeVariants(recipeOutput, mosaic);
+                buildBlockTypeVariants(recipeOutput, cut);
+                buildBlockTypeVariants(recipeOutput, mossy);
                 buildBlockTypeVariants(recipeOutput, lamp);
 
                 SimpleCookingRecipeBuilder.smelting(Ingredient.of(brick.block().get()), RecipeCategory.BUILDING_BLOCKS, cracked.block().get(), 0.7F, 200)
@@ -358,6 +500,7 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.PUMICE_MOSAIC, consumer);
             generateLootTableStoneTypes(Init.CUT_PUMICE, consumer);
             generateLootTableStoneTypes(Init.PUMICE_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_PUMICE, consumer);
             dropSelf(Init.PUMICE_REDSTONE_LAMP.get(), consumer);
 
             //Rhyolite Variants
@@ -378,6 +521,7 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.RHYOLITE_MOSAIC, consumer);
             generateLootTableStoneTypes(Init.CUT_RHYOLITE, consumer);
             generateLootTableStoneTypes(Init.RHYOLITE_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_RHYOLITE, consumer);
             dropSelf(Init.RHYOLITE_REDSTONE_LAMP.get(), consumer);
 
             //Saltstone Variants
@@ -398,7 +542,29 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.SALTSTONE_MOSAIC, consumer);
             generateLootTableStoneTypes(Init.CUT_SALTSTONE, consumer);
             generateLootTableStoneTypes(Init.SALTSTONE_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_SALTSTONE, consumer);
             dropSelf(Init.SALTSTONE_REDSTONE_LAMP.get(), consumer);
+
+            //Duskmire Variants
+            var duskmireTypes = Init.DUSKMIRE;
+            dropCobbleVariant(duskmireTypes.block().get(), Init.COBBLED_DUSKMIRE.block().get(), consumer);
+            dropSelf(duskmireTypes.slab().get(), consumer);
+            dropSelf(duskmireTypes.stairs().get(), consumer);
+            dropSelf(duskmireTypes.wall().get(), consumer);
+            dropSelf(duskmireTypes.button().get(), consumer);
+            dropSelf(duskmireTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_DUSKMIRE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_DUSKMIRE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_DUSKMIRE, consumer);
+            generateLootTableStoneTypes(Init.DUSKMIRE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.DUSKMIRE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_DUSKMIRE, consumer);
+            generateLootTableStoneTypes(Init.DUSKMIRE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.DUSKMIRE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_DUSKMIRE, consumer);
+            generateLootTableStoneTypes(Init.DUSKMIRE_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_DUSKMIRE, consumer);
+            dropSelf(Init.DUSKMIRE_REDSTONE_LAMP.get(), consumer);
 
             //Halite Variants
             var haliteTypes = Init.HALITE;
@@ -438,6 +604,7 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.WORN_GRANITE_MOSAIC, consumer);
             generateLootTableStoneTypes(Init.CUT_WORN_GRANITE, consumer);
             generateLootTableStoneTypes(Init.WORN_GRANITE_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_WORN_GRANITE, consumer);
             dropSelf(Init.WORN_GRANITE_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
@@ -498,6 +665,7 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.PUMICE_MOSAIC);
                 generateBlockTypeTags(Init.CUT_PUMICE);
                 generateBlockTypeTags(Init.PUMICE_LAMP);
+                generateBlockTypeTags(Init.MOSSY_PUMICE);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.PUMICE_REDSTONE_LAMP.get());
 
                 //Rhyolite Variant
@@ -512,6 +680,7 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.RHYOLITE_MOSAIC);
                 generateBlockTypeTags(Init.CUT_RHYOLITE);
                 generateBlockTypeTags(Init.RHYOLITE_LAMP);
+                generateBlockTypeTags(Init.MOSSY_RHYOLITE);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.RHYOLITE_REDSTONE_LAMP.get());
 
                 //Saltstone Variant
@@ -526,7 +695,23 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.SALTSTONE_MOSAIC);
                 generateBlockTypeTags(Init.CUT_SALTSTONE);
                 generateBlockTypeTags(Init.SALTSTONE_LAMP);
+                generateBlockTypeTags(Init.MOSSY_SALTSTONE);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.SALTSTONE_REDSTONE_LAMP.get());
+
+                //Duskmire Variant
+                generateBlockTypeTags(Init.DUSKMIRE);
+                generateBlockTypeTags(Init.COBBLED_DUSKMIRE);
+                generateBlockTypeTags(Init.CHISELED_DUSKMIRE);
+                generateBlockTypeTags(Init.CRACKED_DUSKMIRE);
+                generateBlockTypeTags(Init.DUSKMIRE_BRICKS);
+                generateBlockTypeTags(Init.DUSKMIRE_TILE);
+                generateBlockTypeTags(Init.POLISHED_DUSKMIRE);
+                generateBlockTypeTags(Init.DUSKMIRE_PILLAR);
+                generateBlockTypeTags(Init.DUSKMIRE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_DUSKMIRE);
+                generateBlockTypeTags(Init.DUSKMIRE_LAMP);
+                generateBlockTypeTags(Init.MOSSY_DUSKMIRE);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.DUSKMIRE_REDSTONE_LAMP.get());
 
                 //Halite Variants
                 generateBlockTypeTags(Init.HALITE);
@@ -554,6 +739,7 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.WORN_GRANITE_MOSAIC);
                 generateBlockTypeTags(Init.CUT_WORN_GRANITE);
                 generateBlockTypeTags(Init.WORN_GRANITE_LAMP);
+                generateBlockTypeTags(Init.MOSSY_WORN_GRANITE);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.WORN_GRANITE_REDSTONE_LAMP.get());
             }
 
@@ -578,6 +764,14 @@ public class MineralProviders {
                 var cobbleSaltstoneTypes = Init.COBBLED_SALTSTONE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbleSaltstoneTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbleSaltstoneTypes.block().get().asItem());
+
+                var duskmireTypes = Init.DUSKMIRE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(duskmireTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(duskmireTypes.block().get().asItem());
+
+                var cobbledDuskmireTypes = Init.COBBLED_DUSKMIRE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledDuskmireTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledDuskmireTypes.block().get().asItem());
 
                 var haliteTypes = Init.HALITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(haliteTypes.block().get().asItem());
