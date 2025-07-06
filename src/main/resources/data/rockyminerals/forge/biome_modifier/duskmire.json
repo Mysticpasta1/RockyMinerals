@@ -2,5 +2,5 @@
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
   "features": "rockyminerals:duskmire_placed",
-  "stage": "underground_ores"
+  "step": "underground_ores"
 }
