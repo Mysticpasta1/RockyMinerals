@@ -9,6 +9,8 @@ import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Objects;
+
 public class MineralBlockModelProvider extends BlockModelProvider {
 
     public MineralBlockModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
@@ -46,8 +48,11 @@ public class MineralBlockModelProvider extends BlockModelProvider {
     }
 
     private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {
-        var texture = block.getId().withSuffix(name);
-        this.cubeAll(texture.getPath(), blockTexture(texture));
+        if (Objects.nonNull(block.getId())) {
+            ResourceLocation texture = block.getId().withSuffix(name);
+            this.cubeAll(texture.getPath(), blockTexture(texture));
+        }
+        else RockyMineral.LOGGER.error("Failed to get Id for: {}", block);
     }
 
     private ResourceLocation blockTexture(ResourceLocation loc) {
