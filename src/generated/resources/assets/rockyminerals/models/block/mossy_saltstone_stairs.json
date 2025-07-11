@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/mossy_saltstone",
+    "side": "rockyminerals:block/mossy_saltstone",
+    "top": "rockyminerals:block/mossy_saltstone"
+  }
+}
