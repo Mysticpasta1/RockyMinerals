@@ -33,6 +33,7 @@ public class RockyMineral {
         }
     }
 
+    /// @return rockyminerals:path
     public static ResourceLocation res(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
