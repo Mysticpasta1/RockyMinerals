@@ -3,6 +3,7 @@ package com.mystic.rockyminerals;
 import com.mystic.rockyminerals.api.intergration.CompatBlockType;
 import com.mystic.rockyminerals.api.set.MineralTypeRegistry;
 import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
+import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
 import com.mystic.rockyminerals.registry.Init;
@@ -24,6 +25,7 @@ public class RockyMineral {
         var bus = context.getModEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
+        RockyMineralConfigs.init();
         BlockSetAPI.registerBlockSetDefinition(StoneTypeRegistry.INSTANCE);
         BlockSetAPI.registerBlockSetDefinition(MineralTypeRegistry.INSTANCE);
         CompatBlockType.init();
