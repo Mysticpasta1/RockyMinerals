@@ -52,7 +52,7 @@ public class MineralBlockModelProvider extends BlockModelProvider {
             ResourceLocation texture = block.getId().withSuffix(name);
             this.cubeAll(texture.getPath(), blockTexture(texture));
         }
-        else RockyMineral.LOGGER.error("Failed to get Id for: {}", block);
+        else System.err.println("Failed to get Id for: " + block);
     }
 
     private ResourceLocation blockTexture(ResourceLocation loc) {

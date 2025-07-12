@@ -17,14 +17,15 @@ public class MineralBlockStateProvider extends MainProvider.Proxied {
     @Override
     public void registerStatesAndModels() {
         BlockType.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
-        registerLamp(Init.SALTSTONE_REDSTONE_LAMP.get(), Init.SALTSTONE_REDSTONE_LAMP.get());
+
+        registerLamp(Init.SALTSTONE_REDSTONE_LAMP.get(), Init.SALTSTONE_REDSTONE_LAMP.get()); // ONLY THIS
         registerLamp(Init.HALITE_REDSTONE_LAMP.get(), Init.HALITE_REDSTONE_LAMP.get());
         registerLamp(Init.WORN_GRANITE_REDSTONE_LAMP.get(), Init.WORN_GRANITE_REDSTONE_LAMP.get());
         registerLamp(Init.ANHYDRITE_REDSTONE_LAMP.get(), Init.ANHYDRITE_REDSTONE_LAMP.get());
         registerLamp(Init.OPAL_REDSTONE_LAMP.get(), Init.OPAL_REDSTONE_LAMP.get());
         registerLamp(Init.PUMICE_REDSTONE_LAMP.get(), Init.PUMICE_REDSTONE_LAMP.get());
         registerLamp(Init.RHYOLITE_REDSTONE_LAMP.get(), Init.RHYOLITE_REDSTONE_LAMP.get());
-        registerLamp(Init.BLUE_CALCITE_REDSTONE_LAMP.get(), Init.BLUE_CALCITE_REDSTONE_LAMP.get());
+        registerLamp(Init.BLUE_CALCITE_REDSTONE_LAMP.get(), Init.BLUE_CALCITE_REDSTONE_LAMP.get()); // ONLY THIS
         registerLamp(Init.DUSKMIRE_REDSTONE_LAMP.get(), Init.DUSKMIRE_REDSTONE_LAMP.get());
     }
 
