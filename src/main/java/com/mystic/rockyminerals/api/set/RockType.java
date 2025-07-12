@@ -53,6 +53,16 @@ public abstract class RockType extends BlockType{
         this.addChild("smooth", this.findRelatedEntry("smooth", "stone", BuiltInRegistries.BLOCK));
         this.addChild("redstone_lamp", this.findRelatedEntry("redstone_lamp", BuiltInRegistries.BLOCK));
 
+        Block mossy = this.findRelatedEntry("mossy", BuiltInRegistries.BLOCK);
+        this.addChild("mossy", mossy);
+        if (Objects.nonNull(mossy)) {
+            this.addChild("mossy_stairs", findRelatedEntry("mossy", "stairs", BuiltInRegistries.BLOCK));
+            this.addChild("mossy_slab", findRelatedEntry("mossy", "slab", BuiltInRegistries.BLOCK));
+            this.addChild("mossy_wall", findRelatedEntry("mossy", "wall", BuiltInRegistries.BLOCK));
+            this.addChild("mossy_button", findRelatedEntry("mossy", "button", BuiltInRegistries.BLOCK));
+            this.addChild("mossy_pressure_plate", findRelatedEntry("mossy", "pressure_plate", BuiltInRegistries.BLOCK));
+        }
+
         Block polished = this.findRelatedEntry("polished", BuiltInRegistries.BLOCK);
         this.addChild("polished", polished);
         if (Objects.nonNull(polished)) {
@@ -188,10 +198,15 @@ public abstract class RockType extends BlockType{
             return reg.get(ResourceLocation.parse("cobblestone"));
         }
 
+        String prefix = (prefixOrInfix.isEmpty()) ? "" : prefixOrInfix + "_";
+        String infix = (prefixOrInfix.isEmpty()) ? "" : "_" + prefixOrInfix;
+        String withoutUnderscore = suffix;
         if (!suffix.isEmpty()) suffix = "_" + suffix;
+
         ResourceLocation[] targets = {
-                ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath() +"_"+ prefixOrInfix + suffix),
-                ResourceLocation.fromNamespaceAndPath(id.getNamespace(), prefixOrInfix +"_"+ id.getPath() + suffix),
+                // DEFAULT
+                ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath() + infix + suffix),
+                ResourceLocation.fromNamespaceAndPath(id.getNamespace(), prefix + id.getPath() + suffix),
         };
         V found = null;
         for (var r : targets) {

@@ -31,6 +31,16 @@ public class MineralType extends StoneType {
     }
 
     @Override
+    protected void initializeChildrenBlocks() {
+        super.initializeChildrenBlocks();
+    }
+
+    @Override
+    protected void initializeChildrenItems() {
+        super.initializeChildrenItems();
+    }
+
+    @Override
     public String getTranslationKey() {
         return "mineral_type." + this.getTypeName();
     }

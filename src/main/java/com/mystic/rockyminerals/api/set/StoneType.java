@@ -35,6 +35,16 @@ public class StoneType extends RockType {
     }
 
     @Override
+    protected void initializeChildrenBlocks() {
+        super.initializeChildrenBlocks();
+    }
+
+    @Override
+    protected void initializeChildrenItems() {
+        super.initializeChildrenItems();
+    }
+
+    @Override
     public ItemLike mainChild() {
         return this.stone;
     }
