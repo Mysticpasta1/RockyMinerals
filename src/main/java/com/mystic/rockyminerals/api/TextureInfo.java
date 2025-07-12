@@ -1,21 +1,17 @@
 package com.mystic.rockyminerals.api;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.resources.ResourceLocation;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public record TextureInfo(String blockId, ResourceLocation texture, ResourceLocation mask,
+public record TextureInfo(String blockId, ResourceLocation textureResLoc, ResourceLocation mask, String customPath,
                           boolean onAtlas) {
 
 
     public static Builder of(String blockId, ResourceLocation texture) {
-        return new Builder(blockId, texture);
+        return new Builder("rockyminerals:" + blockId, texture);
     }
 
     public static Builder of(String blockId, ResourceLocation texture, ResourceLocation mask) {
-        return new Builder(blockId, texture, mask);
+        return new Builder("rockyminerals:" +  blockId, texture, mask);
     }
 
     public static final class Builder {
@@ -23,6 +19,12 @@ public record TextureInfo(String blockId, ResourceLocation texture, ResourceLoca
         private final ResourceLocation texture;
         private ResourceLocation mask;
         private final boolean onAtlas;
+        private String customPath = "";
+
+        public Builder customPath(String path) {
+            this.customPath = path;
+            return this;
+        }
 
         public Builder(String blockId, ResourceLocation texture) {
             this.blockId = blockId;
@@ -38,7 +40,7 @@ public record TextureInfo(String blockId, ResourceLocation texture, ResourceLoca
         }
 
         public TextureInfo build() {
-            return new TextureInfo(blockId, texture, mask, onAtlas);
+            return new TextureInfo(blockId, texture, mask, customPath, onAtlas);
         }
     }
 }

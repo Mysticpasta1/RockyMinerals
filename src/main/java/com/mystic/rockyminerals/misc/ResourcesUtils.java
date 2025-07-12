@@ -119,8 +119,6 @@ public class ResourcesUtils {
             }
         });
 
-
-
     }
 
     /// Generate only models/item for ITEMS
