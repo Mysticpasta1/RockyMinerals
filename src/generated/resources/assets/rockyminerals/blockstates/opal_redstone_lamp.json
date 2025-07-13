@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "rockyminerals:block/opal_redstone_lamp_unlit"
+    },
+    "lit=true": {
+      "model": "rockyminerals:block/opal_redstone_lamp_lit"
+    }
+  }
+}

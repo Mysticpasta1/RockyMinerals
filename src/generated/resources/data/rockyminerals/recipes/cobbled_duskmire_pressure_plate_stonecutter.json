@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_duskmire"
+  },
+  "result": "rockyminerals:cobbled_duskmire_pressure_plate"
+}

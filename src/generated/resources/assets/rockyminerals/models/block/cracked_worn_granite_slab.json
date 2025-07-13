@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rockyminerals:block/cracked_worn_granite",
+    "side": "rockyminerals:block/cracked_worn_granite",
+    "top": "rockyminerals:block/cracked_worn_granite"
+  }
+}

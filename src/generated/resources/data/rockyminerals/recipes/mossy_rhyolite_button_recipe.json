@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:mossy_rhyolite"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:mossy_rhyolite_button"
+  }
+}

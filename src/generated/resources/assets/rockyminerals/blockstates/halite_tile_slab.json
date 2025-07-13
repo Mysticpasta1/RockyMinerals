@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/halite_tile_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/halite_tile"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/halite_tile_slab_top"
+    }
+  }
+}

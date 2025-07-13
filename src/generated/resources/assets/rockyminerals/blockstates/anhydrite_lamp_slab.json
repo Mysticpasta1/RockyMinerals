@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/anhydrite_lamp_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/anhydrite_lamp"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/anhydrite_lamp_slab_top"
+    }
+  }
+}

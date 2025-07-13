@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "rockyminerals:block/worn_granite_pillar_top",
+    "side": "rockyminerals:block/worn_granite_pillar"
+  }
+}

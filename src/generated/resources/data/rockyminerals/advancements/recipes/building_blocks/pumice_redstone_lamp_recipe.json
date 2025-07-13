@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pumice_lamp": {
+    "has_mossy_pumice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rockyminerals:pumice_lamp"
+              "rockyminerals:mossy_pumice"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_pumice_lamp",
+      "has_mossy_pumice",
       "has_redstone",
       "has_the_recipe"
     ]

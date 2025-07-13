@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "rockyminerals:block/rhyolite_pillar_top",
+    "side": "rockyminerals:block/rhyolite_pillar"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rockyminerals:block/halite_redstone_lamp_unlit"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "rockyminerals:block/polished_rhyolite_pressure_plate"
+    },
+    "powered=true": {
+      "model": "rockyminerals:block/polished_rhyolite_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "rockyminerals:block/cobbled_blue_calcite"
+  }
+}

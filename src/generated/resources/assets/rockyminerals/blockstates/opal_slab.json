@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/opal_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/opal"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/opal_slab_top"
+    }
+  }
+}

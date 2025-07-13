@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/cut_duskmire_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/cut_duskmire"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/cut_duskmire_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:mossy_duskmire"
+  },
+  "result": "rockyminerals:mossy_duskmire_stairs"
+}

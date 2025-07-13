@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/cut_anhydrite_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/cut_anhydrite"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/cut_anhydrite_slab_top"
+    }
+  }
+}

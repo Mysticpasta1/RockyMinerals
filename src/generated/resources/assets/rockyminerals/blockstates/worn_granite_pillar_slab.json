@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/worn_granite_pillar_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/worn_granite_pillar"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/worn_granite_pillar_slab_top"
+    }
+  }
+}

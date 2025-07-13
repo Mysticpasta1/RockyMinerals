@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:duskmire_bricks"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:duskmire_brick_button"
+  }
+}

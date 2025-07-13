@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/mosaic_pumice_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/mosaic_pumice"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/mosaic_pumice_slab_top"
+    }
+  }
+}

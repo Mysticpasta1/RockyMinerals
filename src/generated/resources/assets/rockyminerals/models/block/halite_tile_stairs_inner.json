@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "rockyminerals:block/halite_tile",
+    "side": "rockyminerals:block/halite_tile",
+    "top": "rockyminerals:block/halite_tile"
+  }
+}

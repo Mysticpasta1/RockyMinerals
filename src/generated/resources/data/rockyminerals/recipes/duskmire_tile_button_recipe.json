@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:duskmire_tile"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:duskmire_tile_button"
+  }
+}

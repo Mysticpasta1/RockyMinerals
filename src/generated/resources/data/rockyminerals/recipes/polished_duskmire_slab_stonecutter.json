@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:polished_duskmire"
+  },
+  "result": "rockyminerals:polished_duskmire_slab"
+}

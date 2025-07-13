@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:cracked_duskmire"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:cracked_duskmire_button"
+  }
+}

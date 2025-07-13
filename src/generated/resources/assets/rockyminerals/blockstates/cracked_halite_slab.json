@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/cracked_halite_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/cracked_halite"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/cracked_halite_slab_top"
+    }
+  }
+}
