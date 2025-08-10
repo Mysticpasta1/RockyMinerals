@@ -4,7 +4,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.107'
-    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
+    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
 version = minecraft_version + "-" + mod_version
@@ -126,8 +126,8 @@ tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
             minecraft_version       : minecraft_version,
             minecraft_version_range : minecraft_version_range,
-            neo_version             : neo_version,
-            neo_version_range       : neo_version_range,
+            neo_version             : neoforge_version,
+            neo_version_range       : neoforge_version_range,
             loader_version_range    : loader_version_range,
             mod_id                  : mod_id,
             mod_name                : mod_name,
@@ -171,5 +171,31 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+publishMods {
+    dryRun = true
+    var changelogFile = rootProject.file("changelog.md")
+    var changelogText = changelogFile.exists() ? changelogFile.text : " "
+
+    file = jar.archiveFile
+    changelog = changelogText
+    type = STABLE
+    modLoaders.add("forge")
+    displayName = file.map { it.asFile.name }
+
+    curseforge {
+        projectId = "${curseforge_id}"
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        requires("selene")
+    }
+
+    modrinth {
+        projectId = "${modrinth_id}"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        requires("moonlight")
     }
 }
