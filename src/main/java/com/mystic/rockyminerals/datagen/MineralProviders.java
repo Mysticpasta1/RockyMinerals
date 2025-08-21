@@ -3,19 +3,17 @@ package com.mystic.rockyminerals.datagen;
 import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.registry.Init;
 import com.mystic.rockyminerals.utils.BlockType;
-import net.minecraft.advancements.critereon.EnchantmentPredicate;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.recipes.*;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -23,15 +21,14 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class MineralProviders {
     public static void init(IEventBus bus) {
@@ -43,9 +40,9 @@ public class MineralProviders {
         event.getGenerator().addProvider(true, new MineralBlockModelProvider(output, event.getExistingFileHelper()));
         event.getGenerator().addProvider(true, new MainProvider(output, event.getExistingFileHelper(), MineralBlockStateProvider::new));
         event.getGenerator().addProvider(true, new MineralEnglishLanguageProvider(output));
-        event.getGenerator().addProvider(true, new RecipeProvider(output) {
+        event.getGenerator().addProvider(true, new RecipeProvider(output, event.getLookupProvider()) {
             @Override
-            protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {
+            protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
                 buildRecipesForAllStoneVariants(recipeOutput,
                         Init.SALTSTONE, Init.COBBLED_SALTSTONE, Init.CHISELED_SALTSTONE, Init.CRACKED_SALTSTONE,
                         Init.SALTSTONE_BRICKS, Init.SALTSTONE_TILE, Init.POLISHED_SALTSTONE, Init.SALTSTONE_PILLAR,
@@ -92,7 +89,7 @@ public class MineralProviders {
                         Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
             }
 
-            private static void buildRecipesForAllMineralVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
+            private static void buildRecipesForAllMineralVariants(@NotNull RecipeOutput recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
                                                            BlockType brick, BlockType tile, BlockType polished,
                                                            BlockType pillar, BlockType mosaic, BlockType cut,
                                                            BlockType lamp, Block redstoneLamp) {
@@ -228,7 +225,7 @@ public class MineralProviders {
                         .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
             }
 
-            private static void buildRecipesForAllStoneVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
+            private static void buildRecipesForAllStoneVariants(@NotNull RecipeOutput recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
                                                            BlockType brick, BlockType tile, BlockType polished,
                                                            BlockType pillar, BlockType mosaic, BlockType cut, BlockType mossy,
                                                            BlockType lamp, Block redstoneLamp) {
@@ -365,7 +362,7 @@ public class MineralProviders {
                         .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_stonecutter"));
             }
 
-            private static void buildBlockTypeVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType blockType) {
+            private static void buildBlockTypeVariants(@NotNull RecipeOutput recipeOutput, BlockType blockType) {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, blockType.button().get(), 1)
                         .requires(blockType.block().get())
                         .unlockedBy(getHasName(blockType.block().get()), has(blockType.block().get().asItem()))
@@ -424,7 +421,7 @@ public class MineralProviders {
         LootTableProvider.SubProviderEntry lootTableProvider = new LootTableProvider.SubProviderEntry(() -> consumer -> {
             //Anhydrite Variants
             var anhydriteTypes = Init.ANHYDRITE;
-            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_ANHYDRITE.block().get(), consumer);
+            dropCobbleVariant(anhydriteTypes.block().get(), Init.COBBLED_ANHYDRITE.block().get(), consumer, event.getLookupProvider());
             dropSelf(anhydriteTypes.slab().get(), consumer);
             dropSelf(anhydriteTypes.stairs().get(), consumer);
             dropSelf(anhydriteTypes.wall().get(), consumer);
@@ -444,7 +441,7 @@ public class MineralProviders {
 
             //Opal Variants
             var opalTypes = Init.OPAL;
-            dropCobbleVariant(opalTypes.block().get(), Init.COBBLED_OPAL.block().get(), consumer);
+            dropCobbleVariant(opalTypes.block().get(), Init.COBBLED_OPAL.block().get(), consumer, event.getLookupProvider());
             dropSelf(opalTypes.slab().get(), consumer);
             dropSelf(opalTypes.stairs().get(), consumer);
             dropSelf(opalTypes.wall().get(), consumer);
@@ -464,7 +461,7 @@ public class MineralProviders {
 
             //Blue Calcite Variants
             var blueCalciteTypes = Init.BLUE_CALCITE;
-            dropCobbleVariant(blueCalciteTypes.block().get(), Init.COBBLED_BLUE_CALCITE.block().get(), consumer);
+            dropCobbleVariant(blueCalciteTypes.block().get(), Init.COBBLED_BLUE_CALCITE.block().get(), consumer, event.getLookupProvider());
             dropSelf(blueCalciteTypes.slab().get(), consumer);
             dropSelf(blueCalciteTypes.stairs().get(), consumer);
             dropSelf(blueCalciteTypes.wall().get(), consumer);
@@ -484,7 +481,7 @@ public class MineralProviders {
 
             //Pumice Variants
             var pumiceTypes = Init.PUMICE;
-            dropCobbleVariant(pumiceTypes.block().get(), Init.COBBLED_PUMICE.block().get(), consumer);
+            dropCobbleVariant(pumiceTypes.block().get(), Init.COBBLED_PUMICE.block().get(), consumer, event.getLookupProvider());
             dropSelf(pumiceTypes.slab().get(), consumer);
             dropSelf(pumiceTypes.stairs().get(), consumer);
             dropSelf(pumiceTypes.wall().get(), consumer);
@@ -505,7 +502,7 @@ public class MineralProviders {
 
             //Rhyolite Variants
             var rhyoliteTypes = Init.RHYOLITE;
-            dropCobbleVariant(rhyoliteTypes.block().get(), Init.COBBLED_RHYOLITE.block().get(), consumer);
+            dropCobbleVariant(rhyoliteTypes.block().get(), Init.COBBLED_RHYOLITE.block().get(), consumer, event.getLookupProvider());
             dropSelf(rhyoliteTypes.slab().get(), consumer);
             dropSelf(rhyoliteTypes.stairs().get(), consumer);
             dropSelf(rhyoliteTypes.wall().get(), consumer);
@@ -526,7 +523,7 @@ public class MineralProviders {
 
             //Saltstone Variants
             var saltstoneTypes = Init.SALTSTONE;
-            dropCobbleVariant(saltstoneTypes.block().get(), Init.COBBLED_SALTSTONE.block().get(), consumer);
+            dropCobbleVariant(saltstoneTypes.block().get(), Init.COBBLED_SALTSTONE.block().get(), consumer, event.getLookupProvider());
             dropSelf(saltstoneTypes.slab().get(), consumer);
             dropSelf(saltstoneTypes.stairs().get(), consumer);
             dropSelf(saltstoneTypes.wall().get(), consumer);
@@ -547,7 +544,7 @@ public class MineralProviders {
 
             //Duskmire Variants
             var duskmireTypes = Init.DUSKMIRE;
-            dropCobbleVariant(duskmireTypes.block().get(), Init.COBBLED_DUSKMIRE.block().get(), consumer);
+            dropCobbleVariant(duskmireTypes.block().get(), Init.COBBLED_DUSKMIRE.block().get(), consumer, event.getLookupProvider());
             dropSelf(duskmireTypes.slab().get(), consumer);
             dropSelf(duskmireTypes.stairs().get(), consumer);
             dropSelf(duskmireTypes.wall().get(), consumer);
@@ -568,7 +565,7 @@ public class MineralProviders {
 
             //Halite Variants
             var haliteTypes = Init.HALITE;
-            dropCobbleVariant(haliteTypes.block().get(), Init.COBBLED_HALITE.block().get(), consumer);
+            dropCobbleVariant(haliteTypes.block().get(), Init.COBBLED_HALITE.block().get(), consumer, event.getLookupProvider());
             dropSelf(haliteTypes.slab().get(), consumer);
             dropSelf(haliteTypes.stairs().get(), consumer);
             dropSelf(haliteTypes.wall().get(), consumer);
@@ -588,7 +585,7 @@ public class MineralProviders {
 
             //Worn Granite Variants
             var wornGraniteTypes = Init.WORN_GRANITE;
-            dropCobbleVariant(wornGraniteTypes.block().get(), Init.COBBLED_WORN_GRANITE.block().get(), consumer);
+            dropCobbleVariant(wornGraniteTypes.block().get(), Init.COBBLED_WORN_GRANITE.block().get(), consumer, event.getLookupProvider());
             dropSelf(wornGraniteTypes.slab().get(), consumer);
             dropSelf(wornGraniteTypes.stairs().get(), consumer);
             dropSelf(wornGraniteTypes.wall().get(), consumer);
@@ -839,9 +836,7 @@ public class MineralProviders {
                 addProvider(true, itemTagsProvider);
         event.getGenerator().
 
-                addProvider(true, new LootTableProvider(output, Set.of(), List.
-
-                        of()) {
+                addProvider(true, new LootTableProvider(output, Set.of(), List.of(), event.getLookupProvider()) {
                     @Override
                     public @NotNull List<SubProviderEntry> getTables() {
                         return List.of(lootTableProvider);
@@ -849,7 +844,7 @@ public class MineralProviders {
                 });
     }
 
-    private static void generateLootTableStoneTypes(BlockType blockType, BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
+    private static void generateLootTableStoneTypes(BlockType blockType, BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer) {
         dropSelf(blockType.block().get(), consumer);
         dropSelf(blockType.slab().get(), consumer);
         dropSelf(blockType.stairs().get(), consumer);
@@ -858,16 +853,22 @@ public class MineralProviders {
         dropSelf(blockType.pressurePlate().get(), consumer);
     }
 
-    private static void dropSelf(Block block, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
+    private static void dropSelf(Block block, BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder) {
         builder.accept(block.getLootTable(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(block)
                 .when(ExplosionCondition.survivesExplosion())).add(LootItem.lootTableItem(block))));
     }
 
-    private static void dropCobbleVariant(Block block, Block block2, BiConsumer<ResourceLocation, LootTable.Builder> builder) {
+    private static void dropCobbleVariant(Block block, Block block2, BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder, HolderLookup.Provider provider) {
+        var silkTouch = provider.asGetterLookup()
+                .lookupOrThrow(Registries.ENCHANTMENT)
+                .getOrThrow(net.minecraft.world.item.enchantment.Enchantments.SILK_TOUCH);
+
+        var silkTouchPredicate = ItemEnchantmentsPredicate.enchantments(List.of(new EnchantmentPredicate(silkTouch, MinMaxBounds.Ints.ANY)));
+
         builder.accept(block.getLootTable(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .add(LootItem.lootTableItem(block).when(MatchTool.toolMatches(
-                                ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.ANY)))))
+                                ItemPredicate.Builder.item().withSubPredicate(ItemSubPredicates.ENCHANTMENTS, silkTouchPredicate))))
                         .add(LootItem.lootTableItem(block2).when(ExplosionCondition.survivesExplosion()))));
     }
 }

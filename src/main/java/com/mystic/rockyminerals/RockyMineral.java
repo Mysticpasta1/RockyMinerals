@@ -10,8 +10,8 @@ import com.mystic.rockyminerals.registry.Init;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,8 +21,8 @@ public class RockyMineral {
     public static final String MOD_ID = "rockyminerals";
     public static final Logger LOGGER = LogManager.getLogger("Rocky Minerals");
 
-    public RockyMineral(FMLJavaModLoadingContext context) {
-        var bus = context.getModEventBus();
+    public RockyMineral(ModContainer context) {
+        var bus = context.getEventBus();
         Init.init(bus);
         MineralProviders.init(bus);
         RockyMineralConfigs.init();

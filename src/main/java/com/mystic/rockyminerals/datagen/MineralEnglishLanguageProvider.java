@@ -4,7 +4,7 @@ import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.registry.Init;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class MineralEnglishLanguageProvider extends LanguageProvider {
 

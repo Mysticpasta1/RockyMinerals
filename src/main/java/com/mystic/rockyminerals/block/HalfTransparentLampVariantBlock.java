@@ -14,7 +14,7 @@ public class HalfTransparentLampVariantBlock extends RedstoneLampBlock {
     public static final BooleanProperty LIT = RedstoneLampBlock.LIT;
 
     public HalfTransparentLampVariantBlock() {
-        super(Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
+        super(Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 

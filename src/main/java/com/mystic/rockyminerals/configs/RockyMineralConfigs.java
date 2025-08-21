@@ -1,18 +1,17 @@
 package com.mystic.rockyminerals.configs;
 
 import com.mystic.rockyminerals.RockyMineral;
-import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.platform.configs.ConfigBuilder;
-import net.mehvahdjukaar.moonlight.api.platform.configs.ConfigSpec;
 import net.mehvahdjukaar.moonlight.api.platform.configs.ConfigType;
+import net.mehvahdjukaar.moonlight.api.platform.configs.ModConfigHolder;
 
 import java.util.function.Supplier;
 
 //loaded after registry
 public class RockyMineralConfigs {
 
-    public static ConfigSpec SPEC;
-//    public static ConfigSpec CLIENT_SPED;
+    public static ModConfigHolder SPEC;
+//    public static ModConfigHolder CLIENT_SPED;
 
     public static final Supplier<Boolean> DEPEND_ON_PACKS;
     public static final Supplier<Boolean> DEBUG_RESOURCES;
@@ -46,9 +45,9 @@ public class RockyMineralConfigs {
                 .define("save_debug_resources", false);
 
 
-        SPEC = builder.buildAndRegister();
+        SPEC = builder.build();
 
-        SPEC.loadFromFile(); //manually load early
+        SPEC.forceLoad(); //manually load early
     }
 
 }

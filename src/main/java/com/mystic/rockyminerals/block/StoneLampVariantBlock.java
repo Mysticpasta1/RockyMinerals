@@ -12,7 +12,7 @@ public class StoneLampVariantBlock extends RedstoneLampBlock {
     public static final BooleanProperty LIT = RedstoneLampBlock.LIT;
 
     public StoneLampVariantBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
+        super(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel((blockState) -> blockState.getValue(LIT) ? 15 : 0));
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 

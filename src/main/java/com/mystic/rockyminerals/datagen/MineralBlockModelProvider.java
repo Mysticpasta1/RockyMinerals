@@ -5,11 +5,9 @@ import com.mystic.rockyminerals.registry.Init;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
-
-import java.util.Objects;
+import net.neoforged.neoforge.client.model.generators.BlockModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MineralBlockModelProvider extends BlockModelProvider {
 
@@ -47,12 +45,10 @@ public class MineralBlockModelProvider extends BlockModelProvider {
         cubeAll(Init.BLUE_CALCITE_REDSTONE_LAMP, "_lit");
     }
 
-    private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {
-        if (Objects.nonNull(block.getId())) {
-            ResourceLocation texture = block.getId().withSuffix(name);
-            this.cubeAll(texture.getPath(), blockTexture(texture));
-        }
-        else System.err.println("Failed to get Id for: " + block);
+    private <T extends Block> void cubeAll(DeferredHolder<Block, T> block, String name) {
+        block.getId();
+        ResourceLocation texture = block.getId().withSuffix(name);
+        this.cubeAll(texture.getPath(), blockTexture(texture));
     }
 
     private ResourceLocation blockTexture(ResourceLocation loc) {
