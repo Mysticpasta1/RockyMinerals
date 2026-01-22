@@ -42,14 +42,13 @@ dependencies {
     implementation("curse.maven:jade-324717:6853386")
     implementation("curse.maven:emi-580555:6420931")
 
-
     //For tags
-    compileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
-    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("mezz.jei:jei-$minecraft_version-common-api:$jei_version")
+    compileOnly("mezz.jei:jei-$minecraft_version-neoforge-api:$jei_version")
+    runtimeOnly("mezz.jei:jei-$minecraft_version-neoforge:$jei_version")
 
     //!! DEPENDENCIES
-    implementation("net.mehvahdjukaar:moonlight-neoforge:${moonlight_version}:neoforge") {
+    implementation("net.mehvahdjukaar:moonlight-neoforge:$moonlight_version:neoforge") {
         transitive = false
     }
 }
@@ -186,16 +185,16 @@ publishMods {
     displayName = file.map { it.asFile.name }
 
     curseforge {
-        projectId = "${curseforge_id}"
+        projectId = "$curseforge_id"
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-        minecraftVersions.add("${minecraft_version}")
+        minecraftVersions.add("$minecraft_version")
         requires("selene")
     }
 
     modrinth {
-        projectId = "${modrinth_id}"
+        projectId = "$modrinth_id"
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        minecraftVersions.add("${minecraft_version}")
+        minecraftVersions.add("$minecraft_version")
         requires("moonlight")
     }
 }
