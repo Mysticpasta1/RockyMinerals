@@ -90,6 +90,11 @@ public class MineralProviders {
                         Init.HALITE, Init.COBBLED_HALITE, Init.CHISELED_HALITE, Init.CRACKED_HALITE,
                         Init.HALITE_BRICKS, Init.HALITE_TILE, Init.POLISHED_HALITE, Init.HALITE_PILLAR,
                         Init.HALITE_MOSAIC, Init.CUT_HALITE, Init.HALITE_LAMP, Init.HALITE_REDSTONE_LAMP.get());
+
+                buildRecipesForAllMineralVariants(recipeOutput,
+                        Init.OLIVINE, Init.COBBLED_OLIVINE, Init.CHISELED_OLIVINE, Init.CRACKED_OLIVINE,
+                        Init.OLIVINE_BRICKS, Init.OLIVINE_TILE, Init.POLISHED_OLIVINE, Init.OLIVINE_PILLAR,
+                        Init.OLIVINE_MOSAIC, Init.CUT_OLIVINE, Init.OLIVINE_LAMP, Init.OLIVINE_REDSTONE_LAMP.get());
             }
 
             private static void buildRecipesForAllMineralVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
@@ -566,6 +571,26 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.MOSSY_DUSKMIRE, consumer);
             dropSelf(Init.DUSKMIRE_REDSTONE_LAMP.get(), consumer);
 
+            //Olivine Variants
+            var olivineTypes = Init.OLIVINE;
+            dropCobbleVariant(olivineTypes.block().get(), Init.COBBLED_OLIVINE.block().get(), consumer);
+            dropSelf(olivineTypes.slab().get(), consumer);
+            dropSelf(olivineTypes.stairs().get(), consumer);
+            dropSelf(olivineTypes.wall().get(), consumer);
+            dropSelf(olivineTypes.button().get(), consumer);
+            dropSelf(olivineTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_OLIVINE, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_OLIVINE, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_OLIVINE, consumer);
+            generateLootTableStoneTypes(Init.OLIVINE_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.OLIVINE_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_OLIVINE, consumer);
+            generateLootTableStoneTypes(Init.OLIVINE_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.OLIVINE_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_OLIVINE, consumer);
+            generateLootTableStoneTypes(Init.OLIVINE_LAMP, consumer);
+            dropSelf(Init.OLIVINE_REDSTONE_LAMP.get(), consumer);
+
             //Halite Variants
             var haliteTypes = Init.HALITE;
             dropCobbleVariant(haliteTypes.block().get(), Init.COBBLED_HALITE.block().get(), consumer);
@@ -624,6 +649,20 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.CUT_ANHYDRITE);
                 generateBlockTypeTags(Init.ANHYDRITE_LAMP);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.ANHYDRITE_REDSTONE_LAMP.get());
+
+                //Olivine Variant
+                generateBlockTypeTags(Init.OLIVINE);
+                generateBlockTypeTags(Init.COBBLED_OLIVINE);
+                generateBlockTypeTags(Init.CHISELED_OLIVINE);
+                generateBlockTypeTags(Init.CRACKED_OLIVINE);
+                generateBlockTypeTags(Init.OLIVINE_BRICKS);
+                generateBlockTypeTags(Init.OLIVINE_TILE);
+                generateBlockTypeTags(Init.POLISHED_OLIVINE);
+                generateBlockTypeTags(Init.OLIVINE_PILLAR);
+                generateBlockTypeTags(Init.OLIVINE_MOSAIC);
+                generateBlockTypeTags(Init.CUT_OLIVINE);
+                generateBlockTypeTags(Init.OLIVINE_LAMP);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.OLIVINE_REDSTONE_LAMP.get());
 
                 //Opal Variant
                 generateBlockTypeTags(Init.OPAL);
@@ -828,6 +867,14 @@ public class MineralProviders {
                 var cobbledAnhydriteTypes = Init.COBBLED_ANHYDRITE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledAnhydriteTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledAnhydriteTypes.block().get().asItem());
+
+                var olivineTypes = Init.OLIVINE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(olivineTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(olivineTypes.block().get().asItem());
+
+                var cobbledOlivineTypes = Init.COBBLED_OLIVINE;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledOlivineTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledOlivineTypes.block().get().asItem());
             }
         };
 

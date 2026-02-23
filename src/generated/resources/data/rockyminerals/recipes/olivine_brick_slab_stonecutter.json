@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:olivine_bricks"
+  },
+  "result": "rockyminerals:olivine_brick_slab"
+}

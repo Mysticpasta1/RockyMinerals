@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:cut_olivine"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:cut_olivine_button"
+  }
+}

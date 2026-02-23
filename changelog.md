@@ -1,2 +1,4 @@
 ### NEW: 
-- Added a new system to generate blockstates & models files reducing the mod's size
+- Fixed Blue Calcite not generating
+- Added Olivine Mineral
+- Update forge to 47.4.16

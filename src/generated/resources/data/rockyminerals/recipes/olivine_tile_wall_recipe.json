@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:olivine_tile"
+    }
+  },
+  "pattern": [
+    "   ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "rockyminerals:olivine_tile_wall"
+  },
+  "show_notification": true
+}

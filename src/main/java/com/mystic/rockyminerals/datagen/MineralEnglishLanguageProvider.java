@@ -28,6 +28,20 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.ANHYDRITE_LAMP, "Anhydrite Lamp");
         addBlock(Init.ANHYDRITE_REDSTONE_LAMP, "Anhydrite Redstone Lamp");
 
+        //Olivine Variants
+        addBaseBlocksFromType(Init.OLIVINE, "Olivine");
+        addBlocksFromType(Init.COBBLED_OLIVINE, "Cobbled Olivine");
+        addBlocksFromType(Init.CHISELED_OLIVINE, "Chiseled Olivine");
+        addBlocksFromType(Init.CRACKED_OLIVINE, "Cracked Olivine");
+        addBlocksFromType(Init.CUT_OLIVINE, "Cut Olivine");
+        addBlocksFromType(Init.POLISHED_OLIVINE, "Polished Olivine");
+        addBlocksFromBricksType(Init.OLIVINE_BRICKS, "Olivine Brick");
+        addBlocksFromType(Init.OLIVINE_PILLAR, "Olivine Pillar");
+        addBlocksFromType(Init.OLIVINE_MOSAIC, "Olivine Mosaic");
+        addBlocksFromType(Init.OLIVINE_TILE, "Olivine Tile");
+        addBlocksFromType(Init.OLIVINE_LAMP, "Olivine Lamp");
+        addBlock(Init.OLIVINE_REDSTONE_LAMP, "Olivine Redstone Lamp");
+
         //Saltstone Variants
         addBaseBlocksFromType(Init.SALTSTONE, "Saltstone");
         addBlocksFromType(Init.COBBLED_SALTSTONE, "Cobbled Saltstone");

@@ -140,6 +140,21 @@ public class Init {
     public static final BlockType ANHYDRITE_LAMP = registerBlockType("anhydrite_lamp", BASE_MINERAL_LAMP_BLOCK, BlockSetType.STONE, 40, true);
     public static final RegistryObject<Block> ANHYDRITE_REDSTONE_LAMP = registerBlock("anhydrite_redstone_lamp", MineralLampVariantBlock::new);
 
+
+    //Olivine Variants
+    public static final BlockType OLIVINE = registerBlockType("olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_OLIVINE = registerBlockType("cobbled_olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_OLIVINE = registerBlockType("chiseled_olivine", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_OLIVINE = registerBlockType("cracked_olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType OLIVINE_BRICKS = registerBricksBlockType("olivine_brick", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType OLIVINE_TILE = registerBlockType("olivine_tile", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_OLIVINE = registerBlockType("polished_olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType OLIVINE_PILLAR = registerBlockType("olivine_pillar", BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType OLIVINE_MOSAIC = registerBlockType("mosaic_olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_OLIVINE = registerBlockType("cut_olivine", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 40, true);
+    public static final BlockType OLIVINE_LAMP = registerBlockType("olivine_lamp", BASE_HALF_TRANSPARENT_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final RegistryObject<Block> OLIVINE_REDSTONE_LAMP = registerBlock("olivine_redstone_lamp", HalfTransparentLampVariantBlock::new);
+
     //Blue calcite Variants
     public static final BlockType BLUE_CALCITE = registerBlockType("blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);
     public static final BlockType COBBLED_BLUE_CALCITE = registerBlockType("cobbled_blue_calcite", BASE_MINERAL_BLOCK, BlockSetType.STONE, 40, true);

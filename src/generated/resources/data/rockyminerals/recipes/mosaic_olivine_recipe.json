@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:cracked_olivine_slab"
+    }
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:mosaic_olivine"
+  },
+  "show_notification": true
+}

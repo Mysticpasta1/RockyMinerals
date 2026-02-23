@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "rockyminerals:block/polished_olivine",
+    "side": "rockyminerals:block/polished_olivine",
+    "top": "rockyminerals:block/polished_olivine"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:olivine_bricks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "## ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:olivine_brick_pressure_plate"
+  },
+  "show_notification": true
+}

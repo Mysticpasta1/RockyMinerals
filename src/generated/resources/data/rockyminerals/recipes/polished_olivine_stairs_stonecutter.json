@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:polished_olivine"
+  },
+  "result": "rockyminerals:polished_olivine_stairs"
+}

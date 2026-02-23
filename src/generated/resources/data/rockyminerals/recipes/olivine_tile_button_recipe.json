@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:olivine_tile"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:olivine_tile_button"
+  }
+}

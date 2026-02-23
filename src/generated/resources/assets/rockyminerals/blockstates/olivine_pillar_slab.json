@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockyminerals:block/olivine_pillar_slab"
+    },
+    "type=double": {
+      "model": "rockyminerals:block/olivine_pillar"
+    },
+    "type=top": {
+      "model": "rockyminerals:block/olivine_pillar_slab_top"
+    }
+  }
+}

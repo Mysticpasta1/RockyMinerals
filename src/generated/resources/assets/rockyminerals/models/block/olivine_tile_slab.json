@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rockyminerals:block/olivine_tile",
+    "side": "rockyminerals:block/olivine_tile",
+    "top": "rockyminerals:block/olivine_tile"
+  }
+}
