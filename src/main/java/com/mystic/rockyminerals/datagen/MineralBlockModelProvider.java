@@ -48,6 +48,9 @@ public class MineralBlockModelProvider extends BlockModelProvider {
 
         cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_unlit");
         cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_lit");
+
+        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_unlit");
+        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_lit");
     }
 
     private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {

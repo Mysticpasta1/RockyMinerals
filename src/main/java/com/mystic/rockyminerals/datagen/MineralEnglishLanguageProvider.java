@@ -57,6 +57,21 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.MOSSY_SALTSTONE, "Mossy Saltstone");
         addBlock(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
 
+        //Terra Rossa Variants
+        addBaseBlocksFromType(Init.TERRA_ROSSA, "Terra Rossa");
+        addBlocksFromType(Init.COBBLED_TERRA_ROSSA, "Cobbled Terra Rossa");
+        addBlocksFromType(Init.CHISELED_TERRA_ROSSA, "Chiseled Terra Rossa");
+        addBlocksFromType(Init.CRACKED_TERRA_ROSSA, "Cracked Terra Rossa");
+        addBlocksFromType(Init.CUT_TERRA_ROSSA, "Cut Terra Rossa");
+        addBlocksFromType(Init.POLISHED_TERRA_ROSSA, "Polished Terra Rossa");
+        addBlocksFromBricksType(Init.TERRA_ROSSA_BRICKS, "Terra Rossa Brick");
+        addBlocksFromType(Init.TERRA_ROSSA_PILLAR, "Terra Rossa Pillar");
+        addBlocksFromType(Init.TERRA_ROSSA_MOSAIC, "Terra Rossa Mosaic");
+        addBlocksFromType(Init.TERRA_ROSSA_TILE, "Terra Rossa Tile");
+        addBlocksFromType(Init.TERRA_ROSSA_LAMP, "Terra Rossa Lamp");
+        addBlocksFromType(Init.MOSSY_TERRA_ROSSA, "Mossy Terra Rossa");
+        addBlock(Init.TERRA_ROSSA_REDSTONE_LAMP, "Terra Rossa Redstone Lamp");
+
         //Duskmire Variants
         addBaseBlocksFromType(Init.DUSKMIRE, "Duskmire");
         addBlocksFromType(Init.COBBLED_DUSKMIRE, "Cobbled Duskmire");

@@ -62,6 +62,11 @@ public class MineralProviders {
                         Init.WORN_GRANITE_MOSAIC, Init.CUT_WORN_GRANITE, Init.WORN_GRANITE_LAMP, Init.MOSSY_WORN_GRANITE, Init.WORN_GRANITE_REDSTONE_LAMP.get());
 
                 buildRecipesForAllStoneVariants(recipeOutput,
+                        Init.TERRA_ROSSA, Init.COBBLED_TERRA_ROSSA, Init.CHISELED_TERRA_ROSSA, Init.CRACKED_TERRA_ROSSA,
+                        Init.TERRA_ROSSA_BRICKS, Init.TERRA_ROSSA_TILE, Init.POLISHED_TERRA_ROSSA, Init.TERRA_ROSSA_PILLAR,
+                        Init.TERRA_ROSSA_MOSAIC, Init.CUT_TERRA_ROSSA, Init.TERRA_ROSSA_LAMP, Init.MOSSY_TERRA_ROSSA, Init.TERRA_ROSSA_REDSTONE_LAMP.get());
+
+                buildRecipesForAllStoneVariants(recipeOutput,
                         Init.PUMICE, Init.COBBLED_PUMICE, Init.CHISELED_PUMICE, Init.CRACKED_PUMICE,
                         Init.PUMICE_BRICKS, Init.PUMICE_TILE, Init.POLISHED_PUMICE, Init.PUMICE_PILLAR,
                         Init.PUMICE_MOSAIC, Init.CUT_PUMICE, Init.PUMICE_LAMP, Init.MOSSY_PUMICE, Init.PUMICE_REDSTONE_LAMP.get());
@@ -631,6 +636,27 @@ public class MineralProviders {
             generateLootTableStoneTypes(Init.WORN_GRANITE_LAMP, consumer);
             generateLootTableStoneTypes(Init.MOSSY_WORN_GRANITE, consumer);
             dropSelf(Init.WORN_GRANITE_REDSTONE_LAMP.get(), consumer);
+
+            //Worn Granite Variants
+            var terraRossaTypes = Init.TERRA_ROSSA;
+            dropCobbleVariant(terraRossaTypes.block().get(), Init.COBBLED_TERRA_ROSSA.block().get(), consumer);
+            dropSelf(terraRossaTypes.slab().get(), consumer);
+            dropSelf(terraRossaTypes.stairs().get(), consumer);
+            dropSelf(terraRossaTypes.wall().get(), consumer);
+            dropSelf(terraRossaTypes.button().get(), consumer);
+            dropSelf(terraRossaTypes.pressurePlate().get(), consumer);
+            generateLootTableStoneTypes(Init.COBBLED_TERRA_ROSSA, consumer);
+            generateLootTableStoneTypes(Init.CHISELED_TERRA_ROSSA, consumer);
+            generateLootTableStoneTypes(Init.CRACKED_TERRA_ROSSA, consumer);
+            generateLootTableStoneTypes(Init.TERRA_ROSSA_BRICKS, consumer);
+            generateLootTableStoneTypes(Init.TERRA_ROSSA_TILE, consumer);
+            generateLootTableStoneTypes(Init.POLISHED_TERRA_ROSSA, consumer);
+            generateLootTableStoneTypes(Init.TERRA_ROSSA_PILLAR, consumer);
+            generateLootTableStoneTypes(Init.TERRA_ROSSA_MOSAIC, consumer);
+            generateLootTableStoneTypes(Init.CUT_TERRA_ROSSA, consumer);
+            generateLootTableStoneTypes(Init.TERRA_ROSSA_LAMP, consumer);
+            generateLootTableStoneTypes(Init.MOSSY_TERRA_ROSSA, consumer);
+            dropSelf(Init.TERRA_ROSSA_REDSTONE_LAMP.get(), consumer);
         }, LootContextParamSets.BLOCK);
 
         BlockTagsProvider blockTagsProvider = new BlockTagsProvider(output, event.getLookupProvider(), RockyMineral.MOD_ID, event.getExistingFileHelper()) {
@@ -780,6 +806,21 @@ public class MineralProviders {
                 generateBlockTypeTags(Init.WORN_GRANITE_LAMP);
                 generateBlockTypeTags(Init.MOSSY_WORN_GRANITE);
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.WORN_GRANITE_REDSTONE_LAMP.get());
+
+                //Terra Rossa Variants
+                generateBlockTypeTags(Init.TERRA_ROSSA);
+                generateBlockTypeTags(Init.COBBLED_TERRA_ROSSA);
+                generateBlockTypeTags(Init.CHISELED_TERRA_ROSSA);
+                generateBlockTypeTags(Init.CRACKED_TERRA_ROSSA);
+                generateBlockTypeTags(Init.TERRA_ROSSA_BRICKS);
+                generateBlockTypeTags(Init.TERRA_ROSSA_TILE);
+                generateBlockTypeTags(Init.POLISHED_TERRA_ROSSA);
+                generateBlockTypeTags(Init.TERRA_ROSSA_PILLAR);
+                generateBlockTypeTags(Init.TERRA_ROSSA_MOSAIC);
+                generateBlockTypeTags(Init.CUT_TERRA_ROSSA);
+                generateBlockTypeTags(Init.TERRA_ROSSA_LAMP);
+                generateBlockTypeTags(Init.MOSSY_TERRA_ROSSA);
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Init.TERRA_ROSSA_REDSTONE_LAMP.get());
             }
 
             private void generateBlockTypeTags(BlockType blockType) {
@@ -875,6 +916,14 @@ public class MineralProviders {
                 var cobbledOlivineTypes = Init.COBBLED_OLIVINE;
                 tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledOlivineTypes.block().get().asItem());
                 tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledOlivineTypes.block().get().asItem());
+
+                var terraRossaTypes = Init.TERRA_ROSSA;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(terraRossaTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(terraRossaTypes.block().get().asItem());
+
+                var cobbledTerraRossaTypes = Init.COBBLED_TERRA_ROSSA;
+                tag(ItemTags.STONE_CRAFTING_MATERIALS).add(cobbledTerraRossaTypes.block().get().asItem());
+                tag(ItemTags.STONE_TOOL_MATERIALS).add(cobbledTerraRossaTypes.block().get().asItem());
             }
         };
 

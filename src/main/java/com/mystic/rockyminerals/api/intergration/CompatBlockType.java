@@ -10,6 +10,7 @@ public class CompatBlockType {
 
         /// StoneType
         simpleStoneFinder("rockyminerals", "worn_granite");
+        simpleStoneFinder("rockyminerals", "terra_rossa");
 
         /// MineralType
         simpleMineralFinder("rockyminerals", "blue_calcite");

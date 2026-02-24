@@ -190,6 +190,27 @@ public class Init {
     );
     public static final RegistryObject<Block> WORN_GRANITE_REDSTONE_LAMP = registerBlock("worn_granite_redstone_lamp", StoneLampVariantBlock::new);
 
+    //Worn Granite Variants
+    public static final BlockType TERRA_ROSSA = registerBlockType("terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_TERRA_ROSSA = registerBlockType("cobbled_terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_TERRA_ROSSA = registerBlockType("chiseled_terra_rossa", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_TERRA_ROSSA = registerBlockType("cracked_terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType TERRA_ROSSA_BRICKS = registerBricksBlockType("terra_rossa_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType TERRA_ROSSA_TILE = registerBlockType("terra_rossa_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_TERRA_ROSSA = registerBlockType("polished_terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType TERRA_ROSSA_PILLAR = registerBlockType("terra_rossa_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType TERRA_ROSSA_MOSAIC = registerBlockType("mosaic_terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_TERRA_ROSSA = registerBlockType("cut_terra_rossa", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType TERRA_ROSSA_LAMP = registerBlockType("terra_rossa_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_TERRA_ROSSA = registerBlockType(
+            "mossy_terra_rossa",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> TERRA_ROSSA.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
+    public static final RegistryObject<Block> TERRA_ROSSA_REDSTONE_LAMP = registerBlock("terra_rossa_redstone_lamp", StoneLampVariantBlock::new);
+
     //Halite Variants
     public static final BlockType HALITE = registerBlockType("halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
     public static final BlockType COBBLED_HALITE = registerBlockType("cobbled_halite", BASE_HALF_TRANSPARENT_MINERAL, BlockSetType.STONE, 30, true);
