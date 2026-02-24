@@ -1,7 +1,7 @@
 package com.mystic.rockyminerals.api.intergration;
 
-import com.mystic.rockyminerals.api.set.MineralType;
-import com.mystic.rockyminerals.api.set.StoneType;
+import com.mystic.rockyminerals.api.set.mineral.MineralType;
+import com.mystic.rockyminerals.api.set.stone.StoneType;
 import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 
 public class CompatBlockType {

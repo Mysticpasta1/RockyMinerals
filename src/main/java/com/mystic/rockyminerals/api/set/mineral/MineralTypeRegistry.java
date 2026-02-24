@@ -1,4 +1,4 @@
-package com.mystic.rockyminerals.api.set;
+package com.mystic.rockyminerals.api.set.mineral;
 
 import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.Collection;
-import java.util.Objects;
 import java.util.Optional;
 
 public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
@@ -19,21 +18,14 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
         super(MineralType.class, RockyMineral.MOD_ID + ":mineral_type");
     }
 
-    public static MineralType getBlueCalciteType() {
-        return getValue("rockyminerals:blue_calcite");
-    }
-
-    public static Collection<MineralType> getTypes() {
-        return INSTANCE.getValues();
-    }
-
-    public static MineralType getValue(String mineralTypeId) {
-        return INSTANCE.get(ResourceLocation.parse(mineralTypeId));
+    @Override
+    protected MineralType register(MineralType vanillaType) {
+        return super.register(vanillaType);
     }
 
     @Override
     public MineralType getDefaultType() {
-        return this.get(ResourceLocation.parse("amethyst"));
+        return VanillaMineralTypes.AMETHYST;
     }
 
     @Override
@@ -47,7 +39,7 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
                 ResourceLocation idBlockType = baseRes.withPath(mineralName);
 
                 // Check if a BlockType is already added
-                if ( Objects.isNull(get(idBlockType)) ) {
+                if (!valuesReg.containsKey(idBlockType)) {
                     var opt = BuiltInRegistries.BLOCK.getOptional(idBlockType);
                     if (opt.isPresent()) return Optional.of(new MineralType(baseRes.withPath(mineralName), opt.get()));
                 }
@@ -59,7 +51,7 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
                 ResourceLocation idBlockType = baseRes.withPath(mineralName);
 
                 // Check if a BlockType is already added
-                if ( Objects.isNull(get(idBlockType)) ) {
+                if (!valuesReg.containsKey(idBlockType)) {
                     var opt = BuiltInRegistries.BLOCK.getOptional(idBlockType);
                     if (opt.isPresent()) return Optional.of(new MineralType(baseRes.withPath(mineralName), opt.get()));
 
@@ -67,13 +59,6 @@ public class MineralTypeRegistry extends BlockTypeRegistry<MineralType> {
             }
         }
         return Optional.empty();
-    }
-
-    @Override
-    public void addTypeTranslations(AfterLanguageLoadEvent language) {
-        this.getValues().forEach((mineralType) -> {
-            if (language.isDefault()) language.addEntry(mineralType.getTranslationKey(), mineralType.getReadableName());
-        });
     }
 
     @Override

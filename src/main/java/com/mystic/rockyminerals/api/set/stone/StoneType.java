@@ -1,6 +1,7 @@
-package com.mystic.rockyminerals.api.set;
+package com.mystic.rockyminerals.api.set.stone;
 
 import com.mystic.rockyminerals.RockyMineral;
+import com.mystic.rockyminerals.api.set.RockType;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

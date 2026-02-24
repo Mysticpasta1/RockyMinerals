@@ -1,4 +1,4 @@
-package com.mystic.rockyminerals.api.set;
+package com.mystic.rockyminerals.api.set.stone;
 
 import com.mystic.rockyminerals.RockyMineral;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.Collection;
-import java.util.Objects;
 import java.util.Optional;
 
 @SuppressWarnings("unused")
@@ -22,21 +21,14 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
 
     }
 
-    public static StoneType getSaltstoneType() {
-        return getValue("rockyminerals:saltstone");
-    }
-
-    public static Collection<StoneType> getTypes() {
-        return INSTANCE.getValues();
-    }
-
-    public static StoneType getValue(String stoneTypeId) {
-        return INSTANCE.get(ResourceLocation.parse(stoneTypeId));
+    @Override
+    protected StoneType register(StoneType vanillaType) {
+        return super.register(vanillaType);
     }
 
     @Override
     public StoneType getDefaultType() {
-        return this.get(ResourceLocation.parse("stone"));
+        return VanillaStoneTypes.STONE;
     }
 
     @Override
@@ -50,7 +42,7 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
                 ResourceLocation idBlockType = baseRes.withPath(stoneName);
 
                 // Check if a BlockType is already added
-                if ( Objects.isNull(get(idBlockType)) ) {
+                if (!valuesReg.containsKey(idBlockType)) {
                     var opt = BuiltInRegistries.BLOCK.getOptional(idBlockType);
                     if (opt.isPresent()) return Optional.of(new StoneType(baseRes.withPath(stoneName), opt.get()));
                 }
@@ -62,20 +54,13 @@ public class StoneTypeRegistry extends BlockTypeRegistry<StoneType> {
                 ResourceLocation idBlockType = baseRes.withPath(stoneName);
 
                 // Check if a BlockType is already added
-                if ( Objects.isNull(get(idBlockType)) ) {
+                if (!valuesReg.containsKey(idBlockType)) {
                     var opt = BuiltInRegistries.BLOCK.getOptional(idBlockType);
                     if (opt.isPresent()) return Optional.of(new StoneType(baseRes.withPath(stoneName), opt.get()));
                 }
             }
         }
         return Optional.empty();
-    }
-
-    @Override
-    public void addTypeTranslations(AfterLanguageLoadEvent language) {
-        this.getValues().forEach((stoneType) -> {
-            if (language.isDefault()) language.addEntry(stoneType.getTranslationKey(), stoneType.getReadableName());
-        });
     }
 
     @Override

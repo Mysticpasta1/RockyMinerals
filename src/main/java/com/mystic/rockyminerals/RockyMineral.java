@@ -1,8 +1,8 @@
 package com.mystic.rockyminerals;
 
 import com.mystic.rockyminerals.api.intergration.CompatBlockType;
-import com.mystic.rockyminerals.api.set.MineralTypeRegistry;
-import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
+import com.mystic.rockyminerals.api.set.mineral.MineralTypeRegistry;
+import com.mystic.rockyminerals.api.set.stone.StoneTypeRegistry;
 import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
