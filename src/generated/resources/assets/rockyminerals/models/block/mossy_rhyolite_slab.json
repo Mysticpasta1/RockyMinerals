@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockyminerals:block/mossy_rhyolite",
-    "side": "rockyminerals:block/mossy_rhyolite",
-    "top": "rockyminerals:block/mossy_rhyolite"
-  }
-}

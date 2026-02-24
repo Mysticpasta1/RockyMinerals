@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/anhydrite_lamp",
-    "side": "rockyminerals:block/anhydrite_lamp",
-    "top": "rockyminerals:block/anhydrite_lamp"
-  }
-}

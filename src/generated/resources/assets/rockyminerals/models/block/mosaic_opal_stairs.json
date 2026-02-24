@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/mosaic_opal",
-    "side": "rockyminerals:block/mosaic_opal",
-    "top": "rockyminerals:block/mosaic_opal"
-  }
-}

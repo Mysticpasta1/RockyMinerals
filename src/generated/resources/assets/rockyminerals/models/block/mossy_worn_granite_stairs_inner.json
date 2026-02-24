@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/mossy_worn_granite",
-    "side": "rockyminerals:block/mossy_worn_granite",
-    "top": "rockyminerals:block/mossy_worn_granite"
-  }
-}

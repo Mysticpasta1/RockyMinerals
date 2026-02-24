@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockyminerals:block/polished_opal",
-    "side": "rockyminerals:block/polished_opal",
-    "top": "rockyminerals:block/polished_opal"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/cut_pumice",
-    "side": "rockyminerals:block/cut_pumice",
-    "top": "rockyminerals:block/cut_pumice"
-  }
-}

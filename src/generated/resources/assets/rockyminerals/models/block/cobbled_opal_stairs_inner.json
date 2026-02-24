@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/cobbled_opal",
-    "side": "rockyminerals:block/cobbled_opal",
-    "top": "rockyminerals:block/cobbled_opal"
-  }
-}

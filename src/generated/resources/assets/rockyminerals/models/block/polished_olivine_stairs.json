@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/polished_olivine",
-    "side": "rockyminerals:block/polished_olivine",
-    "top": "rockyminerals:block/polished_olivine"
-  }
-}
