@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:cracked_terra_rossa_slab"
+    }
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:mosaic_terra_rossa"
+  },
+  "show_notification": true
+}

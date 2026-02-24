@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:terra_rossa_tile"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:terra_rossa_tile_stairs"
+  },
+  "show_notification": true
+}

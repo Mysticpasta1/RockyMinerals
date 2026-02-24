@@ -40,9 +40,9 @@ public class MineralProviders {
 
     public static void dataGather(GatherDataEvent event) {
         var output = event.getGenerator().getPackOutput();
-        event.getGenerator().addProvider(true, new MineralBlockModelProvider(output, event.getExistingFileHelper()));
-        event.getGenerator().addProvider(true, new MainProvider(output, event.getExistingFileHelper(), MineralBlockStateProvider::new));
-        event.getGenerator().addProvider(true, new MineralEnglishLanguageProvider(output));
+        //event.getGenerator().addProvider(true, new MineralBlockModelProvider(output, event.getExistingFileHelper()));
+        //event.getGenerator().addProvider(true, new MainProvider(output, event.getExistingFileHelper(), MineralBlockStateProvider::new));
+        //event.getGenerator().addProvider(true, new MineralEnglishLanguageProvider(output));
         event.getGenerator().addProvider(true, new RecipeProvider(output) {
             @Override
             protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {

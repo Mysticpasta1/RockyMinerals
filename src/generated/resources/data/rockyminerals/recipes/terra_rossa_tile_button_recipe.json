@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:terra_rossa_tile"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:terra_rossa_tile_button"
+  }
+}

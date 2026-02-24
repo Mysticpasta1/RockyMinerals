@@ -1,67 +1,67 @@
-package com.mystic.rockyminerals.datagen;
-
-import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.registry.Init;
-import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
-
-import java.util.Objects;
-
-public class MineralBlockModelProvider extends BlockModelProvider {
-
-    public MineralBlockModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
-        super(generator, RockyMineral.MOD_ID, existingFileHelper);
-    }
-
-    @Override
-    protected void registerModels() {
-        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.HALITE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.HALITE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.OPAL_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.OPAL_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.PUMICE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.PUMICE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.RHYOLITE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.RHYOLITE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.BLUE_CALCITE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.BLUE_CALCITE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_lit");
-
-        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_unlit");
-        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_lit");
-    }
-
-    private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {
-        if (Objects.nonNull(block.getId())) {
-            ResourceLocation texture = block.getId().withSuffix(name);
-            this.cubeAll(texture.getPath(), blockTexture(texture));
-        }
-        else System.err.println("Failed to get Id for: " + block);
-    }
-
-    private ResourceLocation blockTexture(ResourceLocation loc) {
-        return ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), "block/" + loc.getPath());
-    }
-}
+//package com.mystic.rockyminerals.datagen;
+//
+//import com.mystic.rockyminerals.RockyMineral;
+//import com.mystic.rockyminerals.registry.Init;
+//import net.minecraft.data.PackOutput;
+//import net.minecraft.resources.ResourceLocation;
+//import net.minecraft.world.level.block.Block;
+//import net.minecraftforge.client.model.generators.BlockModelProvider;
+//import net.minecraftforge.common.data.ExistingFileHelper;
+//import net.minecraftforge.registries.RegistryObject;
+//
+//import java.util.Objects;
+//
+//public class MineralBlockModelProvider extends BlockModelProvider {
+//
+//    public MineralBlockModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
+//        super(generator, RockyMineral.MOD_ID, existingFileHelper);
+//    }
+//
+//    @Override
+//    protected void registerModels() {
+//        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.ANHYDRITE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.SALTSTONE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.HALITE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.HALITE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.WORN_GRANITE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.DUSKMIRE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.OPAL_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.OPAL_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.PUMICE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.PUMICE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.RHYOLITE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.RHYOLITE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.BLUE_CALCITE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.BLUE_CALCITE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.OLIVINE_REDSTONE_LAMP, "_lit");
+//
+//        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_unlit");
+//        cubeAll(Init.TERRA_ROSSA_REDSTONE_LAMP, "_lit");
+//    }
+//
+//    private <T extends Block> void cubeAll(RegistryObject<T> block, String name) {
+//        if (Objects.nonNull(block.getId())) {
+//            ResourceLocation texture = block.getId().withSuffix(name);
+//            this.cubeAll(texture.getPath(), blockTexture(texture));
+//        }
+//        else System.err.println("Failed to get Id for: " + block);
+//    }
+//
+//    private ResourceLocation blockTexture(ResourceLocation loc) {
+//        return ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), "block/" + loc.getPath());
+//    }
+//}
