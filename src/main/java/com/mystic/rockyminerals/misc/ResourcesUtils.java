@@ -8,7 +8,7 @@ import com.mystic.rockyminerals.api.ResourceLocationTransformer;
 import net.mehvahdjukaar.moonlight.api.resources.RPUtils;
 import net.mehvahdjukaar.moonlight.api.resources.ResType;
 import net.mehvahdjukaar.moonlight.api.resources.StaticResource;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceSink;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +17,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 import java.io.ByteArrayInputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ResourcesUtils {
 
@@ -26,7 +29,7 @@ public class ResourcesUtils {
             T currentType, ArrayList<Block> decorativeType, T baseType,
             ResourceLocationTransformer<T> blockStateTransformer,
             ResourceLocationTransformer<T> modelTransformer,
-            DynClientResourcesGenerator generator, ResourceManager manager) {
+            ResourceManager manager, ResourceSink sink) {
 
         decorativeType.forEach(( currentBlock) -> {
 
@@ -70,7 +73,7 @@ public class ResourcesUtils {
                             "ids can't be the same: " + newBlockState.location);
 
                     //Adding to the resources
-                    generator.addResourceIfNotPresent(manager, newBlockState);
+                    sink.addResourceIfNotPresent(manager, newBlockState);
 
                     ///creates block model
                     for (StaticResource model : baseBlockModels) {
@@ -81,7 +84,7 @@ public class ResourcesUtils {
                                     "ids cant be the same: " + newModel.location);
 
                             //Adding to the resources
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception e) {
                             RockyMineral.LOGGER.error("Failed to add {} model json file:", currentBlock, e);
                         }
@@ -97,7 +100,7 @@ public class ResourcesUtils {
                     Preconditions.checkArgument(newRes.location != baseItemModel.location,
                             "ids cant be the same: " + newRes.location);
 
-                    generator.addResourceIfNotPresent(manager, newRes);
+                    sink.addResourceIfNotPresent(manager, newRes);
 
                     for (StaticResource model : baseItemModels) {
                         try {
@@ -105,7 +108,7 @@ public class ResourcesUtils {
                             Preconditions.checkArgument(newModel.location != model.location,
                                     "ids cant be the same: " + model.location);
 
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception ex) {
                             RockyMineral.LOGGER.error("Failed to modify {} model json file:", currentBlock, ex);
                         }
@@ -125,7 +128,7 @@ public class ResourcesUtils {
     public static <T extends BlockType> void generateStandardItemModels(
             T currentType, ArrayList<Item> decorativeType, T baseType,
             ResourceLocationTransformer<T> itemModelTransformer,
-            DynClientResourcesGenerator generator, ResourceManager manager) {
+            ResourceManager manager, ResourceSink sink) {
 
         decorativeType.forEach((currentItem) -> {
 
@@ -169,7 +172,7 @@ public class ResourcesUtils {
                     Preconditions.checkArgument(newRes.location != baseItemModel.location,
                             "ids cant be the same: " + newRes.location);
 
-                    generator.addResourceIfNotPresent(manager, newRes);
+                    sink.addResourceIfNotPresent(manager, newRes);
 
                     for (StaticResource model : baseItemModels) {
                         try {
@@ -177,7 +180,7 @@ public class ResourcesUtils {
                             Preconditions.checkArgument(newModel.location != model.location,
                                     "ids cant be the same: " + model.location);
 
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception ex) {
                             RockyMineral.LOGGER.error("Failed to add {} model json file:", currentItem, ex);
                         }

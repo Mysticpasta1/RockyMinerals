@@ -1,6 +1,7 @@
 package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.RockyMineral;
+import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynServerResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicDataPack;
 import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceGenTask;
@@ -21,5 +22,7 @@ public class ServerDynamicResourcesHandler extends DynServerResourcesGenerator {
     }
 
     @Override
-    public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {}
+    public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {
+//        if (!RockyMineralConfigs.GENERATE_DYNAMIC_SERVER.get()) return;
+    }
 }

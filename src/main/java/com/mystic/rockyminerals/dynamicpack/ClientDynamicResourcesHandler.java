@@ -1,6 +1,7 @@
 package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.RockyMineral;
+import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
@@ -33,9 +34,13 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {
         this.dynamicPack.setGenerateDebugResources(PlatHelper.isDev());
 
-        executor.accept((manager, sink) -> {
-            ResourcesGenerator.generateResources(this, manager);
-        });
+        if (!RockyMineralConfigs.GENERATE_DYNAMIC_CLIENT.get()) return;
+
+        try {
+            executor.accept(ResourcesGenerator::generateResources);
+        } catch (Throwable e) {
+            RockyMineral.LOGGER.error("Error while generating dynamic resources for client");
+        }
     }
 
 }
