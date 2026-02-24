@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/mossy_duskmire",
-    "side": "rockyminerals:block/mossy_duskmire",
-    "top": "rockyminerals:block/mossy_duskmire"
-  }
-}

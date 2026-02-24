@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/halite_lamp",
-    "side": "rockyminerals:block/halite_lamp",
-    "top": "rockyminerals:block/halite_lamp"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/rhyolite_tile",
-    "side": "rockyminerals:block/rhyolite_tile",
-    "top": "rockyminerals:block/rhyolite_tile"
-  }
-}

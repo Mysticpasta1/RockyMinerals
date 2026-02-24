@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:terra_rossa"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#g#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:mossy_terra_rossa"
+  },
+  "show_notification": true
+}

@@ -114,6 +114,18 @@
     "rockyminerals:mosaic_worn_granite_wall",
     "rockyminerals:cut_worn_granite_wall",
     "rockyminerals:worn_granite_lamp_wall",
-    "rockyminerals:mossy_worn_granite_wall"
+    "rockyminerals:mossy_worn_granite_wall",
+    "rockyminerals:terra_rossa_wall",
+    "rockyminerals:cobbled_terra_rossa_wall",
+    "rockyminerals:chiseled_terra_rossa_wall",
+    "rockyminerals:cracked_terra_rossa_wall",
+    "rockyminerals:terra_rossa_brick_wall",
+    "rockyminerals:terra_rossa_tile_wall",
+    "rockyminerals:polished_terra_rossa_wall",
+    "rockyminerals:terra_rossa_pillar_wall",
+    "rockyminerals:mosaic_terra_rossa_wall",
+    "rockyminerals:cut_terra_rossa_wall",
+    "rockyminerals:terra_rossa_lamp_wall",
+    "rockyminerals:mossy_terra_rossa_wall"
   ]
 }

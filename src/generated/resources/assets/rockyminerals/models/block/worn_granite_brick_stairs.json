@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "rockyminerals:block/worn_granite_bricks",
-    "side": "rockyminerals:block/worn_granite_bricks",
-    "top": "rockyminerals:block/worn_granite_bricks"
-  }
-}

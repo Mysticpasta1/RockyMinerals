@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "rockyminerals:block/halite_tile",
-    "side": "rockyminerals:block/halite_tile",
-    "top": "rockyminerals:block/halite_tile"
-  }
-}

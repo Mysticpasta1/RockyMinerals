@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "rockyminerals:block/cut_halite",
-    "side": "rockyminerals:block/cut_halite",
-    "top": "rockyminerals:block/cut_halite"
-  }
-}

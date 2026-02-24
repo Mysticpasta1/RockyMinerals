@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:terra_rossa_lamp"
+  },
+  "result": "rockyminerals:terra_rossa_lamp_wall"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:terra_rossa_bricks"
+  },
+  "result": "rockyminerals:terra_rossa_brick_wall"
+}

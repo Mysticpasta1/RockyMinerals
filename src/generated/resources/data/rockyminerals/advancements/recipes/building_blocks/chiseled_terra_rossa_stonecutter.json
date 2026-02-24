@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_terra_rossa": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:terra_rossa"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:chiseled_terra_rossa_stonecutter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_terra_rossa",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:chiseled_terra_rossa_stonecutter"
+    ]
+  },
+  "sends_telemetry_event": false
+}

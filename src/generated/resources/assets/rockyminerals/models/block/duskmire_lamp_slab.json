@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockyminerals:block/duskmire_lamp",
-    "side": "rockyminerals:block/duskmire_lamp",
-    "top": "rockyminerals:block/duskmire_lamp"
-  }
-}
