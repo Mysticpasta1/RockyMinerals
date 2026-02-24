@@ -1,6 +1,5 @@
 package com.mystic.rockyminerals.misc;
 
-import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.api.TextureInfo;
 
 import java.util.List;

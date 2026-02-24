@@ -1,12 +1,13 @@
 package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
-import net.minecraft.server.packs.resources.ResourceManager;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceGenTask;
 import org.apache.logging.log4j.Logger;
+
+import java.util.function.Consumer;
 
 public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     private static ClientDynamicResourcesHandler INSTANCE;
@@ -27,15 +28,14 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
         return RockyMineral.LOGGER;
     }
 
-    @Override
-    public boolean dependsOnLoadedPacks() {
-        return RockyMineralConfigs.SPEC == null || RockyMineralConfigs.DEPEND_ON_PACKS.get();
-    }
 
     @Override
-    public void regenerateDynamicAssets(ResourceManager manager) {
+    public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {
         this.dynamicPack.setGenerateDebugResources(PlatHelper.isDev());
 
-        ResourcesGenerator.generateResources(this, manager);
+        executor.accept((manager, sink) -> {
+            ResourcesGenerator.generateResources(this, manager);
+        });
     }
+
 }
