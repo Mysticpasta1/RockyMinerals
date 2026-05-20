@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:marble_lamp"
+  },
+  "result": "rockyminerals:marble_lamp_button"
+}

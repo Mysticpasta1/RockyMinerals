@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:crystallized_marble_pillar"
+  },
+  "result": "rockyminerals:crystallized_marble_pillar_stairs"
+}

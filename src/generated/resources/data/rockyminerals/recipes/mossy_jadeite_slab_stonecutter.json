@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:mossy_jadeite"
+  },
+  "result": "rockyminerals:mossy_jadeite_slab"
+}

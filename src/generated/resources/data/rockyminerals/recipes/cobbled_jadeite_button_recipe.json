@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:cobbled_jadeite"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:cobbled_jadeite_button"
+  }
+}

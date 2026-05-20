@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:cobbled_marble"
+  },
+  "result": "rockyminerals:cobbled_marble_wall"
+}

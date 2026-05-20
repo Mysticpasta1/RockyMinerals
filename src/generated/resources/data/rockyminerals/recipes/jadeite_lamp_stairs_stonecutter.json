@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:jadeite_lamp"
+  },
+  "result": "rockyminerals:jadeite_lamp_stairs"
+}

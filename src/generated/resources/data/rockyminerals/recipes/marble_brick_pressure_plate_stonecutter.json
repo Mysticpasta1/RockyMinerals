@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:marble_bricks"
+  },
+  "result": "rockyminerals:marble_brick_pressure_plate"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:jadeite_lamp"
+    }
+  },
+  "pattern": [
+    "   ",
+    "## ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:jadeite_lamp_pressure_plate"
+  },
+  "show_notification": true
+}

@@ -3,6 +3,7 @@ package com.mystic.rockyminerals;
 import com.mystic.rockyminerals.api.intergration.CompatBlockType;
 import com.mystic.rockyminerals.api.set.mineral.MineralTypeRegistry;
 import com.mystic.rockyminerals.api.set.stone.StoneTypeRegistry;
+import com.mystic.rockyminerals.compat.projecte.ProjectECompat;
 import com.mystic.rockyminerals.configs.RockyMineralConfigs;
 import com.mystic.rockyminerals.datagen.MineralProviders;
 import com.mystic.rockyminerals.dynamicpack.ClientDynamicResourcesHandler;
@@ -10,6 +11,7 @@ import com.mystic.rockyminerals.registry.Init;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -29,13 +31,15 @@ public class RockyMineral {
         BlockSetAPI.registerBlockSetDefinition(StoneTypeRegistry.INSTANCE);
         BlockSetAPI.registerBlockSetDefinition(MineralTypeRegistry.INSTANCE);
         CompatBlockType.init();
+        if (ModList.get().isLoaded("projecte")) {
+            context.getModEventBus().addListener(ProjectECompat::init);
+        }
 
         if (PlatHelper.getPhysicalSide().isClient()) {
             ClientDynamicResourcesHandler.getInstance().register();
         }
     }
 
-    /// @return rockyminerals:path
     public static ResourceLocation res(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }

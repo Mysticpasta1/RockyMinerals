@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:mosaic_marble"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:mosaic_marble_button"
+  }
+}

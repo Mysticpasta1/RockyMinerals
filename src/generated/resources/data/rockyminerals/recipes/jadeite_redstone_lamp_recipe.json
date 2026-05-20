@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:mossy_jadeite"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " r ",
+    "r#r",
+    " r "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:jadeite_redstone_lamp"
+  },
+  "show_notification": true
+}

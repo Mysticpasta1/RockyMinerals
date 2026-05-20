@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:jadeite"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:jadeite_button"
+  }
+}

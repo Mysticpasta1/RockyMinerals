@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:crystallized_marble_lamp"
+  },
+  "result": "rockyminerals:crystallized_marble_lamp_pressure_plate"
+}

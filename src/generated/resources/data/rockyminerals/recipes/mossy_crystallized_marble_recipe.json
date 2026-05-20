@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:crystallized_marble"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#g#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:mossy_crystallized_marble"
+  },
+  "show_notification": true
+}

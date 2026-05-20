@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:cracked_crystallized_marble"
+    }
+  },
+  "pattern": [
+    "   ",
+    "## ",
+    "   "
+  ],
+  "result": {
+    "item": "rockyminerals:cracked_crystallized_marble_pressure_plate"
+  },
+  "show_notification": true
+}

@@ -57,6 +57,51 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.MOSSY_SALTSTONE, "Mossy Saltstone");
         addBlock(Init.SALTSTONE_REDSTONE_LAMP, "Saltstone Redstone Lamp");
 
+        //Marble Variants
+        addBaseBlocksFromType(Init.MARBLE, "Marble");
+        addBlocksFromType(Init.COBBLED_MARBLE, "Cobbled Marble");
+        addBlocksFromType(Init.CHISELED_MARBLE, "Chiseled Marble");
+        addBlocksFromType(Init.CRACKED_MARBLE, "Cracked Marble");
+        addBlocksFromType(Init.CUT_MARBLE, "Cut Marble");
+        addBlocksFromType(Init.POLISHED_MARBLE, "Polished Marble");
+        addBlocksFromBricksType(Init.MARBLE_BRICKS, "Marble Brick");
+        addBlocksFromType(Init.MARBLE_PILLAR, "Marble Pillar");
+        addBlocksFromType(Init.MARBLE_MOSAIC, "Marble Mosaic");
+        addBlocksFromType(Init.MARBLE_TILE, "Marble Tile");
+        addBlocksFromType(Init.MARBLE_LAMP, "Marble Lamp");
+        addBlocksFromType(Init.MOSSY_MARBLE, "Mossy Marble");
+        addBlock(Init.MARBLE_REDSTONE_LAMP, "Marble Redstone Lamp");
+
+        //Crystallized Marble Variants
+        addBaseBlocksFromType(Init.CRYSTALLIZED_MARBLE, "Crystallized Marble");
+        addBlocksFromType(Init.COBBLED_CRYSTALLIZED_MARBLE, "Cobbled Crystallized Marble");
+        addBlocksFromType(Init.CHISELED_CRYSTALLIZED_MARBLE, "Chiseled Crystallized Marble");
+        addBlocksFromType(Init.CRACKED_CRYSTALLIZED_MARBLE, "Cracked Crystallized Marble");
+        addBlocksFromType(Init.CUT_CRYSTALLIZED_MARBLE, "Cut Crystallized Marble");
+        addBlocksFromType(Init.POLISHED_CRYSTALLIZED_MARBLE, "Polished Crystallized Marble");
+        addBlocksFromBricksType(Init.CRYSTALLIZED_MARBLE_BRICKS, "Crystallized Marble Brick");
+        addBlocksFromType(Init.CRYSTALLIZED_MARBLE_PILLAR, "Crystallized Marble Pillar");
+        addBlocksFromType(Init.CRYSTALLIZED_MARBLE_MOSAIC, "Crystallized Marble Mosaic");
+        addBlocksFromType(Init.CRYSTALLIZED_MARBLE_TILE, "Crystallized Marble Tile");
+        addBlocksFromType(Init.CRYSTALLIZED_MARBLE_LAMP, "Crystallized Marble Lamp");
+        addBlocksFromType(Init.MOSSY_CRYSTALLIZED_MARBLE, "Mossy Crystallized Marble");
+        addBlock(Init.CRYSTALLIZED_MARBLE_REDSTONE_LAMP, "Crystallized Marble Redstone Lamp");
+
+        //Jadeite Variants
+        addBaseBlocksFromType(Init.JADEITE, "Jadeite");
+        addBlocksFromType(Init.COBBLED_JADEITE, "Cobbled Jadeite");
+        addBlocksFromType(Init.CHISELED_JADEITE, "Chiseled Jadeite");
+        addBlocksFromType(Init.CRACKED_JADEITE, "Cracked Jadeite");
+        addBlocksFromType(Init.CUT_JADEITE, "Cut Jadeite");
+        addBlocksFromType(Init.POLISHED_JADEITE, "Polished Jadeite");
+        addBlocksFromBricksType(Init.JADEITE_BRICKS, "Jadeite Brick");
+        addBlocksFromType(Init.JADEITE_PILLAR, "Jadeite Pillar");
+        addBlocksFromType(Init.JADEITE_MOSAIC, "Jadeite Mosaic");
+        addBlocksFromType(Init.JADEITE_TILE, "Jadeite Tile");
+        addBlocksFromType(Init.JADEITE_LAMP, "Jadeite Lamp");
+        addBlocksFromType(Init.MOSSY_JADEITE, "Mossy Jadeite");
+        addBlock(Init.JADEITE_REDSTONE_LAMP, "Jadeite Redstone Lamp");
+
         //Terra Rossa Variants
         addBaseBlocksFromType(Init.TERRA_ROSSA, "Terra Rossa");
         addBlocksFromType(Init.COBBLED_TERRA_ROSSA, "Cobbled Terra Rossa");
@@ -174,7 +219,9 @@ public class MineralEnglishLanguageProvider extends LanguageProvider {
         addBlocksFromType(Init.MOSSY_WORN_GRANITE, "Mossy Worn Granite");
         addBlock(Init.WORN_GRANITE_REDSTONE_LAMP, "Worn Granite Redstone Lamp");
 
-        add("itemGroup." + Init.MAIN.getId().toLanguageKey(), "Rocky Minerals");
+        if (Init.MAIN.getId() != null) {
+            add("itemGroup." + Init.MAIN.getId().toLanguageKey(), "Rocky Minerals");
+        }
     }
 
     private void addBlocksFromType(BlockType type, String base) {

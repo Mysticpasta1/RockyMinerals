@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_marble": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:polished_marble"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rockyminerals:polished_marble_stairs_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_marble",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rockyminerals:polished_marble_stairs_recipe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

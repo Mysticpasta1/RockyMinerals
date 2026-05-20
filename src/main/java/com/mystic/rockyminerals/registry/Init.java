@@ -5,6 +5,10 @@ import com.mystic.rockyminerals.block.*;
 import com.mystic.rockyminerals.utils.BlockType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -41,6 +45,69 @@ public class Init {
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_MINERAL = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_ROTATED_PILLAR_BLOCK = () -> new HalfTransparentRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().sound(SoundType.AMETHYST));
     public static final Supplier<Block> BASE_HALF_TRANSPARENT_LAMP_BLOCK = () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(light -> 15).sound(SoundType.AMETHYST));
+
+    //Marble
+    public static final BlockType MARBLE = registerBlockType("marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_MARBLE = registerBlockType("cobbled_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_MARBLE = registerBlockType("chiseled_marble", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_MARBLE = registerBlockType("cracked_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MARBLE_BRICKS = registerBricksBlockType("marble_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MARBLE_TILE = registerBlockType("marble_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_MARBLE = registerBlockType("polished_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MARBLE_PILLAR = registerBlockType("marble_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MARBLE_MOSAIC = registerBlockType("mosaic_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_MARBLE = registerBlockType("cut_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MARBLE_LAMP = registerBlockType("marble_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_MARBLE = registerBlockType(
+            "mossy_marble",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> MARBLE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
+    public static final RegistryObject<Block> MARBLE_REDSTONE_LAMP = registerBlock("marble_redstone_lamp", StoneLampVariantBlock::new);
+
+    //Crystallized Marble
+    public static final BlockType CRYSTALLIZED_MARBLE = registerBlockType("crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_CRYSTALLIZED_MARBLE = registerBlockType("cobbled_crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_CRYSTALLIZED_MARBLE = registerBlockType("chiseled_crystallized_marble", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_CRYSTALLIZED_MARBLE = registerBlockType("cracked_crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRYSTALLIZED_MARBLE_BRICKS = registerBricksBlockType("crystallized_marble_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRYSTALLIZED_MARBLE_TILE = registerBlockType("crystallized_marble_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_CRYSTALLIZED_MARBLE = registerBlockType("polished_crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRYSTALLIZED_MARBLE_PILLAR = registerBlockType("crystallized_marble_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRYSTALLIZED_MARBLE_MOSAIC = registerBlockType("mosaic_crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_CRYSTALLIZED_MARBLE = registerBlockType("cut_crystallized_marble", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRYSTALLIZED_MARBLE_LAMP = registerBlockType("crystallized_marble_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_CRYSTALLIZED_MARBLE = registerBlockType(
+            "mossy_crystallized_marble",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> CRYSTALLIZED_MARBLE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
+    public static final RegistryObject<Block> CRYSTALLIZED_MARBLE_REDSTONE_LAMP = registerBlock("crystallized_marble_redstone_lamp", StoneLampVariantBlock::new);
+
+    //Jadeite
+    public static final BlockType JADEITE = registerBlockType("jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType COBBLED_JADEITE = registerBlockType("cobbled_jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CHISELED_JADEITE = registerBlockType("chiseled_jadeite", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CRACKED_JADEITE = registerBlockType("cracked_jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType JADEITE_BRICKS = registerBricksBlockType("jadeite_brick", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType JADEITE_TILE = registerBlockType("jadeite_tile", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType POLISHED_JADEITE = registerBlockType("polished_jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType JADEITE_PILLAR = registerBlockType("jadeite_pillar", BASE_ROTATED_PILLAR_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType JADEITE_MOSAIC = registerBlockType("mosaic_jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType CUT_JADEITE = registerBlockType("cut_jadeite", BASE_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType JADEITE_LAMP = registerBlockType("jadeite_lamp", BASE_LAMP_BLOCK, BlockSetType.STONE, 40, true);
+    public static final BlockType MOSSY_JADEITE = registerBlockType(
+            "mossy_jadeite",
+            () -> new MossSpreadingStoneBlock(
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.0F, 6.0F).sound(SoundType.STONE),
+                    () -> JADEITE.block().get()
+            ), BlockSetType.STONE, 40, true
+    );
+    public static final RegistryObject<Block> JADEITE_REDSTONE_LAMP = registerBlock("jadeite_redstone_lamp", StoneLampVariantBlock::new);
 
     //Saltstone Variants
     public static final BlockType SALTSTONE = registerBlockType("saltstone", BASE_BLOCK, BlockSetType.STONE, 40, true);
@@ -285,6 +352,7 @@ public class Init {
     public static void init(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        TagsInit.init();
         CREATIVE_MODE_TABS.register(bus);
     }
 
@@ -295,4 +363,98 @@ public class Init {
                 MAIN_BLOCKS.forEach(itemLike -> output.accept(itemLike.get()));
             }).build());
 
+    public static class TagsInit {
+        public static void init () {
+            BlockTag.init();
+            ItemTag.init();
+        }
+        public static class BlockTag {
+            public static final TagKey<Block> ROCKY_COBBLE_VARIANTS = BlockTags.create(ResourceLocation.fromNamespaceAndPath(RockyMineral.MOD_ID, "rocky_cobble_variants"));
+            public static final TagKey<Block> ROCKY_STONE_VARIANTS = BlockTags.create(ResourceLocation.fromNamespaceAndPath(RockyMineral.MOD_ID, "rocky_stone_variants"));
+
+            public static Set<Supplier<Block>> getRockyCobbleVariants() {
+                return Set.of(
+                        COBBLED_MARBLE.block(),
+                        COBBLED_CRYSTALLIZED_MARBLE.block(),
+                        COBBLED_JADEITE.block(),
+                        COBBLED_SALTSTONE.block(),
+                        COBBLED_DUSKMIRE.block(),
+                        COBBLED_PUMICE.block(),
+                        COBBLED_RHYOLITE.block(),
+                        COBBLED_ANHYDRITE.block(),
+                        COBBLED_OLIVINE.block(),
+                        COBBLED_BLUE_CALCITE.block(),
+                        COBBLED_WORN_GRANITE.block(),
+                        COBBLED_TERRA_ROSSA.block(),
+                        COBBLED_HALITE.block(),
+                        COBBLED_OPAL.block()
+                );
+            }
+
+            public static Set<Supplier<Block>> getRockyStoneVariants() {
+                return Set.of(
+                        MARBLE.block(),
+                        CRYSTALLIZED_MARBLE.block(),
+                        JADEITE.block(),
+                        SALTSTONE.block(),
+                        DUSKMIRE.block(),
+                        PUMICE.block(),
+                        RHYOLITE.block(),
+                        ANHYDRITE.block(),
+                        OLIVINE.block(),
+                        BLUE_CALCITE.block(),
+                        WORN_GRANITE.block(),
+                        TERRA_ROSSA.block(),
+                        HALITE.block(),
+                        OPAL.block()
+                );
+            }
+
+            public static void init() {}
+        }
+
+        public static class ItemTag {
+            public static final TagKey<Item> ROCKY_COBBLE_VARIANTS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(RockyMineral.MOD_ID, "rocky_cobble_variants"));
+            public static final TagKey<Item> ROCKY_STONE_VARIANTS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(RockyMineral.MOD_ID, "rocky_stone_variants"));
+
+            public static Set<Supplier<Item>> getRockyCobbleVariants() {
+                return Set.of(
+                        COBBLED_MARBLE.block().lazyMap(Block::asItem),
+                        COBBLED_CRYSTALLIZED_MARBLE.block().lazyMap(Block::asItem),
+                        COBBLED_JADEITE.block().lazyMap(Block::asItem),
+                        COBBLED_SALTSTONE.block().lazyMap(Block::asItem),
+                        COBBLED_DUSKMIRE.block().lazyMap(Block::asItem),
+                        COBBLED_PUMICE.block().lazyMap(Block::asItem),
+                        COBBLED_RHYOLITE.block().lazyMap(Block::asItem),
+                        COBBLED_ANHYDRITE.block().lazyMap(Block::asItem),
+                        COBBLED_OLIVINE.block().lazyMap(Block::asItem),
+                        COBBLED_BLUE_CALCITE.block().lazyMap(Block::asItem),
+                        COBBLED_WORN_GRANITE.block().lazyMap(Block::asItem),
+                        COBBLED_TERRA_ROSSA.block().lazyMap(Block::asItem),
+                        COBBLED_HALITE.block().lazyMap(Block::asItem),
+                        COBBLED_OPAL.block().lazyMap(Block::asItem)
+                );
+            }
+
+            public static Set<Supplier<Item>> getRockyStoneVariants() {
+                return Set.of(
+                        MARBLE.block().lazyMap(Block::asItem),
+                        CRYSTALLIZED_MARBLE.block().lazyMap(Block::asItem),
+                        JADEITE.block().lazyMap(Block::asItem),
+                        SALTSTONE.block().lazyMap(Block::asItem),
+                        DUSKMIRE.block().lazyMap(Block::asItem),
+                        PUMICE.block().lazyMap(Block::asItem),
+                        RHYOLITE.block().lazyMap(Block::asItem),
+                        ANHYDRITE.block().lazyMap(Block::asItem),
+                        OLIVINE.block().lazyMap(Block::asItem),
+                        BLUE_CALCITE.block().lazyMap(Block::asItem),
+                        WORN_GRANITE.block().lazyMap(Block::asItem),
+                        TERRA_ROSSA.block().lazyMap(Block::asItem),
+                        HALITE.block().lazyMap(Block::asItem),
+                        OPAL.block().lazyMap(Block::asItem));
+            }
+
+            public static void init() {}
+        }
+    }
 }

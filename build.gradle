@@ -82,7 +82,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     maven {
         url = "https://www.cursemaven.com"
-        allowInsecureProtocol = true
     }
     maven {
         url = "https://api.modrinth.com/maven"
@@ -113,6 +112,8 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:6271651")
     implementation fg.deobf("curse.maven:emi-580555:6362010")
 
+    //For EMC
+    implementation fg.deobf("curse.maven:projecte-226410:4901949")
 
     //For tags
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")

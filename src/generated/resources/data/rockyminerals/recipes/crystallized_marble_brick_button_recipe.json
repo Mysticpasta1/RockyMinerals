@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "rockyminerals:crystallized_marble_bricks"
+    }
+  ],
+  "result": {
+    "item": "rockyminerals:crystallized_marble_brick_button"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "rockyminerals:mosaic_crystallized_marble"
+  },
+  "result": "rockyminerals:mosaic_crystallized_marble_slab"
+}

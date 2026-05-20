@@ -1,5 +1,6 @@
 package com.mystic.rockyminerals.api.intergration;
 
+import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.api.set.mineral.MineralType;
 import com.mystic.rockyminerals.api.set.stone.StoneType;
 import net.mehvahdjukaar.moonlight.api.set.BlockSetAPI;
@@ -9,11 +10,12 @@ public class CompatBlockType {
     public static void init() {
 
         /// StoneType
-        simpleStoneFinder("rockyminerals", "worn_granite");
-        simpleStoneFinder("rockyminerals", "terra_rossa");
+        simpleStoneFinder(RockyMineral.MOD_ID, "worn_granite");
+        simpleStoneFinder(RockyMineral.MOD_ID, "terra_rossa");
+        simpleStoneFinder(RockyMineral.MOD_ID, "crystallized_marble");
 
         /// MineralType
-        simpleMineralFinder("rockyminerals", "blue_calcite");
+        simpleMineralFinder(RockyMineral.MOD_ID, "blue_calcite");
 
     }
 

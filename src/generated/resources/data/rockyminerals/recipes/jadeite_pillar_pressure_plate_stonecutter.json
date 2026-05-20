@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "rockyminerals:jadeite_pillar"
+  },
+  "result": "rockyminerals:jadeite_pillar_pressure_plate"
+}

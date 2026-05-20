@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rockyminerals:jadeite"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#g#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "item": "rockyminerals:mossy_jadeite"
+  },
+  "show_notification": true
+}
