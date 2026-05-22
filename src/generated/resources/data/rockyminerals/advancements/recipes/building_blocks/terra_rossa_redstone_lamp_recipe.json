@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mossy_terra_rossa": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "rockyminerals:mossy_terra_rossa"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_redstone": {
       "conditions": {
         "items": [
           {
             "items": [
               "minecraft:redstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_terra_rossa_lamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rockyminerals:terra_rossa_lamp"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_mossy_terra_rossa",
+      "has_terra_rossa_lamp",
       "has_redstone",
       "has_the_recipe"
     ]

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mossy_marble": {
+    "has_marble_lamp": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rockyminerals:mossy_marble"
+              "rockyminerals:marble_lamp"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_mossy_marble",
+      "has_marble_lamp",
       "has_redstone",
       "has_the_recipe"
     ]

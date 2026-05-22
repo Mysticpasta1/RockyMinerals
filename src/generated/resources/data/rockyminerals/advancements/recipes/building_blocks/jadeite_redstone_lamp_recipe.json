@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mossy_jadeite": {
+    "has_jadeite_lamp": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rockyminerals:mossy_jadeite"
+              "rockyminerals:jadeite_lamp"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_mossy_jadeite",
+      "has_jadeite_lamp",
       "has_redstone",
       "has_the_recipe"
     ]

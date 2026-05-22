@@ -1,12 +1,5 @@
 ### NEW: 
-- Added Crystallized Marble and variants
-- Added Marble and variants
-- Added Jadeite and variants
-- Fix tags and add more tags
-- Give all blocks EMC for compat with ProjectE
-- Update to 47.4.20 Forge and 15.20.0.130 JEI
-
-### NOTE:
-- Jadeite spawns anywhere in the nether from y 128 to y 0
-- Marble spawns anywhere in the overworld from y 40 to y 10
-- Crystallized Marble spawns anywhere in the overworld from y -20 to y -45
+- Fixed lamp recipe being used for mossy variant 
+- Added mossy variant recipe
+- Switch glowstone dust to a glowstone block in the regular lamp recipe
+- Fixed EMC values to be more inline with vanilla game

@@ -1,18 +1,18 @@
 {
   "values": [
-    "rockyminerals:cobbled_pumice",
-    "rockyminerals:cobbled_duskmire",
-    "rockyminerals:cobbled_olivine",
-    "rockyminerals:cobbled_saltstone",
-    "rockyminerals:cobbled_blue_calcite",
-    "rockyminerals:cobbled_worn_granite",
-    "rockyminerals:cobbled_jadeite",
-    "rockyminerals:cobbled_anhydrite",
-    "rockyminerals:cobbled_opal",
-    "rockyminerals:cobbled_terra_rossa",
-    "rockyminerals:cobbled_rhyolite",
-    "rockyminerals:cobbled_halite",
+    "rockyminerals:cobbled_crystallized_marble",
     "rockyminerals:cobbled_marble",
-    "rockyminerals:cobbled_crystallized_marble"
+    "rockyminerals:cobbled_halite",
+    "rockyminerals:cobbled_rhyolite",
+    "rockyminerals:cobbled_terra_rossa",
+    "rockyminerals:cobbled_opal",
+    "rockyminerals:cobbled_anhydrite",
+    "rockyminerals:cobbled_jadeite",
+    "rockyminerals:cobbled_worn_granite",
+    "rockyminerals:cobbled_blue_calcite",
+    "rockyminerals:cobbled_saltstone",
+    "rockyminerals:cobbled_olivine",
+    "rockyminerals:cobbled_duskmire",
+    "rockyminerals:cobbled_pumice"
   ]
 }

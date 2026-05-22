@@ -5,13 +5,13 @@
     "#": {
       "item": "rockyminerals:terra_rossa"
     },
-    "g": {
-      "item": "minecraft:glowstone_dust"
+    "m": {
+      "item": "minecraft:moss_block"
     }
   },
   "pattern": [
     " # ",
-    "#g#",
+    "#m#",
     " # "
   ],
   "result": {

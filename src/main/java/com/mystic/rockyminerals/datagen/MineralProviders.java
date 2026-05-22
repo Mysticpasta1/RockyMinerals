@@ -265,8 +265,8 @@ public class MineralProviders {
 
             private static void buildRecipesForAllStoneVariants(@NotNull Consumer<FinishedRecipe> recipeOutput, BlockType original, BlockType cobbled, BlockType cracked, BlockType chiseled,
                                                                 BlockType brick, BlockType tile, BlockType polished,
-                                                                BlockType pillar, BlockType mosaic, BlockType cut, BlockType mossy,
-                                                                BlockType lamp, Block redstoneLamp) {
+                                                                BlockType pillar, BlockType mosaic, BlockType cut, BlockType lamp,
+                                                                BlockType mossy, Block redstoneLamp) {
                 buildBlockTypeVariants(recipeOutput, original);
                 buildBlockTypeVariants(recipeOutput, cobbled);
                 buildBlockTypeVariants(recipeOutput, chiseled);
@@ -356,14 +356,24 @@ public class MineralProviders {
                         .unlockedBy(getHasName(polished.block().get()), has(polished.block().get().asItem()))
                         .save(recipeOutput, RockyMineral.res(cut.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, mossy.block().get(), 4)
+                        .pattern(" # ")
+                        .pattern("#m#")
+                        .pattern(" # ")
+                        .define('#', original.block().get())
+                        .define('m', Items.MOSS_BLOCK)
+                        .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
+                        .unlockedBy(getHasName(Items.MOSS_BLOCK), has(Items.MOSS_BLOCK))
+                        .save(recipeOutput, RockyMineral.res(mossy.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
+
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, lamp.block().get(), 4)
                         .pattern(" # ")
                         .pattern("#g#")
                         .pattern(" # ")
                         .define('#', original.block().get())
-                        .define('g', Items.GLOWSTONE_DUST)
+                        .define('g', Blocks.GLOWSTONE)
                         .unlockedBy(getHasName(original.block().get()), has(original.block().get().asItem()))
-                        .unlockedBy(getHasName(Items.GLOWSTONE_DUST), has(Items.GLOWSTONE_DUST))
+                        .unlockedBy(getHasName(Blocks.GLOWSTONE), has(Blocks.GLOWSTONE))
                         .save(recipeOutput, RockyMineral.res(lamp.block().get().getDescriptionId().replace("block.rockyminerals.", "") + "_recipe"));
 
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, redstoneLamp, 4)

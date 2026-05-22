@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moss_block": {
+    "has_glowstone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:moss_block"
+              "minecraft:glowstone"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_pumice": {
+    "has_rhyolite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rockyminerals:pumice"
+              "rockyminerals:rhyolite"
             ]
           }
         ]
@@ -27,21 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rockyminerals:mossy_pumice_recipe"
+        "recipe": "rockyminerals:rhyolite_lamp_recipe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_pumice",
-      "has_moss_block",
+      "has_rhyolite",
+      "has_glowstone",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rockyminerals:mossy_pumice_recipe"
+      "rockyminerals:rhyolite_lamp_recipe"
     ]
   },
   "sends_telemetry_event": false

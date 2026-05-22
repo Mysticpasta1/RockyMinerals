@@ -1,18 +1,18 @@
 {
   "values": [
-    "rockyminerals:opal",
-    "rockyminerals:crystallized_marble",
-    "rockyminerals:duskmire",
-    "rockyminerals:blue_calcite",
-    "rockyminerals:terra_rossa",
-    "rockyminerals:rhyolite",
-    "rockyminerals:anhydrite",
-    "rockyminerals:pumice",
-    "rockyminerals:marble",
-    "rockyminerals:olivine",
     "rockyminerals:worn_granite",
+    "rockyminerals:rhyolite",
+    "rockyminerals:opal",
+    "rockyminerals:duskmire",
+    "rockyminerals:olivine",
+    "rockyminerals:anhydrite",
+    "rockyminerals:crystallized_marble",
     "rockyminerals:halite",
     "rockyminerals:jadeite",
+    "rockyminerals:terra_rossa",
+    "rockyminerals:pumice",
+    "rockyminerals:blue_calcite",
+    "rockyminerals:marble",
     "rockyminerals:saltstone"
   ]
 }

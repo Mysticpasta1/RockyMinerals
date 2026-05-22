@@ -3,20 +3,20 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "rockyminerals:duskmire"
+      "item": "rockyminerals:crystallized_marble"
     },
-    "m": {
-      "item": "minecraft:moss_block"
+    "g": {
+      "item": "minecraft:glowstone"
     }
   },
   "pattern": [
     " # ",
-    "#m#",
+    "#g#",
     " # "
   ],
   "result": {
     "count": 4,
-    "item": "rockyminerals:mossy_duskmire"
+    "item": "rockyminerals:crystallized_marble_lamp"
   },
   "show_notification": true
 }
