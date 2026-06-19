@@ -48,9 +48,7 @@ dependencies {
     runtimeOnly("mezz.jei:jei-$minecraft_version-neoforge:$jei_version")
 
     //!! DEPENDENCIES
-    implementation("net.mehvahdjukaar:moonlight-neoforge:$moonlight_version:neoforge") {
-        transitive = false
-    }
+    implementation("net.mehvahdjukaar:moonlight-neoforge:$moonlight_version") { transitive = false }
 }
 
 neoForge {
