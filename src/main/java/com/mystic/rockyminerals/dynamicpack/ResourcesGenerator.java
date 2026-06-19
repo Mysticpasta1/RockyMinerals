@@ -8,11 +8,13 @@ import com.mystic.rockyminerals.api.set.MineralTypeRegistry;
 import com.mystic.rockyminerals.api.set.StoneType;
 import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
 import net.mehvahdjukaar.moonlight.api.resources.RPUtils;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceSink;
 import net.mehvahdjukaar.moonlight.api.resources.textures.Palette;
 import net.mehvahdjukaar.moonlight.api.resources.textures.Respriter;
 import net.mehvahdjukaar.moonlight.api.resources.textures.TextureImage;
+import net.mehvahdjukaar.moonlight.api.resources.textures.TextureOps;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -31,14 +33,14 @@ public class ResourcesGenerator {
     public static Map<BlockType, ArrayList<Item>> decorativeItemTypes = new HashMap<>();
     public static ArrayList<BlockType> rockTypes = new ArrayList<>();
 
-    public static void generateResources(DynClientResourcesGenerator generator, ResourceManager manager) {
+    public static void generateResources(ResourceSink sink, ResourceManager manager) {
 
         /// Creating textures for all RockTypes
         for (StoneType currentType : StoneTypeRegistry.getTypes()) {
-            generateTexture("saltstone", currentType, Saltstone_Templates, generator, manager);
+            generateTexture("saltstone", currentType, Saltstone_Templates, sink, manager);
         }
         for (MineralType currentType : MineralTypeRegistry.getTypes()) {
-            generateTexture("blue_calcite", currentType, BlueCacite_Templates, generator, manager);
+            generateTexture("blue_calcite", currentType, BlueCacite_Templates, sink, manager);
         }
 
         /// Creating blockstates, models/block, models/item
@@ -48,20 +50,20 @@ public class ResourcesGenerator {
             /// Modifying blockstates & models/block files
             generateStandardResources(currentType, decorativeBlockTypes.get(currentType), baseType,
                     makeBlockStateTransformer(baseType, manager), makeModelTransformer(baseType, manager),
-                    generator, manager
+                    sink, manager
             );
 
             /// Modifying models/item files
             if (!decorativeItemTypes.isEmpty()) {
                 generateStandardItemModels(currentType, decorativeItemTypes.get(currentType), baseType,
-                        makeModelTransformer(baseType, manager), generator, manager
+                        makeModelTransformer(baseType, manager), sink, manager
                 );
             }
         }
     }
 
     private static void generateTexture(String targetBlockType, BlockType blockType, List<TextureInfo> textureTemplates,
-                                        DynClientResourcesGenerator generator, ResourceManager manager) {
+                                        ResourceSink sink, ResourceManager manager) {
 
         if (!targetBlockType.equals(blockType.getTypeName())) { // Skip the blocktype's template
             try (TextureImage stoneImage = TextureImage.open(manager,
@@ -108,10 +110,10 @@ public class ResourcesGenerator {
                         if (newResLoc.contains("mossy")) finishedTexture = postProcessTexture(blockType, manager, finishedTexture);
 
                         /// Adding the textures to the resource
-                        generator.addTextureIfNotPresent(manager, newResLoc, finishedTexture);
+                        sink.addTextureIfNotPresent(manager, ResourceLocation.parse(newResLoc), finishedTexture);
                     }
                     catch (IOException e) {
-                        generator.getLogger().error("Failed to generate texture for {} with {} : {}", textureInfo.blockId(), blockType.getTypeName(), e);
+                        RockyMineral.LOGGER.error("Failed to generate texture for {} with {} : {}", textureInfo.blockId(), blockType.getTypeName(), e);
                     }
                 }
 
@@ -139,8 +141,7 @@ public class ResourcesGenerator {
 
     private static void mossyTexture(TextureImage textureImage, ResourceManager manager, StoneType stoneType) {
         try (TextureImage mossyOverlay = TextureImage.open(manager, RockyMineral.res("block/overlay/mossy"))) {
-            textureImage.applyOverlayOnExisting(mossyOverlay);
-
+            TextureOps.applyOverlay(textureImage, mossyOverlay);
         } catch (Exception e) {
             RockyMineral.LOGGER.warn("Failed to apply mossy overlay for {} texture: {}", stoneType.id.toString(), String.valueOf(e));
         }

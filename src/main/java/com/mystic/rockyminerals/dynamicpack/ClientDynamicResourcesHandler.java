@@ -2,13 +2,15 @@ package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.RockyMineral;
 import com.mystic.rockyminerals.configs.RockyMineralConfigs;
-import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
-import net.minecraft.server.packs.resources.ResourceManager;
-import org.apache.logging.log4j.Logger;
+import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
+import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicClientResourceProvider;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceGenTask;
 
-public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class ClientDynamicResourcesHandler extends DynamicClientResourceProvider {
     private static ClientDynamicResourcesHandler INSTANCE;
 
     public static ClientDynamicResourcesHandler getInstance() {
@@ -19,23 +21,25 @@ public class ClientDynamicResourcesHandler extends DynClientResourcesGenerator {
     }
 
     public ClientDynamicResourcesHandler() {
-        super(new DynamicTexturePack(RockyMineral.res("generated_pack")));
+        super(RockyMineral.res("generated_pack"), RockyMineralConfigs.CLIENT_GENERATION_MODE.get().pickStrategy());
     }
 
     @Override
-    public Logger getLogger() {
-        return RockyMineral.LOGGER;
+    protected Collection<String> gatherSupportedNamespaces() {
+        return List.of();
     }
 
     @Override
-    public boolean dependsOnLoadedPacks() {
-        return RockyMineralConfigs.SPEC == null || RockyMineralConfigs.DEPEND_ON_PACKS.get();
+    protected void addDynamicTranslations(AfterLanguageLoadEvent afterLanguageLoadEvent) {
+
     }
 
     @Override
-    public void regenerateDynamicAssets(ResourceManager manager) {
-        this.dynamicPack.setGenerateDebugResources(PlatHelper.isDev());
+    public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {
 
-        ResourcesGenerator.generateResources(this, manager);
+        executor.accept((manager, sink) ->
+                ResourcesGenerator.generateResources(sink, manager)
+        );
     }
+
 }

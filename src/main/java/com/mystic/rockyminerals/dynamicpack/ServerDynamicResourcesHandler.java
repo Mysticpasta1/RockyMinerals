@@ -1,36 +1,40 @@
 package com.mystic.rockyminerals.dynamicpack;
 
 import com.mystic.rockyminerals.RockyMineral;
-import com.mystic.rockyminerals.api.set.StoneTypeRegistry;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynServerResourcesGenerator;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicDataPack;
-import net.minecraft.server.packs.resources.ResourceManager;
-import org.apache.logging.log4j.Logger;
+import com.mystic.rockyminerals.configs.RockyMineralConfigs;
+import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicServerResourceProvider;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceGenTask;
 
-public class ServerDynamicResourcesHandler extends DynServerResourcesGenerator {
-    public static final ServerDynamicResourcesHandler INSTANCE = new ServerDynamicResourcesHandler();
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class ServerDynamicResourcesHandler extends DynamicServerResourceProvider {
+    public static ServerDynamicResourcesHandler INSTANCE;
+
+    public static ServerDynamicResourcesHandler getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new ServerDynamicResourcesHandler();
+        }
+        return INSTANCE;
+    }
 
     protected ServerDynamicResourcesHandler() {
-        super(new DynamicDataPack(RockyMineral.res("generated_pack")));
+        super(RockyMineral.res("generated_pack"), RockyMineralConfigs.SERVER_GENERATION_MODE.get().pickStrategy());
     }
 
     @Override
-    public Logger getLogger() {
-        return RockyMineral.LOGGER;
+    protected Collection<String> gatherSupportedNamespaces() {
+        return List.of();
     }
 
     @Override
-    public boolean dependsOnLoadedPacks() {
-        return false;
-    }
+    public void regenerateDynamicAssets(Consumer<ResourceGenTask> executor) {
 
-    @Override
-    public void regenerateDynamicAssets(ResourceManager resourceManager) {
-
-        for (var test : StoneTypeRegistry.getTypes()) {
-            if (test.isVanilla()) continue;
-
-            if (test.getTypeName().equals("anhydrite")) RockyMineral.LOGGER.warn("STONE: Anhydrite");
-        }
+//        for (var test : StoneTypeRegistry.getTypes()) {
+//            if (test.isVanilla()) continue;
+//
+//            if (test.getTypeName().equals("anhydrite")) RockyMineral.LOGGER.warn("STONE: Anhydrite");
+//        }
     }
 }

@@ -8,7 +8,7 @@ import com.mystic.rockyminerals.api.ResourceLocationTransformer;
 import net.mehvahdjukaar.moonlight.api.resources.RPUtils;
 import net.mehvahdjukaar.moonlight.api.resources.ResType;
 import net.mehvahdjukaar.moonlight.api.resources.StaticResource;
-import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
+import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceSink;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +17,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 import java.io.ByteArrayInputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ResourcesUtils {
 
@@ -26,7 +29,7 @@ public class ResourcesUtils {
             T currentType, ArrayList<Block> decorativeType, T baseType,
             ResourceLocationTransformer<T> blockStateTransformer,
             ResourceLocationTransformer<T> modelTransformer,
-            DynClientResourcesGenerator generator, ResourceManager manager) {
+            ResourceSink sink, ResourceManager manager) {
 
         decorativeType.forEach(( currentBlock) -> {
 
@@ -45,11 +48,14 @@ public class ResourcesUtils {
 
             /// Blockstate & models/block
             try {
-                StaticResource baseBlockstate = StaticResource.getOrFail(manager, ResType.BLOCKSTATES.getPath(baseBlockId));
-                StaticResource baseItemModel = StaticResource.getOrFail(manager, ResType.ITEM_MODELS.getPath(baseBlockId));
+                StaticResource baseBlockstate = StaticResource.getOrLog(manager, ResType.BLOCKSTATES.getPath(baseBlockId));
+                StaticResource baseModelsBlock = StaticResource.getOrLog(manager, ResType.ITEM_MODELS.getPath(baseBlockId));
+
+                if (baseBlockstate == null) return;
+                if (baseModelsBlock == null) return;
 
                 JsonElement insideBlockstates = RPUtils.deserializeJson(new ByteArrayInputStream(baseBlockstate.data));
-                JsonObject insideItemModel = RPUtils.deserializeJson(new ByteArrayInputStream(baseItemModel.data));
+                JsonObject insideItemModel = RPUtils.deserializeJson(new ByteArrayInputStream(baseModelsBlock.data));
 
                 //adds models referenced from here
                 Set<String> blockModelsLoc = new HashSet<>(
@@ -70,7 +76,7 @@ public class ResourcesUtils {
                             "ids can't be the same: " + newBlockState.location);
 
                     //Adding to the resources
-                    generator.addResourceIfNotPresent(manager, newBlockState);
+                    sink.addResourceIfNotPresent(manager, newBlockState);
 
                     ///creates block model
                     for (StaticResource model : baseBlockModels) {
@@ -81,7 +87,7 @@ public class ResourcesUtils {
                                     "ids cant be the same: " + newModel.location);
 
                             //Adding to the resources
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception e) {
                             RockyMineral.LOGGER.error("Failed to add {} model json file:", currentBlock, e);
                         }
@@ -93,11 +99,11 @@ public class ResourcesUtils {
 
                 /// models/item
                 try {
-                    StaticResource newRes = modelTransformer.transform(baseItemModel, currentBlockId, currentType);
-                    Preconditions.checkArgument(newRes.location != baseItemModel.location,
+                    StaticResource newRes = modelTransformer.transform(baseModelsBlock, currentBlockId, currentType);
+                    Preconditions.checkArgument(newRes.location != baseModelsBlock.location,
                             "ids cant be the same: " + newRes.location);
 
-                    generator.addResourceIfNotPresent(manager, newRes);
+                    sink.addResourceIfNotPresent(manager, newRes);
 
                     for (StaticResource model : baseItemModels) {
                         try {
@@ -105,7 +111,7 @@ public class ResourcesUtils {
                             Preconditions.checkArgument(newModel.location != model.location,
                                     "ids cant be the same: " + model.location);
 
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception ex) {
                             RockyMineral.LOGGER.error("Failed to modify {} model json file:", currentBlock, ex);
                         }
@@ -125,7 +131,7 @@ public class ResourcesUtils {
     public static <T extends BlockType> void generateStandardItemModels(
             T currentType, ArrayList<Item> decorativeType, T baseType,
             ResourceLocationTransformer<T> itemModelTransformer,
-            DynClientResourcesGenerator generator, ResourceManager manager) {
+            ResourceSink sink, ResourceManager manager) {
 
         decorativeType.forEach((currentItem) -> {
 
@@ -144,10 +150,12 @@ public class ResourcesUtils {
             /// models/item
             try {
 
-                StaticResource baseItemModel = StaticResource.getOrFail(manager,
+                StaticResource baseModelsItem = StaticResource.getOrLog(manager,
                         ResType.ITEM_MODELS.getPath(Utils.getID(baseItem)));
 
-                JsonObject json = RPUtils.deserializeJson(new ByteArrayInputStream(baseItemModel.data));
+                if (baseModelsItem == null) return;
+
+                JsonObject json = RPUtils.deserializeJson(new ByteArrayInputStream(baseModelsItem.data));
 
                 //adds models referenced from here, it will not be recursive
                 Set<String> modelsLoc = new HashSet<>(
@@ -165,11 +173,11 @@ public class ResourcesUtils {
 
                 ResourceLocation currentItemId = Utils.getID(currentItem);
                 try {
-                    StaticResource newRes = itemModelTransformer.transform(baseItemModel, currentItemId, currentType);
-                    Preconditions.checkArgument(newRes.location != baseItemModel.location,
+                    StaticResource newRes = itemModelTransformer.transform(baseModelsItem, currentItemId, currentType);
+                    Preconditions.checkArgument(newRes.location != baseModelsItem.location,
                             "ids cant be the same: " + newRes.location);
 
-                    generator.addResourceIfNotPresent(manager, newRes);
+                    sink.addResourceIfNotPresent(manager, newRes);
 
                     for (StaticResource model : baseItemModels) {
                         try {
@@ -177,7 +185,7 @@ public class ResourcesUtils {
                             Preconditions.checkArgument(newModel.location != model.location,
                                     "ids cant be the same: " + model.location);
 
-                            generator.addResourceIfNotPresent(manager, newModel);
+                            sink.addResourceIfNotPresent(manager, newModel);
                         } catch (Exception ex) {
                             RockyMineral.LOGGER.error("Failed to add {} model json file:", currentItem, ex);
                         }
